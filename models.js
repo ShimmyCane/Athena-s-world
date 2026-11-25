@@ -488,6 +488,77 @@
     return g;
   }
 
+  // A standing fan whose blades turn (tester request: more moving things). One turn every 2 seconds.
+  function fan() {
+    const g = G();
+    cyl(g, 0.6, 0.7, 0.3, C.dark, 0, 0.15, 0, { seg: 12 });                      // foot
+    cyl(g, 0.12, 0.12, 2.4, C.white, 0, 1.4, 0, { seg: 8 });                      // pole
+    const hub = G();
+    hub.position.set(0, 2.7, 0.35);
+    ball(hub, 0.22, C.dark, 0, 0, 0.1, { sz: 0.6 });
+    for (let i = 0; i < 3; i++) {
+      const blade = G();
+      blade.rotation.z = i * 2 * Math.PI / 3;
+      box(blade, 0.3, 1.5, 0.08, i % 2 ? C.sky : C.coral, 0, 0.75, 0.1);
+      hub.add(blade);
+    }
+    g.add(hub);
+    g.userData.sails = hub;
+    return g;
+  }
+  // A globe on a stand that turns round. One turn every 6 seconds.
+  function globe() {
+    const g = G();
+    cyl(g, 0.9, 1.1, 0.3, C.darkwood, 0, 0.15, 0, { seg: 12 });                  // base
+    cyl(g, 0.12, 0.12, 1.3, C.white, 0, 0.95, 0, { seg: 8 });                    // stand
+    const spin = G();
+    spin.position.set(0, 2.5, 0);
+    ball(spin, 1.2, C.sky, 0, 0, 0, { sz: 1, sy: 1 });
+    [[0.5, 0.4, 0.8], [-0.6, -0.2, 0.9], [0.1, -0.7, 1.0]].forEach(([x, y, z]) => ball(spin, 0.4, C.mint, x, y, z, { outline: false }));
+    g.add(spin);
+    g.userData.sails = spin;
+    return g;
+  }
+
+  // A rocking horse that rocks on its rockers. One rock every 4 seconds.
+  function rockinghorse() {
+    const g = G();
+    const rock = G();
+    cyl(rock, 0.12, 0.12, 0.9, C.darkwood, -0.9, 0.5, 0, { rz: Math.PI / 2, outline: false });   // rocker bar (left)
+    cyl(rock, 0.12, 0.12, 0.9, C.darkwood, 0.9, 0.5, 0, { rz: Math.PI / 2, outline: false });    // rocker bar (right)
+    box(rock, 1.9, 0.12, 0.3, C.darkwood, 0, 0.12, 0);                                          // rocker base
+    box(rock, 1.6, 0.6, 0.9, C.coral, 0, 1.05, 0);                                              // body
+    box(rock, 0.55, 0.9, 0.7, C.coral, 0.85, 1.7, 0, { rz: -0.4 });                             // neck
+    ball(rock, 0.4, C.coral, 1.15, 2.25, 0);                                                    // head
+    box(rock, 0.18, 0.35, 0.18, C.dark, 1.3, 2.55, 0.1);                                        // ear
+    ball(rock, 0.08, C.dark, 1.42, 2.3, 0.22);                                                  // eye
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, -0.6, 1.4, 0.35);                                      // leg
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, -0.6, 1.4, -0.35);
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, 0.6, 1.4, 0.35);
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, 0.6, 1.4, -0.35);
+    g.add(rock);
+    g.userData.sails = rock;
+    return g;
+  }
+  // A pinwheel on a stick that spins in the breeze. One turn every 4 seconds.
+  function pinwheel() {
+    const g = G();
+    cyl(g, 0.1, 0.1, 2.6, C.white, 0, 1.3, 0, { seg: 8 });                      // stick
+    cyl(g, 0.5, 0.6, 0.4, C.darkwood, 0, 0.2, 0, { seg: 12 });                  // stand
+    const hub = G();
+    hub.position.set(0, 2.7, 0.2);
+    for (let i = 0; i < 4; i++) {
+      const vane = G();
+      vane.rotation.z = i * Math.PI / 2;
+      box(vane, 0.2, 1.3, 0.06, i % 2 ? C.pink : C.sky, 0.35, 0.35, 0.1, { rz: -0.6 });
+      hub.add(vane);
+    }
+    ball(hub, 0.16, C.butter, 0, 0, 0.15, { sz: 0.6 });
+    g.add(hub);
+    g.userData.sails = hub;
+    return g;
+  }
+
   // ---- Outside things (Home Depot): on the outside of a wall, back at z = 0, facing +z ----
   function frontdoor() {
     const g = G();
@@ -589,6 +660,14 @@
     // Things that move: animate(obj, seconds) is called every frame; loop is the length of one full cycle.
     windmill:  { emoji: '🌬️', label: 'windmill', zone: 'floor', build: windmill, loop: 4,
                  animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI / 2; } },
+    fan:       { emoji: '🌀', label: 'spinning fan', zone: 'floor', build: fan, loop: 2,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI; } },
+    globe:     { emoji: '🌍', label: 'spinning globe', zone: 'floor', build: globe, loop: 6,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.y = t * Math.PI / 3; } },
+    rockinghorse: { emoji: '🐴', label: 'rocking horse', zone: 'floor', build: rockinghorse, loop: 4,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = Math.sin(t * Math.PI / 2) * 0.22; } },
+    pinwheel:  { emoji: '🎐', label: 'pinwheel', zone: 'floor', build: pinwheel, loop: 4,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI / 2; } },
     // Outside things (Home Depot). v: how high the middle sits, when it must be fixed (a door stands on the floor).
     frontdoor: { emoji: '🚪', label: 'front door',  zone: 'outside', build: frontdoor, v: 1.85 },
     shutters:  { emoji: '🪟', label: 'shutters',    zone: 'outside', build: shutters },
@@ -601,6 +680,76 @@
     sidingbrick: { emoji: '🧱', label: 'brick',        zone: 'siding', build: sidingSample(C.terracotta, 'brick') },
     sidingwood:  { emoji: '🪵', label: 'wood siding',  zone: 'siding', build: sidingSample(C.wood, 'v') }
   };
+
+  // ---- Job trophies (tester note, 2026-11-25): a little 3-D object for each job, from its stereotype.
+  // Won by finishing the job's harder questions. A trophy goes in the bag, so any house can show it.
+  // Each stands on a gold plinth and turns slowly; the prop is the part that turns (userData.sails).
+  const TROPHY_LABEL = {
+    architect: 'architect', 'flight-attendant': 'flight attendant', pilot: 'pilot', artist: 'artist', dancer: 'dancer', singer: 'singer',
+    builder: 'builder', doctor: 'doctor', nurse: 'nurse', veterinarian: 'vet', teacher: 'teacher', firefighter: 'firefighter',
+    'police-officer': 'police', chef: 'chef', baker: 'baker', farmer: 'farmer', gardener: 'gardener', zookeeper: 'zookeeper',
+    scientist: 'scientist', astronaut: 'astronaut', 'bus-driver': 'bus driver', 'train-driver': 'train driver', sailor: 'sailor',
+    lifeguard: 'lifeguard', 'mail-carrier': 'mail carrier', librarian: 'librarian', photographer: 'photographer', author: 'author',
+    musician: 'musician', actor: 'actor', engineer: 'engineer', coder: 'coder', electrician: 'electrician', hairdresser: 'hairdresser',
+    florist: 'florist', tailor: 'tailor', beekeeper: 'beekeeper'
+  };
+  const TROPHY_PROP = {
+    architect(p) { box(p, 1.1, 0.8, 0.9, C.coral, 0, 0.4, 0); prism(p, 1.4, 0.7, 1.2, C.darkwood, 0, 0.8, 0); box(p, 0.22, 0.22, 0.22, C.white, 0.4, 1.2, 0); },
+    'flight-attendant'(p) { cyl(p, 0.22, 0.22, 1.4, C.white, 0, 0.1, 0, { rx: Math.PI / 2 }); cyl(p, 0.2, 0.25, 0.4, C.coral, -0.3, 0.6, 0.4); ball(p, 0.18, C.gold, 0.35, 0.65, 0.4); box(p, 0.6, 0.12, 0.6, C.sky, 0, 0.9, 0); },
+    pilot(p) { box(p, 1.4, 0.3, 0.4, C.white, 0, 0.4, 0); box(p, 0.4, 0.1, 1.4, C.sky, 0, 0.45, 0); cyl(p, 0.1, 0.1, 0.4, C.dark, 0.7, 0.3, 0.1, { rx: Math.PI / 2 }); box(p, 0.1, 0.9, 0.1, C.dark, 0.7, 0.6, 0.6, { outline: false }); },
+    artist(p) { cyl(p, 0.7, 0.7, 0.15, C.wood, 0, 0.1, 0, { rx: Math.PI / 2 }); ball(p, 0.13, C.coral, -0.3, 0.2, 0.2); ball(p, 0.13, C.blue, 0.1, 0.25, 0.2); ball(p, 0.13, C.butter, 0.4, 0.15, 0.2); cyl(p, 0.05, 0.05, 0.8, C.darkwood, 0.6, -0.3, 0.3); },
+    dancer(p) { cone(p, 0.8, 0.6, C.pink, 0, 0.25, 0, { seg: 20 }); ball(p, 0.3, C.wood, 0, 0.9, 0); cyl(p, 0.05, 0.05, 0.6, C.gold, 0.9, 0.2, 0); },
+    singer(p) { ball(p, 0.35, C.dark, 0, 0.9, 0); cyl(p, 0.12, 0.12, 0.7, C.dark, 0, 0.2, 0); box(p, 0.5, 0.15, 0.1, C.gold, 0, 0.9, 0.36, { outline: false }); },
+    builder(p) { dome(p, 0.6, C.butter, 0, 0.1, 0); box(p, 1.4, 0.12, 1.0, C.butter, 0, 0.05, 0); box(p, 0.4, 0.3, 0.3, C.brown, 0.5, 0.8, 0.2); },
+    doctor(p) { ball(p, 0.35, C.coral, -0.25, 0.7, 0); ball(p, 0.35, C.coral, 0.25, 0.7, 0); cone(p, 0.55, 0.7, C.coral, 0, 0.1, 0, { rz: Math.PI, seg: 20 }); },
+    nurse(p) { box(p, 1.6, 1.6, 0.12, C.white, 0, 0.8, 0); box(p, 0.5, 1.1, 0.14, C.red, 0, 0.8, 0.08); box(p, 1.1, 0.5, 0.14, C.red, 0, 0.8, 0.08); },
+    veterinarian(p) { ball(p, 0.4, C.brown, 0, 0.3, 0); ball(p, 0.16, C.brown, -0.45, 0.85, 0.05); ball(p, 0.16, C.brown, -0.15, 1.0, 0); ball(p, 0.16, C.brown, 0.15, 1.0, 0); ball(p, 0.16, C.brown, 0.45, 0.85, 0.05); },
+    teacher(p) { ball(p, 0.65, C.coral, 0, 0.6, 0); box(p, 0.08, 0.4, 0.08, C.darkwood, 0, 1.45, 0); ball(p, 0.2, C.leaf, 0.25, 1.45, 0); },
+    firefighter(p) { dome(p, 0.7, C.red, 0, 0.2, 0, { seg: 20 }); box(p, 1.6, 0.14, 0.8, C.red, 0, 0.2, 0.2); },
+    'police-officer'(p) { box(p, 1.1, 0.25, 1.0, C.dark, 0, 0.12, 0); box(p, 1.1, 0.5, 0.8, C.dark, 0, 0.5, 0); box(p, 1.4, 0.12, 0.5, C.dark, 0, 0.8, 0.3); ball(p, 0.12, C.gold, 0, 0.7, 0.45); },
+    chef(p) { cyl(p, 0.5, 0.55, 0.45, C.white, 0, 0.2, 0, { seg: 16 }); ball(p, 0.4, C.white, -0.3, 0.8, 0); ball(p, 0.4, C.white, 0.3, 0.8, 0); ball(p, 0.4, C.white, 0, 0.9, 0.2); },
+    baker(p) { cyl(p, 0.45, 0.3, 0.6, C.terracotta, 0, 0.3, 0, { seg: 16 }); ball(p, 0.55, C.pink, 0, 0.8, 0, { sz: 0.7 }); ball(p, 0.1, C.red, 0, 1.2, 0); },
+    farmer(p) { box(p, 1.0, 0.5, 0.7, C.red, 0, 0.5, 0); box(p, 0.5, 0.4, 0.5, C.red, 0.5, 0.8, 0); cyl(p, 0.35, 0.35, 0.12, C.dark, -0.3, 0.0, 0.5, { rx: Math.PI / 2 }); cyl(p, 0.35, 0.35, 0.12, C.dark, 0.5, 0.0, 0.5, { rx: Math.PI / 2 }); },
+    gardener(p) { cyl(p, 0.4, 0.3, 0.45, C.terracotta, 0, 0.2, 0, { seg: 16 }); cyl(p, 0.04, 0.04, 0.8, C.darkleaf, 0, 0.8, 0); ball(p, 0.22, C.pink, 0, 1.25, 0); ball(p, 0.22, C.butter, -0.2, 1.1, 0.1); ball(p, 0.22, C.butter, 0.2, 1.1, -0.1); },
+    zookeeper(p) { ball(p, 0.55, C.butter, 0, 0.6, 0); ball(p, 0.22, C.butter, 0, 1.25, 0); ring(p, 0.45, 0.12, C.hay, 0, 0.65, 0, { rx: Math.PI / 2 }); },
+    scientist(p) { cone(p, 0.5, 0.8, C.sky, 0, 0.6, 0, { seg: 16 }); cyl(p, 0.18, 0.18, 0.5, C.glass, 0, 1.2, 0); cyl(p, 0.5, 0.5, 0.1, C.white, 0, 0.1, 0); },
+    astronaut(p) { cyl(p, 0.3, 0.3, 1.2, C.white, 0, 0.6, 0); cone(p, 0.3, 0.5, C.coral, 0, 1.45, 0); box(p, 0.1, 0.5, 0.5, C.coral, 0, 0.3, 0.3); ball(p, 0.1, C.sky, 0, 0.9, 0.3); },
+    'bus-driver'(p) { box(p, 1.6, 0.9, 0.8, C.orange, 0, 0.5, 0); box(p, 1.0, 0.4, 0.82, C.sky, 0.2, 0.8, 0, { outline: false }); ball(p, 0.16, C.dark, -0.5, 0.0, 0.5); ball(p, 0.16, C.dark, 0.5, 0.0, 0.5); },
+    'train-driver'(p) { box(p, 1.3, 0.7, 0.7, C.blue, 0, 0.5, 0); cyl(p, 0.12, 0.2, 0.5, C.dark, 0.4, 1.05, 0); box(p, 0.7, 0.4, 0.7, C.red, -0.3, 0.9, 0); ball(p, 0.16, C.dark, -0.4, 0.0, 0.4); ball(p, 0.16, C.dark, 0.2, 0.0, 0.4); },
+    sailor(p) { prism(p, 1.2, 0.4, 1.4, C.darkwood, 0, 0.0, 0); cyl(p, 0.04, 0.04, 1.6, C.white, 0, 0.9, 0); box(p, 0.7, 0.8, 0.04, C.white, 0.35, 0.9, 0); },
+    lifeguard(p) { ring(p, 0.55, 0.18, C.coral, 0, 0.6, 0, { rx: Math.PI / 2 }); ring(p, 0.55, 0.06, C.white, 0, 0.6, 0.05, { rx: Math.PI / 2 }); cyl(p, 0.1, 0.1, 0.3, C.gold, 0.6, 1.0, 0); },
+    'mail-carrier'(p) { box(p, 1.4, 0.9, 0.08, C.white, 0, 0.5, 0); prism(p, 1.4, 0.45, 0.2, C.coral, 0, 0.95, 0.0); box(p, 0.4, 0.4, 0.1, C.coral, 0.4, 0.4, 0.1); },
+    librarian(p) { box(p, 1.2, 0.2, 0.8, C.coral, 0, 0.1, 0); box(p, 1.0, 0.2, 0.8, C.sky, 0.05, 0.3, 0); box(p, 1.1, 0.2, 0.8, C.butter, 0, 0.5, 0); box(p, 0.9, 0.2, 0.8, C.pink, 0.03, 0.7, 0); },
+    photographer(p) { box(p, 1.2, 0.7, 0.6, C.dark, 0, 0.45, 0); cyl(p, 0.35, 0.4, 0.4, C.dark, 0, 0.45, 0.5, { rx: Math.PI / 2 }); cyl(p, 0.2, 0.2, 0.2, C.glass, 0, 0.45, 0.72, { rx: Math.PI / 2 }); box(p, 0.3, 0.2, 0.2, C.gold, 0.35, 0.9, 0); },
+    author(p) { box(p, 1.2, 0.2, 0.9, C.brown, 0, 0.1, 0); box(p, 1.1, 0.2, 0.85, C.white, 0, 0.3, 0); box(p, 1.0, 0.2, 0.8, C.lilac, 0, 0.5, 0); cyl(p, 0.05, 0.05, 0.9, C.gold, 0.7, 0.3, 0.4, { rx: 0.4 }); },
+    musician(p) { ball(p, 0.4, C.orange, -0.2, 0.3, 0); ball(p, 0.3, C.orange, 0.3, 0.2, 0); box(p, 0.14, 1.1, 0.12, C.darkwood, 0.12, 0.9, 0); ball(p, 0.1, C.gold, 0.12, 1.5, 0.05); },
+    actor(p) { ball(p, 0.4, C.white, -0.3, 0.6, 0); ball(p, 0.4, C.blue, 0.3, 0.5, 0.15); box(p, 0.5, 0.1, 0.1, C.dark, 0, 0.2, 0.4); },
+    engineer(p) { cyl(p, 0.6, 0.6, 0.25, C.blue, 0, 0.7, 0, { rx: Math.PI / 2, seg: 14 }); for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; box(p, 0.3, 0.3, 0.26, C.blue, Math.cos(a) * 0.72, 0.7 + Math.sin(a) * 0.72, 0); } cyl(p, 0.2, 0.2, 0.3, C.white, 0, 0.7, 0, { rx: Math.PI / 2, seg: 12 }); },
+    coder(p) { box(p, 1.1, 0.7, 0.06, C.dark, 0, 0.7, 0); box(p, 0.95, 0.56, 0.02, C.sky, 0, 0.7, 0.04, { outline: false }); box(p, 1.3, 0.1, 0.7, C.grey, 0, 0.1, 0.25); },
+    electrician(p) { ball(p, 0.4, C.butter, 0, 0.8, 0); cyl(p, 0.2, 0.2, 0.5, C.grey, 0, 0.25, 0, { seg: 12 }); box(p, 0.3, 0.2, 0.3, C.dark, 0, 0.0, 0); },
+    hairdresser(p) { box(p, 0.1, 1.3, 0.1, C.grey, 0, 0.65, 0, { rz: 0.5 }); box(p, 0.1, 1.3, 0.1, C.grey, 0, 0.65, 0, { rz: -0.5 }); ring(p, 0.2, 0.06, C.red, -0.35, 1.1, 0); ring(p, 0.2, 0.06, C.red, 0.35, 1.1, 0); },
+    florist(p) { cone(p, 0.5, 0.6, C.white, 0, 0.25, 0, { rx: Math.PI, seg: 16 }); ball(p, 0.25, C.pink, -0.25, 0.8, 0); ball(p, 0.25, C.coral, 0.25, 0.8, 0); ball(p, 0.25, C.butter, 0, 1.05, 0.1); },
+    tailor(p) { cyl(p, 0.35, 0.35, 0.9, C.sky, 0, 0.5, 0, { seg: 16 }); ring(p, 0.37, 0.05, C.blue, 0, 0.25, 0, { rx: Math.PI / 2 }); ring(p, 0.37, 0.05, C.blue, 0, 0.75, 0, { rx: Math.PI / 2 }); },
+    beekeeper(p) { cone(p, 0.6, 0.7, C.hay, 0, 0.35, 0, { seg: 16 }); box(p, 1.0, 0.2, 0.6, C.darkwood, 0, 0.05, 0); ball(p, 0.15, C.butter, 0.6, 1.0, 0.1); ball(p, 0.1, C.dark, 0.85, 1.05, 0.1); }
+  };
+  for (const id in TROPHY_PROP) {
+    const key = 'trophy-' + id;
+    ITEMS[key] = {
+      emoji: '🏆', label: TROPHY_LABEL[id] + ' trophy', zone: 'floor', loop: 6,
+      build: () => {
+        const g = G();
+        cyl(g, 1.0, 1.15, 0.4, C.gold, 0, 0.2, 0, { seg: 16 });
+        cyl(g, 0.45, 0.6, 0.6, C.gold, 0, 0.7, 0, { seg: 16 });
+        const prop = G();
+        prop.position.set(0, 1.5, 0);
+        TROPHY_PROP[id](prop);
+        g.add(prop);
+        g.userData.sails = prop;
+        return g;
+      },
+      animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.y = t * Math.PI / 3; }
+    };
+  }
 
   window.ITEMS = ITEMS;
   window.Toon = { C, INK, mat, add, box, cyl, ball, cone, dome, ring, prism, G };

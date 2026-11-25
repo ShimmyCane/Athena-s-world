@@ -354,6 +354,10 @@
     .shopTag { display: block; font-size: 13px; font-weight: 700; color: #a2574d; }
     .shopRow .shopItem, .shopRow .price { font-weight: 700; text-align: left; font-size: 17px; }
     .shopRow .btn { width: auto; min-width: 120px; min-height: 48px; }
+    /* Shop items: two or three columns on wide screens, so the list fits the page without much scrolling */
+    .shopList { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    @media (min-width: 760px) { .shopList { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1100px) { .shopList { grid-template-columns: 1fr 1fr 1fr; } }
     .jobGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; max-height: 52vh; overflow-y: auto; padding: 4px; }
     .jobCard {
       display: grid;
@@ -556,6 +560,12 @@
       <label>Version log</label>
       <div>Now on version <span id="version"></span></div>
       <ul>
+        <li><b>2.3.0</b> Hired jobs offer five harder questions (🏆 Harder questions). Answer all five first time to win a job trophy: a small spinning 3-D object for the job. It goes in the bag, so any house can show it. Job questions now live in bank/jobs_round1.json.</li>
+        <li><b>2.2.5</b> Job questions checked and corrected: one question had two right answers, a few tips were wrong or unclear, and one job person had a food for a name.</li>
+        <li><b>2.2.4</b> Every job has steps now (37 jobs). Finishing a job pays a first day's wages (🪙 10). Outside things can be put on from the room view: tap a wall. A window on a wall shows from outside. Two more moving things: a rocking horse and a pinwheel.</li>
+        <li><b>2.2.3</b> Every job card has a 🔊 Listen button with a spoken description (Kokoro voice, made with tools/make_audio.py).</li>
+        <li><b>2.2.2</b> Shop items sit in two or three columns on wide screens. New moving things: a spinning fan (Target, 60) and a spinning globe (Bookshop, 60). A window on a wall now shows from the outside too.</li>
+        <li><b>2.2.1</b> Going home from the shops needs a quarter of the shops (rounded up), and no spending. Tester notes marked done.</li>
         <li><b>2.2.0</b> Prices are set by time: about 10 credits (5 minutes of questions) buys two small things. New: a decorative pony (5) and a windmill whose sails turn (60, save up for it). The shop shows a 3-D picture of everything, and moving things move. Drawn pictures of the job people.</li>
         <li><b>2.1.0</b> Play as Athena, Felix or a guest (each has their own game, synced when signed in). Six places: cottage, beach hut, treehouse, a farm with the farmhouse and the barn, an apartment in the middle of a block, and a tall tower. Make a room bigger (8 × 8) with credits. Zoom out (or 🔭) to see the outside, full screen (⛶), two fingers to pan. Home Depot sells doors, shutters, flower boxes, lamps, awnings and siding. Shops are named H Mart, Costco and Target. Every job has a person to meet and a short hello. Five more places are coming later.</li>
         <li><b>2.0.0</b> V2: Home decor is now a little 3-D world. Turn it, pinch to zoom, and drop chunky cartoon things into a cut-away room. New houses: the farmhouse, the barn outside it, a city apartment and a tall tower. New things to buy: four more beds and four more mushrooms, and a hay bale. V1 is kept in ⚙️.</li>
@@ -610,7 +620,7 @@
   <script src="people.js"></script>
   <script>
     // ---- Places, rooms and players. Edit these lists to change the game. ----
-    const VERSION = '2.2.0';
+    const VERSION = '2.3.0';
     // A place is a little world (ground) with one or more rooms. A room has a look (theme) and the things it needs.
     // cx, cz: where the room sits on the island; y: how high its floor is (the treehouse is up a tree).
     // The things are in models.js (ITEMS).
@@ -995,7 +1005,6 @@
       held = t;
       // outside things are put on from outside; inside things from inside
       if (has3d) {
-        if (zone === 'outside' && !World3D.isOutside()) World3D.setOutside(true);
         if (zone !== 'outside' && World3D.isOutside()) World3D.setOutside(false);
       }
       setNoteContext(`${ROOMS[roomId].name} · ${ITEMS[t].label}`, `${roomId}/${t}`);
@@ -1031,6 +1040,7 @@
       let spot = null;
       if (zone === 'wall' && hit.wall) spot = { wall: hit.wall.wall, u: hit.wall.u, v: hit.wall.v };
       if (zone === 'outside' && hit.outside) spot = { wall: hit.outside.wall, u: hit.outside.u, v: hit.outside.v };
+      else if (zone === 'outside' && hit.wall) spot = { wall: hit.wall.wall, u: hit.wall.u, v: hit.wall.v };   // from home: the outside of the wall tapped
       if (zone === 'floor' && hit.floor) spot = { x: hit.floor.x, z: hit.floor.z, rot: (R.pos[held] && R.pos[held].rot) || 0 };
       if (!spot) return;
       const wasDone = R.done;
@@ -1253,8 +1263,8 @@
       const body = $('levelBody');
       body.replaceChildren(el('p', 'bank'));
       const ready = trip.visited.length >= TRIP.shopsNeeded && trip.spent >= TRIP.spendNeeded;
-      body.append(el('p', '', `Shops visited: ${trip.visited.length} of ${TRIP.shopsNeeded}. Spent this trip: ${trip.spent} of ${TRIP.spendNeeded} credits.`));
-      const home = choiceBtn(ready ? '🏠 Take my things home' : 'Visit every shop and spend enough to go home', goHomeFromTrip);
+      body.append(el('p', '', `Shops visited: ${trip.visited.length} of ${TRIP.shopsNeeded}.`));
+      const home = choiceBtn(ready ? '🏠 Take my things home' : `Visit ${TRIP.shopsNeeded} shops to go home`, goHomeFromTrip);
       home.disabled = !ready;
       body.append(home);
       const grid = el('div', 'shopGrid');
@@ -1268,6 +1278,7 @@
       renderBank();
     }
     let shopAnim = null;
+    const JOB_WAGE = 10;   // credits paid once, the first time a job is finished (tester note, 2026-11-25)
     function openShop(id) {
       if (!trip.visited.includes(id)) { trip.visited.push(id); saveGame(); }
       const s = SHOPS.find(x => x.id === id);
@@ -1275,6 +1286,7 @@
       body.replaceChildren(el('p', 'bank'), el('p', '', `${s.icon} ${s.name}`));
       clearInterval(shopAnim);
       const moving = [];
+      const list = el('div', 'shopList');
       s.stock.forEach(([item, price]) => {
         const row = el('div', 'shopRow');
         const have = bag.includes(item);
@@ -1291,8 +1303,9 @@
         const b = choiceBtn(have ? 'In your bag' : 'Buy', () => buyItem(s.id, item, price));
         b.disabled = have || credits < price;
         row.append(b);
-        body.append(row);
+        list.append(row);
       });
+      body.append(list);
       // things that move play their loop in the shop
       let frame = 0;
       if (moving.length) shopAnim = setInterval(() => {
@@ -1349,7 +1362,12 @@
         const intro = el('div', 'intro');
         (job.intro || [job.desc]).forEach(line => intro.append(el('p', '', line)));
         body.append(intro);
-        if (S) body.append(choiceBtn('✅ Apply', () => { v.stage = 'learn'; v.i = 0; renderJobs(); }));
+        // spoken job description (audio/jobs, made by tools/make_audio.py); a missing file just does nothing
+        body.append(choiceBtn('🔊 Listen', () => {
+          try { const a = new Audio('audio/jobs/' + job.id + '.mp3'); a.play().catch(() => {}); } catch (e) { /* no audio */ }
+        }));
+        if (hired.includes(job.id) && S) body.append(harderBtn(v, job));
+        else if (S) body.append(choiceBtn('✅ Apply', () => { v.stage = 'learn'; v.i = 0; renderJobs(); }));
         else body.append(el('p', '', 'The steps for this job are not written yet. Coming later.'));
       } else if (v.stage === 'learn') {
         const page = S.learn[v.i];
@@ -1400,15 +1418,42 @@
           v.stage = 'hired'; v.hint = ''; renderJobs();
         })));
         body.append(el('p', 'feedback', v.hint || ''));
+      } else if (v.stage === 'harder') {
+        // Harder questions: optional, after the job is finished. Five in a row (first try each) win the job's trophy.
+        const Q = S.harder[v.i];
+        body.append(el('p', 'bank', `Harder question ${v.i + 1} of ${S.harder.length}`));
+        body.append(el('p', 'question', Q.q));
+        Q.choices.forEach(c => body.append(choiceBtn(c, () => {
+          if (c !== Q.a) { v.hint = 'Not that one. Try another.'; renderJobs(); return; }
+          v.i++;
+          v.hint = 'Right! ' + Q.why;
+          if (v.i >= S.harder.length) { v.stage = 'trophy'; v.hint = ''; }
+          renderJobs();
+        })));
+        body.append(el('p', 'feedback', v.hint || ''));
+      } else if (v.stage === 'trophy') {
+        const tid = 'trophy-' + job.id;
+        if (!bag.includes(tid)) { addToBag(tid); fanfare(); }
+        body.append(el('span', 'bigEmoji', '🏆'), el('p', '', `You won the ${ITEMS[tid].label}! It is in the bag, so you can put it in any house.`));
+        body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
+        renderBank();
+        return;
       } else if (v.stage === 'hired') {
-        if (!hired.includes(job.id)) { hired.push(job.id); saveGame(); fanfare(); }
-        body.append(el('span', 'bigEmoji', '⭐'), el('p', '', `Hired! You are now a ${job.name.toLowerCase()}.`));
+        if (!hired.includes(job.id)) { hired.push(job.id); credits += JOB_WAGE; saveGame(); fanfare(); }
+        body.append(el('span', 'bigEmoji', '⭐'), el('p', '', `Hired! You are now a ${job.name.toLowerCase()}.`), el('p', 'feedback', `Your first day's pay: 🪙 ${JOB_WAGE}`));
+        if (S) body.append(harderBtn(v, job));
         body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
         renderBank();
         return;
       }
       body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
       renderBank();
+    }
+
+    // The harder-questions button for a hired job; once the trophy is in the bag, it says so
+    function harderBtn(v, job) {
+      if (bag.includes('trophy-' + job.id)) return el('p', 'feedback', `🏆 You won the ${ITEMS['trophy-' + job.id].label}. Find it in the bag.`);
+      return choiceBtn('🏆 Harder questions (5)', () => { v.stage = 'harder'; v.i = 0; v.hint = ''; renderJobs(); });
     }
 
     const LOCK_HINT = { shops: 'Finish the first place to open', jobs: 'Finish all the places to open' };
@@ -1534,7 +1579,7 @@
       const zone = held && ITEMS[held].zone;
       $('hint').textContent = held
         ? (zone === 'wall' ? `Tap a wall to hang the ${ITEMS[held].label}.`
-          : zone === 'outside' ? `Tap the outside of a wall to put the ${ITEMS[held].label} there.`
+          : zone === 'outside' ? `Tap a wall to put the ${ITEMS[held].label} on its outside.`
           : `Tap the floor to put the ${ITEMS[held].label} there.`)
         : Object.keys(R.pos).length ? 'Tap a thing to move it. Drag to turn, pinch to zoom, two fingers to move.' : 'Pick a thing on the right to start.';
       $('fullHint').textContent = $('hint').textContent;

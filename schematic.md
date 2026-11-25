@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.0): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.3.0): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -48,7 +48,7 @@ A decorating game. Athena picks who a house or workplace is for, then decorates 
 - **Outside view:** zoom far out, or press 🔭. The walls go back up, the roof goes on (or the upper floors come down), and the inside hides. 🛋️ goes back in. While you look inside, a building's upper floors float above the room like a doll's house lid.
 - **Full screen** (⛶): the world fills the page, with a strip of things along the bottom and ✖ to leave. Two fingers pan (or right-drag / shift-drag with a mouse).
 - **Outside things** (Home Depot): front door, shutters, flower box, porch lamp, awning. Picking one switches to the outside view; tap the outside of a wall. **Siding** (mint, pink, brick, wood) changes a room's outside walls at once; pick it again to take it off.
-- **Shops** now use names Athena knows: H Mart, Costco, Target, and a new Home Depot. The trip needs every shop (13).
+- **Shops** now use names Athena knows: H Mart, Costco, Target, and a new Home Depot. The trip needs 25% of the shops (see Retail therapy, 2026-11-25 feedback).
 - **Jobs:** every job has a person to meet (a picture, a name and a 2–3 line hello). About four in five are women.
 
 ## V2: the 3-D home (2.0.0)
@@ -72,7 +72,7 @@ A decorating game. Athena picks who a house or workplace is for, then decorates 
 ## The three MVPs (v0.8.0)
 
 - **Learning center:** the first round is about baking desserts. It has 30 questions, 41 points in all: 25 core questions (1 point each), 3 bonus questions (2 points each, harder), and 2 challenge questions (5 points each, where you put several facts together). Questions are multiple choice or true/false, in the Test Bank's JSON shape (`bank/desserts_round1.json`, loaded into `content.js`). A right answer on the first try earns its full points as credits; a right answer after a wrong try earns half, rounded up. Credits show as 🪙 on the front page and in every level.
-- **Retail therapy:** 12 shops (`SHOPS` in `content.js`), each selling things by id with a price. Buying puts the thing in the bag, so it becomes a decorate button in every house. A trip home needs every shop visited and 20 credits spent (`TRIP`). Shop names are generic until Jimmy answers convo v0.5.
+- **Retail therapy:** 12 shops (`SHOPS` in `content.js`), each selling things by id with a price. Buying puts the thing in the bag, so it becomes a decorate button in every house. A trip home needs 25% of the shops visited, rounded up (4 of 13 shops), and no credits spent (`TRIP`, from tester feedback 2026-11-25). Shop names are generic until Jimmy answers convo v0.5.
 - **Get a job:** the job board holds all 37 jobs (`JOBS`, from `jobs.md`). Architect, Pilot and Artist have full steps (`JOB_STEPS`): two learn pages, a three-question quiz, a scenario to ask a real worker (with choices and a sentence starter, saved as the answer), a first-pass task, then Hired ⭐. The other 34 show their card; their steps come later.
 - Saved on the device, and in `athena_saves` when signed in: credits, the trip, hired jobs, and the challenge answers.
 
@@ -125,13 +125,36 @@ Levels 2–4 open as placeholder screens for now. Lock rules are a suggestion, s
 - `convo/` — Q&A history, one file per round, never compacted (convo v0.6 holds the level plan).
 - `CLAUDE.md` — pointer for Claude Code.
 
+## Job questions and trophies (2.3.0)
+
+- **Questions live in `bank/jobs_round1.json`**, like the test bank. `content.js` holds the same data (`JOB_STEPS`); keep the two in step. Each job has `learn`, `quiz`, `challenge`, `task`, and `harder`.
+- **Harder questions:** after a job is hired, 🏆 Harder questions (5) opens. Five multiple-choice questions at about the level of the challenge. A wrong try shows a hint; each right answer shows why it is right. Five right answers (first try each) win the job's trophy.
+- **Trophies:** a small gold-plinth 3-D object for each job (the job or its stereotype, for example an apple for a teacher, a helmet for a firefighter), turning slowly. The trophy goes in the bag, so any house can show it, and it stays once won. Built in `models.js` (`TROPHY_PROP`). Ids are `trophy-<job>`.
+- **Pay:** the first hire pays 🪙 10 (2.2.4).
+
+## Tester feedback (2026-11-25)
+
+Source: `athena_notes` in the Family database. All 9 notes are now done (2.2.1 to 2.2.4). Each note is marked done in the database.
+
+- **Shop trip:** 25% of shops visited, rounded up (4 of 13), no minimum spending. (2.2.1)
+- **Shops:** items sit in two or three columns on wide screens. (2.2.2)
+- **Moving things:** spinning fan (Target, 60), spinning globe (Bookshop, 60), rocking horse and pinwheel (Toy shop and Garden centre, 60). (2.2.2, 2.2.4)
+- **Outside things from home:** picking an outside thing keeps the room view. Tap a wall to put it on that wall's outside. Outside things show when you look from outside. (2.2.4)
+- **Windows:** a window on an inside wall also shows on the outside wall. Checked in headless Chromium. (2.2.4)
+- **Job steps:** all 37 jobs have learn pages, a quiz, a challenge and a first-pass task. The 34 new ones are not played through yet. (2.2.4)
+- **Job review (2.2.5):** every job's questions and answers were read again. Fixed: a first-pass question with two right answers (pilot), a photography tip that contradicted itself, a farming tip that made no sense, a space fact that was misleading (astronauts float because they are falling round the Earth), a bread question with an incomplete answer, a lifeguard task that was a swimming rule, a teacher question worded badly, a mail carrier task that said 'posting', and the beekeeper's name (was a food). Quiz answers are checked against their choices by script. Not yet checked with a teacher or a real worker.
+- **Job pay:** finishing a job pays a first day's wages of 10 credits, once per job. This is a design choice: the note did not give an amount. (2.2.4)
+- **Job audio:** all 37 job descriptions are spoken (Kokoro English voice `af_heart`). Clips are in `audio/jobs/`, made by `tools/make_audio.py`. Each job card has a 🔊 Listen button. (2.2.3)
+
+**How to make more audio:** write a JSON list of `{"id", "text"}` and run `python3 -I tools/make_audio.py --model <model folder> --manifest <file>`. The model files stay outside the repo; setup steps are in the script's header.
+
 ## Open
 
 - Athena's age and what she can do on her own (convo v0.3, Q4).
 - Whether houses and decorations should be saved between visits (Q9). Answered in code: yes, through the family sign-in.
 - Whether anyone else plays (Q5).
 - What comes next (Q16).
-- Retail therapy and the economy: credits from questions, a shop trip of 12+ shops, going home to decorate, and buying a job (convo v0.5, planned, awaiting answers).
+- Retail therapy and the economy: credits from questions, a shop trip of 25% of shops with no spending (decided 2026-11-25), going home to decorate, and buying a job (convo v0.5, planned, awaiting answers).
 - What Replay should go back to (convo v0.4, Q2).
 
 Details go in `convo/` as they are answered. Do not compact old convo files.

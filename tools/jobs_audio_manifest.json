@@ -1,0 +1,150 @@
+[
+ {
+  "id": "architect",
+  "text": "Architect. Draws the plans for buildings and houses."
+ },
+ {
+  "id": "flight-attendant",
+  "text": "Flight attendant. Looks after people on a plane and keeps everyone safe."
+ },
+ {
+  "id": "pilot",
+  "text": "Pilot. Flies the plane and checks the weather before take-off."
+ },
+ {
+  "id": "artist",
+  "text": "Artist. Makes pictures and paintings to share how they feel."
+ },
+ {
+  "id": "dancer",
+  "text": "Dancer. Moves to music and tells stories with the body."
+ },
+ {
+  "id": "singer",
+  "text": "Singer. Sings songs for people to hear and sing along to."
+ },
+ {
+  "id": "builder",
+  "text": "Builder. Puts up walls, roofs and floors to make buildings."
+ },
+ {
+  "id": "doctor",
+  "text": "Doctor. Checks people when they are sick and helps them get better."
+ },
+ {
+  "id": "nurse",
+  "text": "Nurse. Looks after patients and helps doctors in the hospital."
+ },
+ {
+  "id": "veterinarian",
+  "text": "Veterinarian. Helps sick and hurt animals get better."
+ },
+ {
+  "id": "teacher",
+  "text": "Teacher. Helps children learn to read, count and make friends."
+ },
+ {
+  "id": "firefighter",
+  "text": "Firefighter. Puts out fires and helps people in emergencies."
+ },
+ {
+  "id": "police-officer",
+  "text": "Police officer. Keeps people safe and helps find lost things and people."
+ },
+ {
+  "id": "chef",
+  "text": "Chef. Cooks meals in a restaurant and makes new recipes."
+ },
+ {
+  "id": "baker",
+  "text": "Baker. Makes bread, cakes and biscuits early in the morning."
+ },
+ {
+  "id": "farmer",
+  "text": "Farmer. Grows food and looks after animals on a farm."
+ },
+ {
+  "id": "gardener",
+  "text": "Gardener. Plants, waters and trims flowers and trees."
+ },
+ {
+  "id": "zookeeper",
+  "text": "Zookeeper. Feeds and looks after the animals at the zoo."
+ },
+ {
+  "id": "scientist",
+  "text": "Scientist. Asks questions and tests them to find out how things work."
+ },
+ {
+  "id": "astronaut",
+  "text": "Astronaut. Flies to space and does experiments on a space station."
+ },
+ {
+  "id": "bus-driver",
+  "text": "Bus driver. Drives people safely around the town."
+ },
+ {
+  "id": "train-driver",
+  "text": "Train driver. Drives trains with lots of people on board."
+ },
+ {
+  "id": "sailor",
+  "text": "Sailor. Sails boats and keeps the ship working on the sea."
+ },
+ {
+  "id": "lifeguard",
+  "text": "Lifeguard. Watches swimmers and keeps them safe at the pool or beach."
+ },
+ {
+  "id": "mail-carrier",
+  "text": "Mail carrier. Delivers letters and parcels to every house."
+ },
+ {
+  "id": "librarian",
+  "text": "Librarian. Helps people find books and loves stories."
+ },
+ {
+  "id": "photographer",
+  "text": "Photographer. Takes pictures of people, places and moments."
+ },
+ {
+  "id": "author",
+  "text": "Author. Writes books and stories for people to read."
+ },
+ {
+  "id": "musician",
+  "text": "Musician. Plays instruments and makes music with others."
+ },
+ {
+  "id": "actor",
+  "text": "Actor. Pretends to be different people in plays and films."
+ },
+ {
+  "id": "engineer",
+  "text": "Engineer. Designs and fixes machines, bridges and gadgets."
+ },
+ {
+  "id": "coder",
+  "text": "Coder. Writes instructions that make apps and games work."
+ },
+ {
+  "id": "electrician",
+  "text": "Electrician. Puts in and fixes the wires that bring power to buildings."
+ },
+ {
+  "id": "hairdresser",
+  "text": "Hairdresser. Cuts, washes and styles hair."
+ },
+ {
+  "id": "florist",
+  "text": "Florist. Makes bunches of flowers for people to give."
+ },
+ {
+  "id": "tailor",
+  "text": "Tailor. Sews and mends clothes so they fit well."
+ },
+ {
+  "id": "beekeeper",
+  "text": "Beekeeper. Looks after bees and collects their honey."
+ }
+]
