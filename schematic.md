@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.4): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.2.5): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -135,6 +135,7 @@ Source: `athena_notes` in the Family database. All 9 notes are now done (2.2.1 t
 - **Outside things from home:** picking an outside thing keeps the room view. Tap a wall to put it on that wall's outside. Outside things show when you look from outside. (2.2.4)
 - **Windows:** a window on an inside wall also shows on the outside wall. Checked in headless Chromium. (2.2.4)
 - **Job steps:** all 37 jobs have learn pages, a quiz, a challenge and a first-pass task. The 34 new ones are not played through yet. (2.2.4)
+- **Job review (2.2.5):** every job's questions and answers were read again. Fixed: a first-pass question with two right answers (pilot), a photography tip that contradicted itself, a farming tip that made no sense, a space fact that was misleading (astronauts float because they are falling round the Earth), a bread question with an incomplete answer, a lifeguard task that was a swimming rule, a teacher question worded badly, a mail carrier task that said 'posting', and the beekeeper's name (was a food). Quiz answers are checked against their choices by script. Not yet checked with a teacher or a real worker.
 - **Job pay:** finishing a job pays a first day's wages of 10 credits, once per job. This is a design choice: the note did not give an amount. (2.2.4)
 - **Job audio:** all 37 job descriptions are spoken (Kokoro English voice `af_heart`). Clips are in `audio/jobs/`, made by `tools/make_audio.py`. Each job card has a 🔊 Listen button. (2.2.3)
 

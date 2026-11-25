@@ -977,7 +977,7 @@ const JOB_PEOPLE = {
   "gardener": { person: "👩‍🌾", who: "Ivy", intro: ["Hi, I'm Ivy. I plant flowers and trees and help them grow.", "I dig, water, trim and pull out weeds.", "Bees and butterflies love my gardens."] },
   "zookeeper": { person: "👩", who: "Nora", intro: ["Hi, I'm Nora. I look after the animals at the zoo.", "I make their food, clean their homes and give them toys.", "My favourite friend is a very hungry giraffe."] },
   "scientist": { person: "👩‍🔬", who: "Dr. Ada", intro: ["Hi, I'm Dr. Ada. I ask questions about how things work.", "Then I test my ideas with experiments and write down what happens.", "Sometimes I discover something nobody knew before!"] },
-  "astronaut": { person: "👩‍🚀", who: "Commander Sally", intro: ["Hi, I'm Commander Sally. I fly into space on a rocket.", "On the space station everything floats, even my water!", "I do experiments and look down at the Earth."] },
+  "astronaut": { person: "👩‍🚀", who: "Commander Sally", intro: ["Hi, I'm Commander Sally. I fly into space on a rocket.", "On the space station everything floats, even my drink!", "I do experiments and look down at the Earth."] },
   "bus-driver": { person: "👨", who: "Mr. Joe", intro: ["Hi, I'm Mr. Joe. I drive a big bus around town.", "I stop at every bus stop and say hello to everyone.", "I drive carefully so everyone gets there safely."] },
   "train-driver": { person: "👩‍🔧", who: "Bea", intro: ["Hi, I'm Bea. I drive a long train full of people.", "I follow the signals and keep the train on time.", "Choo choo! Next stop, the station."] },
   "sailor": { person: "👱‍♀️", who: "Marina", intro: ["Hi, I'm Marina. I sail boats across the sea.", "I tie strong knots and read the wind and the waves.", "At night, I can find my way by the stars."] },
@@ -994,7 +994,7 @@ const JOB_PEOPLE = {
   "hairdresser": { person: "👩‍🎨", who: "Bella", intro: ["Hi, I'm Bella. I cut, wash and style hair.", "I can do braids, bobs, curls and even bright colours.", "I help people feel happy when they look in the mirror."] },
   "florist": { person: "👩‍🌾", who: "Daisy", intro: ["Hi, I'm Daisy. I make beautiful bunches of flowers.", "I pick colours that go together, like a painting.", "People give my flowers for birthdays and to say 'I love you'."] },
   "tailor": { person: "👴", who: "Mr. Arturo", intro: ["Hi, I'm Arturo. I sew and fix clothes so they fit just right.", "I measure carefully, then cut and stitch the cloth.", "A new button or hem can make clothes feel like new."] },
-  "beekeeper": { person: "👩‍🌾", who: "Honey", intro: ["Hi, I'm Honey. I look after bees in their hives.", "I wear a suit and veil so the bees don't sting me.", "The bees make honey, and they help flowers grow too."] }
+  "beekeeper": { person: "👩‍🌾", who: "Nadia", intro: ["Hi, I'm Nadia. I look after bees in their hives.", "I wear a suit and veil so the bees don't sting me.", "The bees make honey, and they help flowers grow too."] }
 };
 JOBS.forEach(j => Object.assign(j, JOB_PEOPLE[j.id] || {}));
 
@@ -1038,12 +1038,12 @@ const JOB_STEPS = {
     challenge: {
       scene: 'The airport is very foggy, and the plane cannot see the runway well.',
       question: 'Ask a pilot: what are some ways the plane could still land safely?',
-      choices: ['Use the instruments to see the way down', 'Land without looking at anything', 'Wait for the fog to be a different colour'],
+      choices: ['Use the instruments to see the way down', 'Fly straight at the ground and hope', 'Wait for the fog to be a different colour'],
       starter: 'I would ___ because ___.'
     },
     task: {
       prompt: 'First pass: which of these should a pilot check before take-off?',
-      choices: ['The fuel', 'Whether the cake is tasty', 'The weather'],
+      choices: ['The fuel', 'Whether the cake is tasty', 'The bus times'],
       a: 'The fuel'
     }
   },
@@ -1244,7 +1244,7 @@ Object.assign(JOB_STEPS, {
       starter: 'I would ___ because ___.'
     },
     task: {
-      prompt: 'First pass: how many apples are 2 apples and 3 more?',
+      prompt: 'First pass: a child has 2 apples and gets 3 more. How many apples now?',
       choices: ['5', '4', '6'],
       a: '5'
     }
@@ -1332,9 +1332,9 @@ Object.assign(JOB_STEPS, {
       starter: 'I would ___ because ___.'
     },
     task: {
-      prompt: 'First pass: what goes into bread dough?',
-      choices: ['Flour and water', 'Sand and glue', 'Paint and paper'],
-      a: 'Flour and water'
+      prompt: 'First pass: which of these goes into bread dough?',
+      choices: ['Flour', 'Glue', 'Paint'],
+      a: 'Flour'
     }
   },
   farmer: {
@@ -1350,11 +1350,11 @@ Object.assign(JOB_STEPS, {
     challenge: {
       scene: 'It has not rained for weeks, and the crops are drying out.',
       question: 'Ask a farmer: what are some ways to keep the crops alive?',
-      choices: ['Water them carefully and use a cover in the hot part of the day', 'Cut them all down straight away', 'Leave them and hope it rains'],
+      choices: ['Water them carefully, early in the morning or in the evening', 'Cut them all down straight away', 'Leave them and hope it rains'],
       starter: 'I would ___ because ___.'
     },
     task: {
-      prompt: 'First pass: what does a seed need to grow?',
+      prompt: 'First pass: what does a plant need to grow?',
       choices: ['Water, soil and sun', 'Paint and glue', 'Sand only'],
       a: 'Water, soil and sun'
     }
@@ -1427,12 +1427,12 @@ Object.assign(JOB_STEPS, {
   },
   astronaut: {
     learn: [
-      { emoji: '🚀', text: 'Astronauts fly to space in a rocket. They float because there is almost no gravity in space.' },
+      { emoji: '🚀', text: 'Astronauts fly to space in a rocket. They float because they are always falling round the Earth, so nothing pulls them down to the floor.' },
       { emoji: '🛰️', text: 'Astronauts live on a space station and do experiments. They look down at the Earth from very high up.' }
     ],
     quiz: [
       { q: 'How do astronauts get to space?', choices: ['In a rocket', 'On a bike', 'By swimming'], a: 'In a rocket' },
-      { q: 'Why do astronauts float?', choices: ['There is almost no gravity', 'They are very light', 'They are wearing wings'], a: 'There is almost no gravity' },
+      { q: 'Why do astronauts float?', choices: ['They are always falling round the Earth', 'They are very light', 'They are wearing wings'], a: 'They are always falling round the Earth' },
       { q: 'What do astronauts do on the space station?', choices: ['Experiments', 'Baking', 'Fishing'], a: 'Experiments' }
     ],
     challenge: {
@@ -1530,9 +1530,9 @@ Object.assign(JOB_STEPS, {
       starter: 'I would ___ because ___.'
     },
     task: {
-      prompt: 'First pass: what should you always do at the pool?',
-      choices: ['Walk, do not run, on the side', 'Push other swimmers', 'Dive into the shallow end'],
-      a: 'Walk, do not run, on the side'
+      prompt: 'First pass: a swimmer is in trouble. What should the lifeguard do first?',
+      choices: ['Blow the whistle and go to them', 'Sit down and read a book', 'Wait and see if they swim back'],
+      a: 'Blow the whistle and go to them'
     }
   },
   'mail-carrier': {
@@ -1552,7 +1552,7 @@ Object.assign(JOB_STEPS, {
       starter: 'I would ___ because ___.'
     },
     task: {
-      prompt: 'First pass: what should a mail carrier check before posting a letter?',
+      prompt: 'First pass: what should a mail carrier check before delivering a letter?',
       choices: ['The address on the envelope', 'The colour of the stamp only', 'Whether the letter is heavy'],
       a: 'The address on the envelope'
     }
@@ -1592,7 +1592,7 @@ Object.assign(JOB_STEPS, {
     challenge: {
       scene: 'A family wants a photo, but the sun is very bright and the faces look dark.',
       question: 'Ask a photographer: what are some ways to make a better photo?',
-      choices: ['Move into the shade and face the light', 'Stand right in the sun', 'Take the photo with your eyes closed'],
+      choices: ['Move into the shade, or turn so the sun is behind you', 'Stand right in the sun', 'Take the photo with your eyes closed'],
       starter: 'I would ___ because ___.'
     },
     task: {
