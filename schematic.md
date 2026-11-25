@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.0): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.2.1): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -72,7 +72,7 @@ A decorating game. Athena picks who a house or workplace is for, then decorates 
 ## The three MVPs (v0.8.0)
 
 - **Learning center:** the first round is about baking desserts. It has 30 questions, 41 points in all: 25 core questions (1 point each), 3 bonus questions (2 points each, harder), and 2 challenge questions (5 points each, where you put several facts together). Questions are multiple choice or true/false, in the Test Bank's JSON shape (`bank/desserts_round1.json`, loaded into `content.js`). A right answer on the first try earns its full points as credits; a right answer after a wrong try earns half, rounded up. Credits show as 🪙 on the front page and in every level.
-- **Retail therapy:** 12 shops (`SHOPS` in `content.js`), each selling things by id with a price. Buying puts the thing in the bag, so it becomes a decorate button in every house. A trip home needs 25% of the shops visited (about 3 of 12) and no credits spent (`TRIP`, from tester feedback 2026-11-25). Shop names are generic until Jimmy answers convo v0.5.
+- **Retail therapy:** 12 shops (`SHOPS` in `content.js`), each selling things by id with a price. Buying puts the thing in the bag, so it becomes a decorate button in every house. A trip home needs 25% of the shops visited, rounded up (4 of 13 shops), and no credits spent (`TRIP`, from tester feedback 2026-11-25). Shop names are generic until Jimmy answers convo v0.5.
 - **Get a job:** the job board holds all 37 jobs (`JOBS`, from `jobs.md`). Architect, Pilot and Artist have full steps (`JOB_STEPS`): two learn pages, a three-question quiz, a scenario to ask a real worker (with choices and a sentence starter, saved as the answer), a first-pass task, then Hired ⭐. The other 34 show their card; their steps come later.
 - Saved on the device, and in `athena_saves` when signed in: credits, the trip, hired jobs, and the challenge answers.
 
@@ -130,7 +130,7 @@ Levels 2–4 open as placeholder screens for now. Lock rules are a suggestion, s
 Source: `athena_notes` in the Family database, all 10 notes still `open` when read. Mark each done only after its fix ships.
 
 **Decided rules**
-- **Shop trip:** 25% of shops must be visited before the next button opens, with no minimum spending. Replaces "every shop and 20 credits". Applies to the Cottage notes from Guest (2026-11-16).
+- **Shop trip:** 25% of shops must be visited (rounded up, 4 of 13) before the next button opens, with no minimum spending. Replaces "every shop and 20 credits". Done in 2.2.1. Applies to the Cottage notes from Guest (2026-11-16), marked done.
 
 **To build**
 - **Shops:** on a wide screen (for example a laundry-room width), allow more than one column. Use horizontal scroll so everything fits a vertical page. (Guest, 2026-11-16)

@@ -726,8 +726,8 @@ const SHOPS = [
   { id: 'music', name: 'Music shop', icon: '🎹', stock: [['piano', 14], ['lamp', 5]] },
   { id: 'home-depot', name: 'Home Depot', icon: '🔨', stock: [['frontdoor', 6], ['shutters', 5], ['flowerbox', 4], ['porchlamp', 4], ['awning', 5], ['sidingmint', 10], ['sidingpink', 10], ['sidingbrick', 12], ['sidingwood', 12]] }
 ];
-// A trip home needs every shop visited and this much spent in the trip.
-const TRIP = { shopsNeeded: SHOPS.length, spendNeeded: 20 };
+// A trip home needs 25% of the shops visited (rounded up) and no minimum spending (tester feedback, 2026-11-25).
+const TRIP = { shopsNeeded: Math.ceil(SHOPS.length * 0.25), spendNeeded: 0 };
 
 // ---- Get a job: the list (from jobs.md). Full steps are written for some jobs below. ----
 const JOBS = [

@@ -556,6 +556,7 @@
       <label>Version log</label>
       <div>Now on version <span id="version"></span></div>
       <ul>
+        <li><b>2.2.1</b> Going home from the shops needs a quarter of the shops (rounded up), and no spending. Tester notes marked done.</li>
         <li><b>2.2.0</b> Prices are set by time: about 10 credits (5 minutes of questions) buys two small things. New: a decorative pony (5) and a windmill whose sails turn (60, save up for it). The shop shows a 3-D picture of everything, and moving things move. Drawn pictures of the job people.</li>
         <li><b>2.1.0</b> Play as Athena, Felix or a guest (each has their own game, synced when signed in). Six places: cottage, beach hut, treehouse, a farm with the farmhouse and the barn, an apartment in the middle of a block, and a tall tower. Make a room bigger (8 × 8) with credits. Zoom out (or 🔭) to see the outside, full screen (⛶), two fingers to pan. Home Depot sells doors, shutters, flower boxes, lamps, awnings and siding. Shops are named H Mart, Costco and Target. Every job has a person to meet and a short hello. Five more places are coming later.</li>
         <li><b>2.0.0</b> V2: Home decor is now a little 3-D world. Turn it, pinch to zoom, and drop chunky cartoon things into a cut-away room. New houses: the farmhouse, the barn outside it, a city apartment and a tall tower. New things to buy: four more beds and four more mushrooms, and a hay bale. V1 is kept in ⚙️.</li>
@@ -610,7 +611,7 @@
   <script src="people.js"></script>
   <script>
     // ---- Places, rooms and players. Edit these lists to change the game. ----
-    const VERSION = '2.2.0';
+    const VERSION = '2.2.1';
     // A place is a little world (ground) with one or more rooms. A room has a look (theme) and the things it needs.
     // cx, cz: where the room sits on the island; y: how high its floor is (the treehouse is up a tree).
     // The things are in models.js (ITEMS).
@@ -1253,8 +1254,8 @@
       const body = $('levelBody');
       body.replaceChildren(el('p', 'bank'));
       const ready = trip.visited.length >= TRIP.shopsNeeded && trip.spent >= TRIP.spendNeeded;
-      body.append(el('p', '', `Shops visited: ${trip.visited.length} of ${TRIP.shopsNeeded}. Spent this trip: ${trip.spent} of ${TRIP.spendNeeded} credits.`));
-      const home = choiceBtn(ready ? '🏠 Take my things home' : 'Visit every shop and spend enough to go home', goHomeFromTrip);
+      body.append(el('p', '', `Shops visited: ${trip.visited.length} of ${TRIP.shopsNeeded}.`));
+      const home = choiceBtn(ready ? '🏠 Take my things home' : `Visit ${TRIP.shopsNeeded} shops to go home`, goHomeFromTrip);
       home.disabled = !ready;
       body.append(home);
       const grid = el('div', 'shopGrid');
