@@ -12,6 +12,7 @@
   const H = 5;          // wall height (one storey)
   const T = 0.45;       // wall thickness
   const SMALL = 5, BIG = 8; // half the inside of a room: 10 x 10, or 16 x 16 when made bigger
+  const OUT_WINDOW = 'window~out';   // the outside copy of a window on a wall (not a real thing)
   const OUT_ZOOM = 0.62;    // zoomed out further than this: the outside view
   const LIFT = 9;           // how high a building's upper floors float while you look inside
   const WALLS = {       // outward direction, and how a wall thing faces into the room
@@ -361,7 +362,24 @@
     heldKey = held ? activeId + '/' + held : null;
     Object.values(rooms).forEach(R => {
       const pos = posByRoom[R.id] || {};
-      for (const id in R.things) if (!pos[id]) removeThing(R, id);
+      for (const id in R.things) if (!pos[id] && id !== OUT_WINDOW) removeThing(R, id);
+      // A window on an inside wall also shows as a window on the outside wall (tester note, 2026-11-09)
+      const wp = pos.window;
+      if (wp && wp.placed && window.ITEMS.window && window.ITEMS.window.zone === 'wall' && wp.wall) {
+        if (!R.things[OUT_WINDOW]) {
+          const obj = window.ITEMS.window.build();
+          obj.traverse(o => { o.userData.roomId = R.id; });
+          R.things[OUT_WINDOW] = { obj, mount: undefined, bounce: 0 };
+        }
+        const t = R.things[OUT_WINDOW];
+        const mount = 'out:' + wp.wall;
+        if (t.mount !== mount) {
+          if (t.obj.parent) t.obj.parent.remove(t.obj);
+          R.walls[wp.wall].outMounts.add(t.obj);
+          t.mount = mount;
+        }
+        t.home = homeOf(R, { zone: 'outside' }, wp);
+      } else if (R.things[OUT_WINDOW]) removeThing(R, OUT_WINDOW);
       for (const id in pos) {
         const p = pos[id], info = window.ITEMS[id];
         if (!info || info.zone === 'siding') continue;
@@ -466,7 +484,7 @@
         } else o.scale.set(1, 1, 1);
         if (o.parent === R.items) o.visible = !out || h.floating;   // the roof hides the inside
         const info = window.ITEMS[id];
-        if (info.animate) info.animate(o, t);
+        if (info && info.animate) info.animate(o, t);
         if (held && window.ITEMS[id].zone === 'floor' && !h.floating) {
           ringMesh.visible = true;
           ringMesh.position.set(h.x, R.y + 0.06, h.z);

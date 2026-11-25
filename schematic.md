@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.1): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.2.2): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -132,11 +132,14 @@ Source: `athena_notes` in the Family database, all 10 notes still `open` when re
 **Decided rules**
 - **Shop trip:** 25% of shops must be visited (rounded up, 4 of 13) before the next button opens, with no minimum spending. Replaces "every shop and 20 credits". Done in 2.2.1. Applies to the Cottage notes from Guest (2026-11-16), marked done.
 
-**To build**
-- **Shops:** on a wide screen (for example a laundry-room width), allow more than one column. Use horizontal scroll so everything fits a vertical page. (Guest, 2026-11-16)
-- **Moving things:** more items like the windmill (Guest, 2026-11-16). Felix (2026-11-25) asks for more of the unfinished things in progress.
-- **Outside things at home:** let the player install outside things (front door, shutters, flower box, porch lamp, awning) from the home screen, not only in the outside view. (Guest, 2026-11-16)
-- **Windows:** a window added inside the house should also show from the outside. (Athena, 2026-11-09, synced 2026-11-25)
+**Done in 2.2.2 (2026-11-25, verified only headless: loads with no errors at 390, 768, 1180 px)**
+- **Shops:** items sit in two or three columns on wide screens so the list fits the page. (Guest, 2026-11-16) Note marked done. Horizontal scroll was not added.
+- **Moving things:** a spinning fan (Target, 60) and a spinning globe (Bookshop, 60) were added. (Guest, 2026-11-16)
+- **Windows:** a window on an inside wall also shows as a window on the outside wall. Not yet checked by placing a window in the game. (Athena, 2026-11-09)
+
+**Still to do**
+- **Outside things at home:** let the player install outside things (front door, shutters, flower box, porch lamp, awning) from the home screen, not only in the outside view. Today picking one switches to the outside view. (Guest, 2026-11-16)
+- **More moving things:** the note asks for more; two were added, so more can follow. (Guest, 2026-11-16)
 - **Jobs:** develop the jobs in progress so they can all be tried (Felix, 2026-11-25). Record audio for the job descriptions, using the voice from the Voice repo (Felix, 2026-11-25). Felix says he was hired as an architect and asks that answering questions earns pay. The existing rule already pays credits for questions, so check that it is clear to the player.
 
 ## Open

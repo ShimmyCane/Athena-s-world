@@ -488,6 +488,38 @@
     return g;
   }
 
+  // A standing fan whose blades turn (tester request: more moving things). One turn every 2 seconds.
+  function fan() {
+    const g = G();
+    cyl(g, 0.6, 0.7, 0.3, C.dark, 0, 0.15, 0, { seg: 12 });                      // foot
+    cyl(g, 0.12, 0.12, 2.4, C.white, 0, 1.4, 0, { seg: 8 });                      // pole
+    const hub = G();
+    hub.position.set(0, 2.7, 0.35);
+    ball(hub, 0.22, C.dark, 0, 0, 0.1, { sz: 0.6 });
+    for (let i = 0; i < 3; i++) {
+      const blade = G();
+      blade.rotation.z = i * 2 * Math.PI / 3;
+      box(blade, 0.3, 1.5, 0.08, i % 2 ? C.sky : C.coral, 0, 0.75, 0.1);
+      hub.add(blade);
+    }
+    g.add(hub);
+    g.userData.sails = hub;
+    return g;
+  }
+  // A globe on a stand that turns round. One turn every 6 seconds.
+  function globe() {
+    const g = G();
+    cyl(g, 0.9, 1.1, 0.3, C.darkwood, 0, 0.15, 0, { seg: 12 });                  // base
+    cyl(g, 0.12, 0.12, 1.3, C.white, 0, 0.95, 0, { seg: 8 });                    // stand
+    const spin = G();
+    spin.position.set(0, 2.5, 0);
+    ball(spin, 1.2, C.sky, 0, 0, 0, { sz: 1, sy: 1 });
+    [[0.5, 0.4, 0.8], [-0.6, -0.2, 0.9], [0.1, -0.7, 1.0]].forEach(([x, y, z]) => ball(spin, 0.4, C.mint, x, y, z, { outline: false }));
+    g.add(spin);
+    g.userData.sails = spin;
+    return g;
+  }
+
   // ---- Outside things (Home Depot): on the outside of a wall, back at z = 0, facing +z ----
   function frontdoor() {
     const g = G();
@@ -589,6 +621,10 @@
     // Things that move: animate(obj, seconds) is called every frame; loop is the length of one full cycle.
     windmill:  { emoji: '🌬️', label: 'windmill', zone: 'floor', build: windmill, loop: 4,
                  animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI / 2; } },
+    fan:       { emoji: '🌀', label: 'spinning fan', zone: 'floor', build: fan, loop: 2,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI; } },
+    globe:     { emoji: '🌍', label: 'spinning globe', zone: 'floor', build: globe, loop: 6,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.y = t * Math.PI / 3; } },
     // Outside things (Home Depot). v: how high the middle sits, when it must be fixed (a door stands on the floor).
     frontdoor: { emoji: '🚪', label: 'front door',  zone: 'outside', build: frontdoor, v: 1.85 },
     shutters:  { emoji: '🪟', label: 'shutters',    zone: 'outside', build: shutters },
