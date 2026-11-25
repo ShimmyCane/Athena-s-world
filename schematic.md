@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.3): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.2.4): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -127,25 +127,18 @@ Levels 2–4 open as placeholder screens for now. Lock rules are a suggestion, s
 
 ## Tester feedback (2026-11-25)
 
-Source: `athena_notes` in the Family database, all 10 notes still `open` when read. Mark each done only after its fix ships.
+Source: `athena_notes` in the Family database. All 9 notes are now done (2.2.1 to 2.2.4). Each note is marked done in the database.
 
-**Decided rules**
-- **Shop trip:** 25% of shops must be visited (rounded up, 4 of 13) before the next button opens, with no minimum spending. Replaces "every shop and 20 credits". Done in 2.2.1. Applies to the Cottage notes from Guest (2026-11-16), marked done.
-
-**Done in 2.2.2 (2026-11-25, verified only headless: loads with no errors at 390, 768, 1180 px)**
-- **Shops:** items sit in two or three columns on wide screens so the list fits the page. (Guest, 2026-11-16) Note marked done. Horizontal scroll was not added.
-- **Moving things:** a spinning fan (Target, 60) and a spinning globe (Bookshop, 60) were added. (Guest, 2026-11-16)
-- **Windows:** a window on an inside wall also shows as a window on the outside wall. Not yet checked by placing a window in the game. (Athena, 2026-11-09)
-
-**Done in 2.2.3**
-- **Job audio:** all 37 job descriptions are spoken (Kokoro English voice `af_heart`, the same engine and default voice as the Voice repo). Clips are in `audio/jobs/<id>.mp3`, made from `tools/jobs_audio_manifest.json` by `tools/make_audio.py`. Each job card has a 🔊 Listen button. Note marked done. Checked headless: the clip loads (200), no errors. Not heard by a person yet.
+- **Shop trip:** 25% of shops visited, rounded up (4 of 13), no minimum spending. (2.2.1)
+- **Shops:** items sit in two or three columns on wide screens. (2.2.2)
+- **Moving things:** spinning fan (Target, 60), spinning globe (Bookshop, 60), rocking horse and pinwheel (Toy shop and Garden centre, 60). (2.2.2, 2.2.4)
+- **Outside things from home:** picking an outside thing keeps the room view. Tap a wall to put it on that wall's outside. Outside things show when you look from outside. (2.2.4)
+- **Windows:** a window on an inside wall also shows on the outside wall. Checked in headless Chromium. (2.2.4)
+- **Job steps:** all 37 jobs have learn pages, a quiz, a challenge and a first-pass task. The 34 new ones are not played through yet. (2.2.4)
+- **Job pay:** finishing a job pays a first day's wages of 10 credits, once per job. This is a design choice: the note did not give an amount. (2.2.4)
+- **Job audio:** all 37 job descriptions are spoken (Kokoro English voice `af_heart`). Clips are in `audio/jobs/`, made by `tools/make_audio.py`. Each job card has a 🔊 Listen button. (2.2.3)
 
 **How to make more audio:** write a JSON list of `{"id", "text"}` and run `python3 -I tools/make_audio.py --model <model folder> --manifest <file>`. The model files stay outside the repo; setup steps are in the script's header.
-
-**Still to do**
-- **Outside things at home:** let the player install outside things (front door, shutters, flower box, porch lamp, awning) from the home screen, not only in the outside view. Today picking one switches to the outside view. (Guest, 2026-11-16)
-- **More moving things:** the note asks for more; two were added, so more can follow. (Guest, 2026-11-16)
-- **Jobs:** develop the jobs in progress so they can all be tried (Felix, 2026-11-25). Record audio for the job descriptions, using the voice from the Voice repo (Felix, 2026-11-25). Felix says he was hired as an architect and asks that answering questions earns pay. The existing rule already pays credits for questions, so check that it is clear to the player.
 
 ## Open
 

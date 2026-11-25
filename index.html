@@ -560,6 +560,7 @@
       <label>Version log</label>
       <div>Now on version <span id="version"></span></div>
       <ul>
+        <li><b>2.2.4</b> Every job has steps now (37 jobs). Finishing a job pays a first day's wages (🪙 10). Outside things can be put on from the room view: tap a wall. A window on a wall shows from outside. Two more moving things: a rocking horse and a pinwheel.</li>
         <li><b>2.2.3</b> Every job card has a 🔊 Listen button with a spoken description (Kokoro voice, made with tools/make_audio.py).</li>
         <li><b>2.2.2</b> Shop items sit in two or three columns on wide screens. New moving things: a spinning fan (Target, 60) and a spinning globe (Bookshop, 60). A window on a wall now shows from the outside too.</li>
         <li><b>2.2.1</b> Going home from the shops needs a quarter of the shops (rounded up), and no spending. Tester notes marked done.</li>
@@ -617,7 +618,7 @@
   <script src="people.js"></script>
   <script>
     // ---- Places, rooms and players. Edit these lists to change the game. ----
-    const VERSION = '2.2.3';
+    const VERSION = '2.2.4';
     // A place is a little world (ground) with one or more rooms. A room has a look (theme) and the things it needs.
     // cx, cz: where the room sits on the island; y: how high its floor is (the treehouse is up a tree).
     // The things are in models.js (ITEMS).
@@ -1002,7 +1003,6 @@
       held = t;
       // outside things are put on from outside; inside things from inside
       if (has3d) {
-        if (zone === 'outside' && !World3D.isOutside()) World3D.setOutside(true);
         if (zone !== 'outside' && World3D.isOutside()) World3D.setOutside(false);
       }
       setNoteContext(`${ROOMS[roomId].name} · ${ITEMS[t].label}`, `${roomId}/${t}`);
@@ -1038,6 +1038,7 @@
       let spot = null;
       if (zone === 'wall' && hit.wall) spot = { wall: hit.wall.wall, u: hit.wall.u, v: hit.wall.v };
       if (zone === 'outside' && hit.outside) spot = { wall: hit.outside.wall, u: hit.outside.u, v: hit.outside.v };
+      else if (zone === 'outside' && hit.wall) spot = { wall: hit.wall.wall, u: hit.wall.u, v: hit.wall.v };   // from home: the outside of the wall tapped
       if (zone === 'floor' && hit.floor) spot = { x: hit.floor.x, z: hit.floor.z, rot: (R.pos[held] && R.pos[held].rot) || 0 };
       if (!spot) return;
       const wasDone = R.done;
@@ -1275,6 +1276,7 @@
       renderBank();
     }
     let shopAnim = null;
+    const JOB_WAGE = 10;   // credits paid once, the first time a job is finished (tester note, 2026-11-25)
     function openShop(id) {
       if (!trip.visited.includes(id)) { trip.visited.push(id); saveGame(); }
       const s = SHOPS.find(x => x.id === id);
@@ -1414,8 +1416,8 @@
         })));
         body.append(el('p', 'feedback', v.hint || ''));
       } else if (v.stage === 'hired') {
-        if (!hired.includes(job.id)) { hired.push(job.id); saveGame(); fanfare(); }
-        body.append(el('span', 'bigEmoji', '⭐'), el('p', '', `Hired! You are now a ${job.name.toLowerCase()}.`));
+        if (!hired.includes(job.id)) { hired.push(job.id); credits += JOB_WAGE; saveGame(); fanfare(); }
+        body.append(el('span', 'bigEmoji', '⭐'), el('p', '', `Hired! You are now a ${job.name.toLowerCase()}.`), el('p', 'feedback', `Your first day's pay: 🪙 ${JOB_WAGE}`));
         body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
         renderBank();
         return;
@@ -1547,7 +1549,7 @@
       const zone = held && ITEMS[held].zone;
       $('hint').textContent = held
         ? (zone === 'wall' ? `Tap a wall to hang the ${ITEMS[held].label}.`
-          : zone === 'outside' ? `Tap the outside of a wall to put the ${ITEMS[held].label} there.`
+          : zone === 'outside' ? `Tap a wall to put the ${ITEMS[held].label} on its outside.`
           : `Tap the floor to put the ${ITEMS[held].label} there.`)
         : Object.keys(R.pos).length ? 'Tap a thing to move it. Drag to turn, pinch to zoom, two fingers to move.' : 'Pick a thing on the right to start.';
       $('fullHint').textContent = $('hint').textContent;

@@ -520,6 +520,45 @@
     return g;
   }
 
+  // A rocking horse that rocks on its rockers. One rock every 4 seconds.
+  function rockinghorse() {
+    const g = G();
+    const rock = G();
+    cyl(rock, 0.12, 0.12, 0.9, C.darkwood, -0.9, 0.5, 0, { rz: Math.PI / 2, outline: false });   // rocker bar (left)
+    cyl(rock, 0.12, 0.12, 0.9, C.darkwood, 0.9, 0.5, 0, { rz: Math.PI / 2, outline: false });    // rocker bar (right)
+    box(rock, 1.9, 0.12, 0.3, C.darkwood, 0, 0.12, 0);                                          // rocker base
+    box(rock, 1.6, 0.6, 0.9, C.coral, 0, 1.05, 0);                                              // body
+    box(rock, 0.55, 0.9, 0.7, C.coral, 0.85, 1.7, 0, { rz: -0.4 });                             // neck
+    ball(rock, 0.4, C.coral, 1.15, 2.25, 0);                                                    // head
+    box(rock, 0.18, 0.35, 0.18, C.dark, 1.3, 2.55, 0.1);                                        // ear
+    ball(rock, 0.08, C.dark, 1.42, 2.3, 0.22);                                                  // eye
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, -0.6, 1.4, 0.35);                                      // leg
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, -0.6, 1.4, -0.35);
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, 0.6, 1.4, 0.35);
+    box(rock, 0.1, 0.9, 0.1, C.darkwood, 0.6, 1.4, -0.35);
+    g.add(rock);
+    g.userData.sails = rock;
+    return g;
+  }
+  // A pinwheel on a stick that spins in the breeze. One turn every 4 seconds.
+  function pinwheel() {
+    const g = G();
+    cyl(g, 0.1, 0.1, 2.6, C.white, 0, 1.3, 0, { seg: 8 });                      // stick
+    cyl(g, 0.5, 0.6, 0.4, C.darkwood, 0, 0.2, 0, { seg: 12 });                  // stand
+    const hub = G();
+    hub.position.set(0, 2.7, 0.2);
+    for (let i = 0; i < 4; i++) {
+      const vane = G();
+      vane.rotation.z = i * Math.PI / 2;
+      box(vane, 0.2, 1.3, 0.06, i % 2 ? C.pink : C.sky, 0.35, 0.35, 0.1, { rz: -0.6 });
+      hub.add(vane);
+    }
+    ball(hub, 0.16, C.butter, 0, 0, 0.15, { sz: 0.6 });
+    g.add(hub);
+    g.userData.sails = hub;
+    return g;
+  }
+
   // ---- Outside things (Home Depot): on the outside of a wall, back at z = 0, facing +z ----
   function frontdoor() {
     const g = G();
@@ -625,6 +664,10 @@
                  animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI; } },
     globe:     { emoji: '🌍', label: 'spinning globe', zone: 'floor', build: globe, loop: 6,
                  animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.y = t * Math.PI / 3; } },
+    rockinghorse: { emoji: '🐴', label: 'rocking horse', zone: 'floor', build: rockinghorse, loop: 4,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = Math.sin(t * Math.PI / 2) * 0.22; } },
+    pinwheel:  { emoji: '🎐', label: 'pinwheel', zone: 'floor', build: pinwheel, loop: 4,
+                 animate: (o, t) => { if (o.userData.sails) o.userData.sails.rotation.z = -t * Math.PI / 2; } },
     // Outside things (Home Depot). v: how high the middle sits, when it must be fixed (a door stands on the floor).
     frontdoor: { emoji: '🚪', label: 'front door',  zone: 'outside', build: frontdoor, v: 1.85 },
     shutters:  { emoji: '🪟', label: 'shutters',    zone: 'outside', build: shutters },

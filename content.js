@@ -717,9 +717,9 @@ const SHOPS = [
   { id: 'home-decor', name: 'Target', icon: '🎯', stock: [['vase', 3], ['picture', 4], ['sun', 4], ['rainbow', 4], ['fan', 60]] },
   { id: 'craft', name: 'Craft shop', icon: '🧶', stock: [['kite', 3], ['balloon', 3], ['basket', 4]] },
   { id: 'bakery', name: 'Bakery', icon: '🥐', stock: [['candle', 3], ['basket', 4]] },
-  { id: 'toy', name: 'Toy shop', icon: '🧸', stock: [['pony', 5], ['teddy', 5], ['balloon', 3], ['kite', 3], ['mushroomstool', 5]] },
+  { id: 'toy', name: 'Toy shop', icon: '🧸', stock: [['pony', 5], ['teddy', 5], ['balloon', 3], ['kite', 3], ['mushroomstool', 5], ['rockinghorse', 60]] },
   { id: 'pet', name: 'Pet shop', icon: '🐠', stock: [['fishbowl', 6], ['basket', 4]] },
-  { id: 'garden', name: 'Garden centre', icon: '🌱', stock: [['windmill', 60], ['plant', 4], ['cactus', 3], ['tulip', 3], ['mushroomtall', 4], ['mushroomtrio', 6], ['haybale', 3]] },
+  { id: 'garden', name: 'Garden centre', icon: '🌱', stock: [['windmill', 60], ['pinwheel', 60], ['plant', 4], ['cactus', 3], ['tulip', 3], ['mushroomtall', 4], ['mushroomtrio', 6], ['haybale', 3]] },
   { id: 'bookshop', name: 'Bookshop', icon: '📚', stock: [['bookshelf', 9], ['lamp', 5], ['globe', 60]] },
   { id: 'furniture', name: 'Furniture shop', icon: '🪑', stock: [['bed', 12], ['bunkbed', 16], ['canopybed', 18], ['carbed', 18], ['haybed', 8], ['chair', 5], ['clock', 4]] },
   { id: 'bathroom', name: 'Bathroom shop', icon: '🛁', stock: [['bath', 10], ['mirror', 4]] },
@@ -1070,3 +1070,755 @@ const JOB_STEPS = {
     }
   }
 };
+
+// ---- Get a job: steps for the other 34 jobs (tester note, 2026-11-25). Same shape as JOB_STEPS.architect. ----
+Object.assign(JOB_STEPS, {
+  'flight-attendant': {
+    learn: [
+      { emoji: '✈️', text: 'Flight attendants look after everyone on a plane. They say hello and show people their seats.' },
+      { emoji: '🦺', text: 'They show how to buckle a seat belt and where the exits are. They know what to do if something goes wrong.' }
+    ],
+    quiz: [
+      { q: 'What do flight attendants show people?', choices: ['How to buckle a seat belt', 'How to bake a cake', 'How to ride a bike'], a: 'How to buckle a seat belt' },
+      { q: 'Who looks after everyone on the plane?', choices: ['The flight attendants', 'The bakers', 'The gardeners'], a: 'The flight attendants' },
+      { q: 'What do they know about the exits?', choices: ['Where they are', 'What colour they are', 'How to sing them'], a: 'Where they are' }
+    ],
+    challenge: {
+      scene: 'A child on the plane is feeling worried about the bumpy ride.',
+      question: 'Ask a flight attendant: what are some ways to help them feel calm?',
+      choices: ['Sit with them and talk about something fun', 'Tell them to stop being scared', 'Turn the lights off and leave them alone'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a flight attendant do before take-off?',
+      choices: ['Check that every seat belt is fastened', 'Start cooking dinner', 'Water the plants'],
+      a: 'Check that every seat belt is fastened'
+    }
+  },
+  dancer: {
+    learn: [
+      { emoji: '💃', text: 'Dancers move to music. They use their arms, legs and whole body to tell a story.' },
+      { emoji: '🩰', text: 'Dancers practise the same moves again and again until they feel easy and strong.' }
+    ],
+    quiz: [
+      { q: 'What do dancers move to?', choices: ['Music', 'Rain', 'Cars'], a: 'Music' },
+      { q: 'What do dancers use to tell a story?', choices: ['Their body', 'A spoon', 'A map'], a: 'Their body' },
+      { q: 'How do dancers get good at a move?', choices: ['They practise it again and again', 'They never try', 'They wait for it to happen'], a: 'They practise it again and again' }
+    ],
+    challenge: {
+      scene: 'A dance is about a sad day, but the music is very happy.',
+      question: 'Ask a dancer: what are some ways to show a sad story with your body?',
+      choices: ['Move slowly and let your arms droop', 'Jump as high as you can', 'Stand still and smile'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: which move would show a happy feeling?',
+      choices: ['Spinning round with your arms up', 'Lying down very still', 'Hiding behind a chair'],
+      a: 'Spinning round with your arms up'
+    }
+  },
+  singer: {
+    learn: [
+      { emoji: '🎤', text: 'Singers sing songs with their voice. They breathe deep so the song can be heard.' },
+      { emoji: '🎶', text: 'Singers learn the words and the tune. They practise until they can sing them clearly.' }
+    ],
+    quiz: [
+      { q: 'What do singers use to make a song?', choices: ['Their voice', 'A hammer', 'A plate'], a: 'Their voice' },
+      { q: 'What helps a singer be heard?', choices: ['Breathing deep', 'Whispering very quietly', 'Covering their mouth'], a: 'Breathing deep' },
+      { q: 'What do singers learn first?', choices: ['The words and the tune', 'How to drive', 'How to swim'], a: 'The words and the tune' }
+    ],
+    challenge: {
+      scene: 'The audience is far away at the back of a big hall.',
+      question: 'Ask a singer: what are some ways to make sure everyone can hear you?',
+      choices: ['Sing with a strong breath and face the back', 'Sing very softly', 'Sing with your eyes closed and sit down'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what helps a singer sing a long note?',
+      choices: ['A big, steady breath', 'Holding the breath for no reason', 'Talking instead of singing'],
+      a: 'A big, steady breath'
+    }
+  },
+  builder: {
+    learn: [
+      { emoji: '🧱', text: 'Builders put up walls, roofs and floors. They use bricks, wood and strong nails.' },
+      { emoji: '📐', text: 'Builders check that each wall stands straight, using a long tool with a bubble in it.' }
+    ],
+    quiz: [
+      { q: 'What do builders put up?', choices: ['Walls, roofs and floors', 'Clouds', 'Waves'], a: 'Walls, roofs and floors' },
+      { q: 'What tool shows if a wall is straight?', choices: ['A spirit level', 'A paintbrush', 'A teapot'], a: 'A spirit level' },
+      { q: 'What do builders use to join wood?', choices: ['Strong nails', 'Cotton wool', 'Jelly'], a: 'Strong nails' }
+    ],
+    challenge: {
+      scene: 'The wall you are building is leaning a little to one side.',
+      question: 'Ask a builder: what are some ways to fix a wall that leans?',
+      choices: ['Check it with a level and move the bricks back', 'Paint it so no one can see', 'Build the next wall on top of it anyway'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a builder check before the roof goes on?',
+      choices: ['That the walls are straight and strong', 'What colour the roof is', 'Whether it is raining'],
+      a: 'That the walls are straight and strong'
+    }
+  },
+  doctor: {
+    learn: [
+      { emoji: '🩺', text: 'Doctors check people who are sick. They listen to the heart and look in the ears.' },
+      { emoji: '💊', text: 'Doctors decide how to help people get better. Sometimes that means rest, and sometimes medicine.' }
+    ],
+    quiz: [
+      { q: 'What does a doctor listen to?', choices: ['The heart', 'The rain', 'The radio'], a: 'The heart' },
+      { q: 'What does a doctor do when someone is sick?', choices: ['Checks them to help them get better', 'Sells them a car', 'Teaches them to sing'], a: 'Checks them to help them get better' },
+      { q: 'What can help a person get better?', choices: ['Rest or medicine', 'Eating paper', 'Staying up all night'], a: 'Rest or medicine' }
+    ],
+    challenge: {
+      scene: 'A friend has a tummy ache and does not want to eat.',
+      question: 'Ask a doctor: what are some ways to help a friend feel better?',
+      choices: ['Let them rest and tell a grown-up', 'Make them run around', 'Say it is nothing and ignore them'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what does a doctor use to listen to a heartbeat?',
+      choices: ['A stethoscope', 'A spoon', 'A shoe'],
+      a: 'A stethoscope'
+    }
+  },
+  nurse: {
+    learn: [
+      { emoji: '🩹', text: 'Nurses look after patients in hospital. They check their temperature and give them their medicine.' },
+      { emoji: '🛏️', text: 'Nurses help doctors. They keep the beds clean and make sure patients are comfortable.' }
+    ],
+    quiz: [
+      { q: 'Where do nurses look after patients?', choices: ['In hospital', 'In a bakery', 'On a farm'], a: 'In hospital' },
+      { q: 'What do nurses check?', choices: ['Temperature', 'The weather', 'Football scores'], a: 'Temperature' },
+      { q: 'Who do nurses help?', choices: ['Doctors', 'Pirates', 'Bus drivers only'], a: 'Doctors' }
+    ],
+    challenge: {
+      scene: 'A patient is scared of the needle.',
+      question: 'Ask a nurse: what are some ways to help the patient feel brave?',
+      choices: ['Explain each step and hold their hand', 'Do it quickly without a word', 'Tell them to look away and not ask'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a nurse do before giving medicine?',
+      choices: ['Check the name and the dose', 'Guess how much to give', 'Give it to the nearest person'],
+      a: 'Check the name and the dose'
+    }
+  },
+  veterinarian: {
+    learn: [
+      { emoji: '🐾', text: 'Vets help sick and hurt animals. They check dogs, cats, birds and even hamsters.' },
+      { emoji: '🩺', text: 'Vets are gentle. They talk softly and check each animal carefully before they give any medicine.' }
+    ],
+    quiz: [
+      { q: 'Who do vets help?', choices: ['Sick and hurt animals', 'Sick cars', 'Lost shoes'], a: 'Sick and hurt animals' },
+      { q: 'How do vets treat animals?', choices: ['Gently and carefully', 'Roughly and quickly', 'With a loud voice'], a: 'Gently and carefully' },
+      { q: 'What do vets check before medicine?', choices: ['Each animal carefully', 'The weather', 'The shop prices'], a: 'Each animal carefully' }
+    ],
+    challenge: {
+      scene: 'A puppy has hurt its paw and keeps trying to run away.',
+      question: 'Ask a vet: what are some ways to help the puppy stay calm?',
+      choices: ['Speak softly and hold the puppy gently', 'Chase the puppy around the room', 'Put the puppy in a box and shout'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: how should a vet hold a hurt bird?',
+      choices: ['Gently, with both hands', 'Tightly in one fist', 'Upside down'],
+      a: 'Gently, with both hands'
+    }
+  },
+  teacher: {
+    learn: [
+      { emoji: '🍎', text: 'Teachers help children learn to read, count and write. They make lessons fun.' },
+      { emoji: '🤝', text: 'Teachers help children make friends and feel safe. They listen when someone is worried.' }
+    ],
+    quiz: [
+      { q: 'What do teachers help children learn?', choices: ['To read, count and write', 'To fly planes', 'To cook soup'], a: 'To read, count and write' },
+      { q: 'How do teachers make lessons?', choices: ['Fun', 'Very boring', 'Quiet all day'], a: 'Fun' },
+      { q: 'What do teachers do when a child is worried?', choices: ['Listen and help', 'Ignore them', 'Send them outside alone'], a: 'Listen and help' }
+    ],
+    challenge: {
+      scene: 'A child in the class finds counting very hard and feels sad.',
+      question: 'Ask a teacher: what are some ways to help them feel better about counting?',
+      choices: ['Use counters or toys and praise each step', 'Tell them they are no good at it', 'Give them harder sums straight away'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: how many apples are 2 apples and 3 more?',
+      choices: ['5', '4', '6'],
+      a: '5'
+    }
+  },
+  firefighter: {
+    learn: [
+      { emoji: '🚒', text: 'Firefighters put out fires and help people in emergencies. They ride in a big red fire engine.' },
+      { emoji: '🧯', text: 'Firefighters wear special clothes and helmets. They use hoses full of water to put out the fire.' }
+    ],
+    quiz: [
+      { q: 'What do firefighters put out?', choices: ['Fires', 'Candles on cakes', 'Music'], a: 'Fires' },
+      { q: 'What do firefighters ride in?', choices: ['A fire engine', 'A bicycle', 'A rowing boat'], a: 'A fire engine' },
+      { q: 'What do firefighters use to put out a fire?', choices: ['Water from hoses', 'Sand from a bucket only', 'Sweets'], a: 'Water from hoses' }
+    ],
+    challenge: {
+      scene: 'There is smoke in a house, and a child is in an upstairs room.',
+      question: 'Ask a firefighter: what are some ways to get the child out safely?',
+      choices: ['Crawl low under the smoke and call out to the child', 'Run up the stairs through thick smoke', 'Wait until the smoke goes away'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should you do first if you smell smoke at home?',
+      choices: ['Tell a grown-up and get out', 'Go and look for the fire', 'Hide under the bed'],
+      a: 'Tell a grown-up and get out'
+    }
+  },
+  'police-officer': {
+    learn: [
+      { emoji: '🚓', text: 'Police officers keep people safe. They help find lost things and lost people.' },
+      { emoji: '👮', text: 'Police officers listen to everyone and help them. They tell the truth and treat people fairly.' }
+    ],
+    quiz: [
+      { q: 'What do police officers help people do?', choices: ['Stay safe', 'Make cakes', 'Grow carrots'], a: 'Stay safe' },
+      { q: 'What do police officers find?', choices: ['Lost things and people', 'Stars', 'Rainbows'], a: 'Lost things and people' },
+      { q: 'How do police officers treat people?', choices: ['Fairly', 'Unfairly', 'Rudely'], a: 'Fairly' }
+    ],
+    challenge: {
+      scene: 'A child has got separated from their family in a busy shop.',
+      question: 'Ask a police officer: what are some ways to help the child find their family?',
+      choices: ['Take the child to a safe place and ask for their name', 'Leave the child on their own', 'Shout to see who answers'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a lost child do?',
+      choices: ['Stay where they are and find a grown-up in uniform', 'Walk off to find home alone', 'Hide in a clothes shop'],
+      a: 'Stay where they are and find a grown-up in uniform'
+    }
+  },
+  chef: {
+    learn: [
+      { emoji: '🍳', text: 'Chefs cook meals in a restaurant. They chop, stir and taste to make the food right.' },
+      { emoji: '📝', text: 'Chefs make new recipes. They try different mixes of food and keep the ones that taste best.' }
+    ],
+    quiz: [
+      { q: 'What do chefs do to check food?', choices: ['Taste it', 'Throw it away', 'Hide it'], a: 'Taste it' },
+      { q: 'Where do chefs cook?', choices: ['In a restaurant', 'In a library', 'On a train'], a: 'In a restaurant' },
+      { q: 'What do chefs make?', choices: ['New recipes', 'New planets', 'New shoes'], a: 'New recipes' }
+    ],
+    challenge: {
+      scene: 'A soup is too salty, and the customers are waiting.',
+      question: 'Ask a chef: what are some ways to fix the soup?',
+      choices: ['Add water or potato to soak up some salt', 'Serve it anyway without a word', 'Add more salt to hide it'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a chef do before cooking?',
+      choices: ['Wash their hands', 'Play with the knives', 'Take off the oven door'],
+      a: 'Wash their hands'
+    }
+  },
+  baker: {
+    learn: [
+      { emoji: '🥐', text: 'Bakers make bread, cakes and biscuits. They get up early so the bread is warm for breakfast.' },
+      { emoji: '🥖', text: 'Bakers mix flour, water and yeast to make bread dough. The dough rises before it goes in the oven.' }
+    ],
+    quiz: [
+      { q: 'What do bakers make?', choices: ['Bread, cakes and biscuits', 'Cars', 'Roads'], a: 'Bread, cakes and biscuits' },
+      { q: 'When do bakers start work?', choices: ['Early in the morning', 'Late at night', 'At lunchtime'], a: 'Early in the morning' },
+      { q: 'What makes bread rise?', choices: ['Yeast', 'Sand', 'Paint'], a: 'Yeast' }
+    ],
+    challenge: {
+      scene: 'The bread dough is not rising, and the shop opens soon.',
+      question: 'Ask a baker: what are some ways to fix it?',
+      choices: ['Check the yeast and put the dough somewhere warm', 'Put it in the freezer', 'Bake it flat and hope for the best'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what goes into bread dough?',
+      choices: ['Flour and water', 'Sand and glue', 'Paint and paper'],
+      a: 'Flour and water'
+    }
+  },
+  farmer: {
+    learn: [
+      { emoji: '🌾', text: 'Farmers grow food like wheat, carrots and apples. They plant seeds in spring.' },
+      { emoji: '🐄', text: 'Farmers look after animals too. They feed the cows and collect the eggs every morning.' }
+    ],
+    quiz: [
+      { q: 'What do farmers grow?', choices: ['Food', 'Houses', 'Computers'], a: 'Food' },
+      { q: 'When do farmers plant seeds?', choices: ['In spring', 'In the middle of the night', 'Never'], a: 'In spring' },
+      { q: 'What do farmers do each morning?', choices: ['Feed the animals', 'Sleep in', 'Sail a boat'], a: 'Feed the animals' }
+    ],
+    challenge: {
+      scene: 'It has not rained for weeks, and the crops are drying out.',
+      question: 'Ask a farmer: what are some ways to keep the crops alive?',
+      choices: ['Water them carefully and use a cover in the hot part of the day', 'Cut them all down straight away', 'Leave them and hope it rains'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what does a seed need to grow?',
+      choices: ['Water, soil and sun', 'Paint and glue', 'Sand only'],
+      a: 'Water, soil and sun'
+    }
+  },
+  gardener: {
+    learn: [
+      { emoji: '🌻', text: 'Gardeners plant flowers and trees. They water them, pull out weeds and cut back the old leaves.' },
+      { emoji: '🪴', text: 'Gardeners know which plants like sun and which like shade. They plant each one in the right place.' }
+    ],
+    quiz: [
+      { q: 'What do gardeners plant?', choices: ['Flowers and trees', 'Roads', 'Bricks'], a: 'Flowers and trees' },
+      { q: 'What do gardeners pull out?', choices: ['Weeds', 'Books', 'Shoes'], a: 'Weeds' },
+      { q: 'What do gardeners think about before planting?', choices: ['Whether the plant likes sun or shade', 'The colour of the fence', 'The time on the clock'], a: 'Whether the plant likes sun or shade' }
+    ],
+    challenge: {
+      scene: 'A rose bush has yellow leaves and looks unhappy.',
+      question: 'Ask a gardener: what are some ways to help the rose bush?',
+      choices: ['Check the water and move it to a sunnier spot', 'Pull it out straight away', 'Paint the leaves green'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should you do before you plant a seed?',
+      choices: ['Make a hole in the soil', 'Put it in the bath', 'Put it in a drawer'],
+      a: 'Make a hole in the soil'
+    }
+  },
+  zookeeper: {
+    learn: [
+      { emoji: '🦁', text: 'Zookeepers feed and look after the animals at the zoo. Each animal eats different food.' },
+      { emoji: '🧹', text: 'Zookeepers clean the animal homes every day, so the animals stay healthy and happy.' }
+    ],
+    quiz: [
+      { q: 'What do zookeepers do with food?', choices: ['Feed the animals', 'Eat it all', 'Throw it in the sea'], a: 'Feed the animals' },
+      { q: 'Do all animals eat the same food?', choices: ['No, each one eats different food', 'Yes, all of them', 'Only the lions'], a: 'No, each one eats different food' },
+      { q: 'Why do zookeepers clean the animal homes?', choices: ['So the animals stay healthy', 'So the animals can hide', 'So the zoo is dark'], a: 'So the animals stay healthy' }
+    ],
+    challenge: {
+      scene: 'A lion has stopped eating its dinner.',
+      question: 'Ask a zookeeper: what are some ways to find out why?',
+      choices: ['Check the food, watch the lion and tell the vet', 'Give the lion a much bigger dinner', 'Ignore the lion until it eats'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a zookeeper do before going near a big animal?',
+      choices: ['Check that it is safe and ask a grown-up', 'Feed it a sweet', 'Climb into its home'],
+      a: 'Check that it is safe and ask a grown-up'
+    }
+  },
+  scientist: {
+    learn: [
+      { emoji: '🔬', text: 'Scientists ask questions and test them. They try things out to find out how the world works.' },
+      { emoji: '📓', text: 'Scientists write down what they see in a notebook, so they can check it again later.' }
+    ],
+    quiz: [
+      { q: 'What do scientists ask?', choices: ['Questions', 'Riddles only', 'Nothing'], a: 'Questions' },
+      { q: 'How do scientists find out the answer?', choices: ['They test it', 'They guess and stop', 'They wait for a sign'], a: 'They test it' },
+      { q: 'Where do scientists write what they see?', choices: ['In a notebook', 'On the walls', 'In the sky'], a: 'In a notebook' }
+    ],
+    challenge: {
+      scene: 'You think a plant grows faster in the dark, and you want to find out.',
+      question: 'Ask a scientist: what are some ways to test this?',
+      choices: ['Grow two plants, one in the light and one in the dark, and measure them', 'Ask the plant what it likes', 'Only look at the plant once'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a scientist write down during a test?',
+      choices: ['What happened each day', 'Only the ending', 'Nothing at all'],
+      a: 'What happened each day'
+    }
+  },
+  astronaut: {
+    learn: [
+      { emoji: '🚀', text: 'Astronauts fly to space in a rocket. They float because there is almost no gravity in space.' },
+      { emoji: '🛰️', text: 'Astronauts live on a space station and do experiments. They look down at the Earth from very high up.' }
+    ],
+    quiz: [
+      { q: 'How do astronauts get to space?', choices: ['In a rocket', 'On a bike', 'By swimming'], a: 'In a rocket' },
+      { q: 'Why do astronauts float?', choices: ['There is almost no gravity', 'They are very light', 'They are wearing wings'], a: 'There is almost no gravity' },
+      { q: 'What do astronauts do on the space station?', choices: ['Experiments', 'Baking', 'Fishing'], a: 'Experiments' }
+    ],
+    challenge: {
+      scene: 'A drink in space floats into the air instead of staying in the cup.',
+      question: 'Ask an astronaut: what are some ways to keep drinks safe in space?',
+      choices: ['Use a sealed bag or a straw with a lid', 'Pour it out on the floor', 'Shake the cup as hard as you can'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should an astronaut wear to go outside a spaceship?',
+      choices: ['A spacesuit', 'Swimming shorts', 'A raincoat'],
+      a: 'A spacesuit'
+    }
+  },
+  'bus-driver': {
+    learn: [
+      { emoji: '🚌', text: 'Bus drivers drive people safely around the town. They stop at each bus stop on time.' },
+      { emoji: '🪞', text: 'Bus drivers check their mirrors often. They keep watch for people, bikes and cars all around the bus.' }
+    ],
+    quiz: [
+      { q: 'What do bus drivers carry?', choices: ['People', 'Cakes', 'Sand'], a: 'People' },
+      { q: 'What do bus drivers check often?', choices: ['Their mirrors', 'Their hair', 'Their shoes'], a: 'Their mirrors' },
+      { q: 'Where do bus drivers stop?', choices: ['At each bus stop', 'In the middle of the road', 'In the sea'], a: 'At each bus stop' }
+    ],
+    challenge: {
+      scene: 'A ball rolls into the road in front of the bus.',
+      question: 'Ask a bus driver: what are some ways to stay safe?',
+      choices: ['Slow down, keep watch and stop if a child runs out', 'Speed up to get past it', 'Honk and keep going'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a bus driver do before setting off?',
+      choices: ['Check that everyone is sitting down', 'Turn off the lights and sleep', 'Let a friend drive'],
+      a: 'Check that everyone is sitting down'
+    }
+  },
+  'train-driver': {
+    learn: [
+      { emoji: '🚂', text: 'Train drivers drive trains with lots of people on board. They drive along the tracks.' },
+      { emoji: '🚦', text: 'Train drivers watch the signals. A green light means go, and a red light means stop.' }
+    ],
+    quiz: [
+      { q: 'Where do trains travel?', choices: ['Along tracks', 'Over the clouds', 'In a field'], a: 'Along tracks' },
+      { q: 'What does a green light mean for a train?', choices: ['Go', 'Stop', 'Sleep'], a: 'Go' },
+      { q: 'Who does a train driver take along?', choices: ['Lots of people', 'Only cats', 'Only cars'], a: 'Lots of people' }
+    ],
+    challenge: {
+      scene: 'The signal is red, but there is a long train behind you waiting.',
+      question: 'Ask a train driver: what are some ways to keep everyone safe?',
+      choices: ['Stop at the red light and tell the control room', 'Go slowly past the red light', 'Turn the signal off yourself'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what colour light tells a train to stop?',
+      choices: ['Red', 'Green', 'Blue'],
+      a: 'Red'
+    }
+  },
+  sailor: {
+    learn: [
+      { emoji: '⛵', text: 'Sailors sail boats and keep the ship working on the sea. They use the wind to move the sails.' },
+      { emoji: '🧭', text: 'Sailors use a compass and a map to know where they are going.' }
+    ],
+    quiz: [
+      { q: 'What do sailors use to move the boat?', choices: ['The wind', 'Sand', 'Cakes'], a: 'The wind' },
+      { q: 'What do sailors use to know where they are going?', choices: ['A compass and a map', 'A spoon', 'A ball'], a: 'A compass and a map' },
+      { q: 'Where do sailors work?', choices: ['On the sea', 'In a shop', 'In a library'], a: 'On the sea' }
+    ],
+    challenge: {
+      scene: 'The wind has stopped, and the sails hang limp.',
+      question: 'Ask a sailor: what are some ways to keep the boat moving?',
+      choices: ['Use the oars and wait for the wind to come back', 'Shout at the sails', 'Jump into the sea and push'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a sailor check before leaving the harbour?',
+      choices: ['The weather and the sails', 'Whether the fish are hungry', 'The time of the moon'],
+      a: 'The weather and the sails'
+    }
+  },
+  lifeguard: {
+    learn: [
+      { emoji: '🏊', text: 'Lifeguards watch swimmers at the pool or beach and keep them safe.' },
+      { emoji: '🛟', text: 'Lifeguards know how to rescue someone who is in trouble in the water.' }
+    ],
+    quiz: [
+      { q: 'What do lifeguards watch?', choices: ['Swimmers', 'Birds', 'Clouds'], a: 'Swimmers' },
+      { q: 'Where do lifeguards work?', choices: ['At the pool or beach', 'In a bank', 'On a bus'], a: 'At the pool or beach' },
+      { q: 'What do lifeguards know how to do?', choices: ['Rescue people in trouble', 'Fly planes', 'Bake bread'], a: 'Rescue people in trouble' }
+    ],
+    challenge: {
+      scene: 'A swimmer is going further out and seems tired.',
+      question: 'Ask a lifeguard: what are some ways to help them get back safely?',
+      choices: ['Call them back, use a rescue buoy and get help', 'Wait and see if they swim back', 'Swim out alone without any help'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should you always do at the pool?',
+      choices: ['Walk, do not run, on the side', 'Push other swimmers', 'Dive into the shallow end'],
+      a: 'Walk, do not run, on the side'
+    }
+  },
+  'mail-carrier': {
+    learn: [
+      { emoji: '📮', text: 'Mail carriers deliver letters and parcels to every house in their area.' },
+      { emoji: '🏠', text: 'Mail carriers check the addresses carefully, so every letter goes to the right home.' }
+    ],
+    quiz: [
+      { q: 'What do mail carriers deliver?', choices: ['Letters and parcels', 'Trees', 'Rain'], a: 'Letters and parcels' },
+      { q: 'Where do mail carriers take the post?', choices: ['To every house in their area', 'To the moon', 'Only to the school'], a: 'To every house in their area' },
+      { q: 'What do mail carriers check?', choices: ['The addresses', 'The shoes', 'The stars'], a: 'The addresses' }
+    ],
+    challenge: {
+      scene: 'A parcel has a name on it, but the house number is missing.',
+      question: 'Ask a mail carrier: what are some ways to find the right home?',
+      choices: ['Look at the street and ask a neighbour or the post office', 'Leave it on the wrong doorstep', 'Keep it and forget about it'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a mail carrier check before posting a letter?',
+      choices: ['The address on the envelope', 'The colour of the stamp only', 'Whether the letter is heavy'],
+      a: 'The address on the envelope'
+    }
+  },
+  librarian: {
+    learn: [
+      { emoji: '📖', text: 'Librarians help people find books. They know where every book is on the shelves.' },
+      { emoji: '📚', text: 'Librarians read a lot and love stories. They suggest books that people might enjoy.' }
+    ],
+    quiz: [
+      { q: 'What do librarians help people find?', choices: ['Books', 'Fish', 'Shoes'], a: 'Books' },
+      { q: 'What do librarians know?', choices: ['Where every book is', 'How to fly', 'How to swim'], a: 'Where every book is' },
+      { q: 'What do librarians love?', choices: ['Stories', 'Loud noise', 'Rain'], a: 'Stories' }
+    ],
+    challenge: {
+      scene: 'A child wants a book about dinosaurs, but cannot find the right shelf.',
+      question: 'Ask a librarian: what are some ways to find the book?',
+      choices: ['Look in the animal or science section and ask the librarian', 'Take any book at random', 'Go home without looking'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: how do libraries keep books in order?',
+      choices: ['On shelves, in an order that helps you find them', 'Scattered on the floor', 'Under the chairs'],
+      a: 'On shelves, in an order that helps you find them'
+    }
+  },
+  photographer: {
+    learn: [
+      { emoji: '📷', text: 'Photographers take pictures of people, places and special moments.' },
+      { emoji: '🌅', text: 'Photographers look at the light. Morning and evening light can make a picture look warm and soft.' }
+    ],
+    quiz: [
+      { q: 'What do photographers take?', choices: ['Pictures', 'Naps', 'Cakes'], a: 'Pictures' },
+      { q: 'What makes a picture look warm and soft?', choices: ['Morning or evening light', 'Turning off the lights', 'A very bright flash in the eyes'], a: 'Morning or evening light' },
+      { q: 'What do photographers capture?', choices: ['Special moments', 'Only the sky', 'Empty rooms'], a: 'Special moments' }
+    ],
+    challenge: {
+      scene: 'A family wants a photo, but the sun is very bright and the faces look dark.',
+      question: 'Ask a photographer: what are some ways to make a better photo?',
+      choices: ['Move into the shade and face the light', 'Stand right in the sun', 'Take the photo with your eyes closed'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: where should the sun be for a good photo of a face?',
+      choices: ['Behind the photographer', 'Right behind the face', 'Under the table'],
+      a: 'Behind the photographer'
+    }
+  },
+  author: {
+    learn: [
+      { emoji: '🖋️', text: 'Authors write books and stories for people to read. They start with an idea and build it up.' },
+      { emoji: '✏️', text: 'Authors write, then read it again and change it. Writing again and again makes a story better.' }
+    ],
+    quiz: [
+      { q: 'What do authors write?', choices: ['Books and stories', 'Cars', 'Roads'], a: 'Books and stories' },
+      { q: 'What do authors do after writing?', choices: ['Read it again and change it', 'Throw it away at once', 'Eat it'], a: 'Read it again and change it' },
+      { q: 'Where does an author start?', choices: ['With an idea', 'With the ending only', 'With the cover'], a: 'With an idea' }
+    ],
+    challenge: {
+      scene: 'A story feels boring in the middle, and the reader might stop.',
+      question: 'Ask an author: what are some ways to make the middle more exciting?',
+      choices: ['Add a surprise or a problem for the hero', 'Make the story shorter by skipping the middle', 'Repeat the same sentence many times'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what does every story need to have?',
+      choices: ['A hero and a problem', 'Only pictures', 'Only numbers'],
+      a: 'A hero and a problem'
+    }
+  },
+  musician: {
+    learn: [
+      { emoji: '🎸', text: 'Musicians play instruments and make music. Some play with others in a band or an orchestra.' },
+      { emoji: '🎵', text: 'Musicians practise the same tune again and again. They listen to each other, so the music sounds good together.' }
+    ],
+    quiz: [
+      { q: 'What do musicians play?', choices: ['Instruments', 'Cars', 'Trees'], a: 'Instruments' },
+      { q: 'How do musicians get better?', choices: ['They practise', 'They stop trying', 'They only sleep'], a: 'They practise' },
+      { q: 'Why do musicians listen to each other?', choices: ['So the music sounds good together', 'So they can hide', 'So they can eat'], a: 'So the music sounds good together' }
+    ],
+    challenge: {
+      scene: 'Two friends in the band are playing at different speeds.',
+      question: 'Ask a musician: what are some ways to play together?',
+      choices: ['Count the beat out loud and watch the drummer', 'Each play as fast as you like', 'Stop and never play together again'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what keeps a band playing together?',
+      choices: ['A steady beat everyone can follow', 'Everyone playing a different tune', 'Silence'],
+      a: 'A steady beat everyone can follow'
+    }
+  },
+  actor: {
+    learn: [
+      { emoji: '🎭', text: 'Actors pretend to be other people in plays and films.' },
+      { emoji: '🎬', text: 'Actors learn their lines and practise with others. They try different voices and faces to show a feeling.' }
+    ],
+    quiz: [
+      { q: 'What do actors pretend to be?', choices: ['Other people', 'Trees', 'Cars'], a: 'Other people' },
+      { q: 'Where do actors perform?', choices: ['In plays and films', 'In a bank', 'In a car park'], a: 'In plays and films' },
+      { q: 'What do actors learn?', choices: ['Their lines', 'How to fly', 'How to cook'], a: 'Their lines' }
+    ],
+    challenge: {
+      scene: 'In a play, your character is very angry, but you feel silly doing it.',
+      question: 'Ask an actor: what are some ways to show anger on stage?',
+      choices: ['Use a loud voice and firm, strong movements', 'Whisper the lines', 'Skip the scene'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: how can an actor show that a character is sad?',
+      choices: ['A slow voice and droopy shoulders', 'Jumping up and down', 'Giggling the whole time'],
+      a: 'A slow voice and droopy shoulders'
+    }
+  },
+  engineer: {
+    learn: [
+      { emoji: '🔧', text: 'Engineers design and fix machines, bridges and gadgets. They work out how things fit and move.' },
+      { emoji: '⚙️', text: 'Engineers test their designs. If something breaks, they find out why and make it stronger.' }
+    ],
+    quiz: [
+      { q: 'What do engineers design?', choices: ['Machines and bridges', 'Songs', 'Cakes'], a: 'Machines and bridges' },
+      { q: 'What do engineers do with a design?', choices: ['Test it', 'Throw it in the bin', 'Sleep on it'], a: 'Test it' },
+      { q: 'What do engineers do if something breaks?', choices: ['Find out why and make it stronger', 'Hide it', 'Pretend it is fine'], a: 'Find out why and make it stronger' }
+    ],
+    challenge: {
+      scene: 'A bridge made of sticks keeps bending in the middle.',
+      question: 'Ask an engineer: what are some ways to make the bridge stronger?',
+      choices: ['Add triangle supports across the middle', 'Make the bridge longer', 'Use only one thin stick'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what shape is strongest for holding weight in a bridge?',
+      choices: ['A triangle', 'A wiggly line', 'A dot'],
+      a: 'A triangle'
+    }
+  },
+  coder: {
+    learn: [
+      { emoji: '💻', text: 'Coders write instructions for computers. These instructions make apps and games work.' },
+      { emoji: '🐞', text: 'Coders test their code. When it does not work, they find the bug and fix it.' }
+    ],
+    quiz: [
+      { q: 'What do coders write?', choices: ['Instructions for computers', 'Letters to friends', 'Shopping lists only'], a: 'Instructions for computers' },
+      { q: 'What do coders do with their code?', choices: ['Test it', 'Hide it', 'Eat it'], a: 'Test it' },
+      { q: 'What is a bug?', choices: ['A mistake in the code', 'A type of cake', 'A pet'], a: 'A mistake in the code' }
+    ],
+    challenge: {
+      scene: 'A game character walks through walls when it should stop at them.',
+      question: 'Ask a coder: what are some ways to find and fix this?',
+      choices: ['Check the wall rule and test it step by step', 'Remove all the walls from the game', 'Tell the player it is a feature'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a coder do when a game does not work?',
+      choices: ['Find the mistake and test it again', 'Turn off the computer and forget it', 'Give up straight away'],
+      a: 'Find the mistake and test it again'
+    }
+  },
+  electrician: {
+    learn: [
+      { emoji: '⚡', text: 'Electricians put in and fix the wires that bring power to buildings. Power makes lights and fridges work.' },
+      { emoji: '🔌', text: 'Electricians always switch off the power before they touch a wire. Safety comes first.' }
+    ],
+    quiz: [
+      { q: 'What do electricians put in?', choices: ['Wires that bring power', 'Water pipes only', 'Carpets'], a: 'Wires that bring power' },
+      { q: 'What do electricians do before touching a wire?', choices: ['Switch off the power', 'Lick it', 'Shout at it'], a: 'Switch off the power' },
+      { q: 'What does power make work?', choices: ['Lights and fridges', 'Rain', 'Snow'], a: 'Lights and fridges' }
+    ],
+    challenge: {
+      scene: 'A lamp in the house keeps flickering, and it is getting dark.',
+      question: 'Ask an electrician: what are some ways to find out why?',
+      choices: ['Check the bulb and get an electrician to look at the wiring', 'Put your fingers in the socket to see', 'Ignore it and keep the lamp on'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should you do before you change a light bulb?',
+      choices: ['Switch the lamp off and let it cool', 'Pour water on it', 'Put a fork in the socket'],
+      a: 'Switch the lamp off and let it cool'
+    }
+  },
+  hairdresser: {
+    learn: [
+      { emoji: '💇', text: 'Hairdressers cut, wash and style hair. They ask how the person wants their hair to look.' },
+      { emoji: '✂️', text: 'Hairdressers are careful with scissors. They cut a little at a time, so the hair looks just right.' }
+    ],
+    quiz: [
+      { q: 'What do hairdressers do?', choices: ['Cut, wash and style hair', 'Drive buses', 'Grow carrots'], a: 'Cut, wash and style hair' },
+      { q: 'What do hairdressers ask first?', choices: ['How the person wants their hair', 'The weather', 'What the time is'], a: 'How the person wants their hair' },
+      { q: 'How do hairdressers cut hair?', choices: ['A little at a time', 'All at once', 'With their eyes closed'], a: 'A little at a time' }
+    ],
+    challenge: {
+      scene: 'A customer wants a short haircut, but they are worried it will look silly.',
+      question: 'Ask a hairdresser: what are some ways to help them feel happy with it?',
+      choices: ['Show them a picture and cut a little at a time', 'Cut it very short straight away', 'Tell them it is too late to change'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a hairdresser do before they start cutting?',
+      choices: ['Ask what style the customer wants', 'Start with the scissors', 'Shave the whole head'],
+      a: 'Ask what style the customer wants'
+    }
+  },
+  florist: {
+    learn: [
+      { emoji: '💐', text: 'Florists make bunches of flowers for people to give to friends, family and at special events.' },
+      { emoji: '🌸', text: 'Florists pick flowers that go well together. They trim the stems so the flowers can drink water.' }
+    ],
+    quiz: [
+      { q: 'What do florists make?', choices: ['Bunches of flowers', 'Bicycles', 'Bread'], a: 'Bunches of flowers' },
+      { q: 'Why do florists trim the stems?', choices: ['So the flowers can drink water', 'So the flowers can fly', 'So the flowers can sing'], a: 'So the flowers can drink water' },
+      { q: 'What do florists think about when they choose flowers?', choices: ['Which ones go well together', 'Which ones are the heaviest', 'Which ones are on the ground'], a: 'Which ones go well together' }
+    ],
+    challenge: {
+      scene: 'A customer wants flowers for a friend who likes only one colour.',
+      question: 'Ask a florist: what are some ways to make a bunch just for them?',
+      choices: ['Use a mix of their favourite colour with some green leaves', 'Pick flowers at random', 'Make the bunch without any flowers'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a florist do with the stems before putting them in water?',
+      choices: ['Trim them at a slant', 'Tie them in knots', 'Dip them in paint'],
+      a: 'Trim them at a slant'
+    }
+  },
+  tailor: {
+    learn: [
+      { emoji: '🧵', text: 'Tailors sew and mend clothes, so they fit well. They measure the person first.' },
+      { emoji: '📏', text: 'Tailors take in or let out seams, so a jumper or a skirt fits just right.' }
+    ],
+    quiz: [
+      { q: 'What do tailors sew?', choices: ['Clothes', 'Cars', 'Walls'], a: 'Clothes' },
+      { q: 'What do tailors do first?', choices: ['Measure the person', 'Paint the cloth', 'Cut the cloth in half and stop'], a: 'Measure the person' },
+      { q: 'What do tailors change so clothes fit?', choices: ['The seams', 'The sky', 'The stars'], a: 'The seams' }
+    ],
+    challenge: {
+      scene: 'A child\'s new coat is too big in the arms.',
+      question: 'Ask a tailor: what are some ways to make the coat fit better?',
+      choices: ['Take in the sleeves and check the fit again', 'Let the arms out even more', 'Tell the child to grow into it straight away'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a tailor do before cutting the cloth?',
+      choices: ['Measure carefully', 'Cut it quickly', 'Throw the cloth away'],
+      a: 'Measure carefully'
+    }
+  },
+  beekeeper: {
+    learn: [
+      { emoji: '🐝', text: 'Beekeepers look after bees and collect their honey. They keep the bee homes, called hives, tidy and dry.' },
+      { emoji: '🧑‍🌾', text: 'Beekeepers wear a special suit and a veil, to stay safe. They move slowly, so the bees stay calm.' }
+    ],
+    quiz: [
+      { q: 'What do beekeepers collect?', choices: ['Honey', 'Sand', 'Stones'], a: 'Honey' },
+      { q: 'What do beekeepers wear to stay safe?', choices: ['A special suit and a veil', 'Swimming goggles', 'A cape'], a: 'A special suit and a veil' },
+      { q: 'Why do beekeepers move slowly?', choices: ['So the bees stay calm', 'So they can nap', 'So the honey dries'], a: 'So the bees stay calm' }
+    ],
+    challenge: {
+      scene: 'A bee is buzzing close to a child in the garden.',
+      question: 'Ask a beekeeper: what are some ways to keep everyone safe and the bee calm?',
+      choices: ['Stay still and let the bee fly away on its own', 'Swat at the bee', 'Run and shout'],
+      starter: 'I would ___ because ___.'
+    },
+    task: {
+      prompt: 'First pass: what should a beekeeper do before opening a hive?',
+      choices: ['Put on the suit and veil', 'Take off all their clothes', 'Shout at the bees'],
+      a: 'Put on the suit and veil'
+    }
+  }
+});
