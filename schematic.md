@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.5): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.3.0): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -124,6 +124,13 @@ Levels 2–4 open as placeholder screens for now. Lock rules are a suggestion, s
 - `jobs.md` — the 37 jobs to explore, with the job flow.
 - `convo/` — Q&A history, one file per round, never compacted (convo v0.6 holds the level plan).
 - `CLAUDE.md` — pointer for Claude Code.
+
+## Job questions and trophies (2.3.0)
+
+- **Questions live in `bank/jobs_round1.json`**, like the test bank. `content.js` holds the same data (`JOB_STEPS`); keep the two in step. Each job has `learn`, `quiz`, `challenge`, `task`, and `harder`.
+- **Harder questions:** after a job is hired, 🏆 Harder questions (5) opens. Five multiple-choice questions at about the level of the challenge. A wrong try shows a hint; each right answer shows why it is right. Five right answers (first try each) win the job's trophy.
+- **Trophies:** a small gold-plinth 3-D object for each job (the job or its stereotype, for example an apple for a teacher, a helmet for a firefighter), turning slowly. The trophy goes in the bag, so any house can show it, and it stays once won. Built in `models.js` (`TROPHY_PROP`). Ids are `trophy-<job>`.
+- **Pay:** the first hire pays 🪙 10 (2.2.4).
 
 ## Tester feedback (2026-11-25)
 

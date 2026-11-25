@@ -560,6 +560,7 @@
       <label>Version log</label>
       <div>Now on version <span id="version"></span></div>
       <ul>
+        <li><b>2.3.0</b> Hired jobs offer five harder questions (🏆 Harder questions). Answer all five first time to win a job trophy: a small spinning 3-D object for the job. It goes in the bag, so any house can show it. Job questions now live in bank/jobs_round1.json.</li>
         <li><b>2.2.5</b> Job questions checked and corrected: one question had two right answers, a few tips were wrong or unclear, and one job person had a food for a name.</li>
         <li><b>2.2.4</b> Every job has steps now (37 jobs). Finishing a job pays a first day's wages (🪙 10). Outside things can be put on from the room view: tap a wall. A window on a wall shows from outside. Two more moving things: a rocking horse and a pinwheel.</li>
         <li><b>2.2.3</b> Every job card has a 🔊 Listen button with a spoken description (Kokoro voice, made with tools/make_audio.py).</li>
@@ -619,7 +620,7 @@
   <script src="people.js"></script>
   <script>
     // ---- Places, rooms and players. Edit these lists to change the game. ----
-    const VERSION = '2.2.5';
+    const VERSION = '2.3.0';
     // A place is a little world (ground) with one or more rooms. A room has a look (theme) and the things it needs.
     // cx, cz: where the room sits on the island; y: how high its floor is (the treehouse is up a tree).
     // The things are in models.js (ITEMS).
@@ -1365,7 +1366,8 @@
         body.append(choiceBtn('🔊 Listen', () => {
           try { const a = new Audio('audio/jobs/' + job.id + '.mp3'); a.play().catch(() => {}); } catch (e) { /* no audio */ }
         }));
-        if (S) body.append(choiceBtn('✅ Apply', () => { v.stage = 'learn'; v.i = 0; renderJobs(); }));
+        if (hired.includes(job.id) && S) body.append(harderBtn(v, job));
+        else if (S) body.append(choiceBtn('✅ Apply', () => { v.stage = 'learn'; v.i = 0; renderJobs(); }));
         else body.append(el('p', '', 'The steps for this job are not written yet. Coming later.'));
       } else if (v.stage === 'learn') {
         const page = S.learn[v.i];
@@ -1416,15 +1418,42 @@
           v.stage = 'hired'; v.hint = ''; renderJobs();
         })));
         body.append(el('p', 'feedback', v.hint || ''));
+      } else if (v.stage === 'harder') {
+        // Harder questions: optional, after the job is finished. Five in a row (first try each) win the job's trophy.
+        const Q = S.harder[v.i];
+        body.append(el('p', 'bank', `Harder question ${v.i + 1} of ${S.harder.length}`));
+        body.append(el('p', 'question', Q.q));
+        Q.choices.forEach(c => body.append(choiceBtn(c, () => {
+          if (c !== Q.a) { v.hint = 'Not that one. Try another.'; renderJobs(); return; }
+          v.i++;
+          v.hint = 'Right! ' + Q.why;
+          if (v.i >= S.harder.length) { v.stage = 'trophy'; v.hint = ''; }
+          renderJobs();
+        })));
+        body.append(el('p', 'feedback', v.hint || ''));
+      } else if (v.stage === 'trophy') {
+        const tid = 'trophy-' + job.id;
+        if (!bag.includes(tid)) { addToBag(tid); fanfare(); }
+        body.append(el('span', 'bigEmoji', '🏆'), el('p', '', `You won the ${ITEMS[tid].label}! It is in the bag, so you can put it in any house.`));
+        body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
+        renderBank();
+        return;
       } else if (v.stage === 'hired') {
         if (!hired.includes(job.id)) { hired.push(job.id); credits += JOB_WAGE; saveGame(); fanfare(); }
         body.append(el('span', 'bigEmoji', '⭐'), el('p', '', `Hired! You are now a ${job.name.toLowerCase()}.`), el('p', 'feedback', `Your first day's pay: 🪙 ${JOB_WAGE}`));
+        if (S) body.append(harderBtn(v, job));
         body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
         renderBank();
         return;
       }
       body.append(choiceBtn('⬅ Back to the job board', () => { jobView = null; renderJobs(); }));
       renderBank();
+    }
+
+    // The harder-questions button for a hired job; once the trophy is in the bag, it says so
+    function harderBtn(v, job) {
+      if (bag.includes('trophy-' + job.id)) return el('p', 'feedback', `🏆 You won the ${ITEMS['trophy-' + job.id].label}. Find it in the bag.`);
+      return choiceBtn('🏆 Harder questions (5)', () => { v.stage = 'harder'; v.i = 0; v.hint = ''; renderJobs(); });
     }
 
     const LOCK_HINT = { shops: 'Finish the first place to open', jobs: 'Finish all the places to open' };

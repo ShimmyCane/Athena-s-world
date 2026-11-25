@@ -1,0 +1,4151 @@
+{
+  "bank": "Get a job: questions for each job (round 1)",
+  "version": 1,
+  "note": "learn pages, quiz and challenge from the first round; harder: five optional questions after a job is finished, which unlock the job trophy",
+  "jobs": {
+    "architect": {
+      "learn": [
+        {
+          "emoji": "📐",
+          "text": "Architects draw plans. A plan is a picture from above that shows where every wall, door and window goes."
+        },
+        {
+          "emoji": "📏",
+          "text": "Architects measure first. They check how big a room is and where the sun comes in, before they draw anything."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does an architect draw?",
+          "choices": [
+            "A plan",
+            "A song",
+            "A cake"
+          ],
+          "a": "A plan"
+        },
+        {
+          "q": "Why do architects measure first?",
+          "choices": [
+            "To know how big things are",
+            "To find fish",
+            "To make music"
+          ],
+          "a": "To know how big things are"
+        },
+        {
+          "q": "What does a plan show?",
+          "choices": [
+            "Where the walls and windows go",
+            "What the weather is",
+            "What to eat"
+          ],
+          "a": "Where the walls and windows go"
+        }
+      ],
+      "challenge": {
+        "scene": "A family wants a window in the kitchen, but the wall is short.",
+        "question": "Ask someone who builds houses: what are some ways to solve this?",
+        "choices": [
+          "Make the window smaller",
+          "Move the window up a little",
+          "Choose a different wall"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: where should the bed go in the plan, so it does not block the door?",
+        "choices": [
+          "Next to the wall, away from the door",
+          "In front of the door",
+          "In the middle of the doorway"
+        ],
+        "a": "Next to the wall, away from the door"
+      },
+      "harder": [
+        {
+          "q": "A client wants a bigger kitchen, but the house has only one small space for it. What should an architect do first?",
+          "choices": [
+            "Measure the space and draw two plan ideas",
+            "Tell the client to find a different house",
+            "Knock down the walls without a plan"
+          ],
+          "a": "Measure the space and draw two plan ideas",
+          "why": "Measuring and drawing ideas show what will fit before any building starts."
+        },
+        {
+          "q": "Why do architects draw a plan from above?",
+          "choices": [
+            "So the house can fly",
+            "So everyone can see where every wall, door and window goes",
+            "So the plan is pretty on the wall"
+          ],
+          "a": "So everyone can see where every wall, door and window goes",
+          "why": "A plan from above shows the whole layout at once."
+        },
+        {
+          "q": "A plan shows a wardrobe blocking a window. What is the best fix?",
+          "choices": [
+            "Move the wardrobe to a wall with no window",
+            "Take the window off the plan",
+            "Paint the window black"
+          ],
+          "a": "Move the wardrobe to a wall with no window",
+          "why": "Light and a view matter, so the furniture moves, not the window."
+        },
+        {
+          "q": "Two rooms in a plan are very dark. What could an architect change?",
+          "choices": [
+            "Put the rooms underground",
+            "Make the windows bigger or add a window facing the sun",
+            "Make the rooms smaller"
+          ],
+          "a": "Make the windows bigger or add a window facing the sun",
+          "why": "Windows let in daylight, so bigger or better-placed windows help."
+        },
+        {
+          "q": "A builder says a wall in the plan is too thin to hold up the floor above. What should the architect do?",
+          "choices": [
+            "Check the drawing and make the wall thicker or add support",
+            "Take the floor out of the plan",
+            "Ignore the builder"
+          ],
+          "a": "Check the drawing and make the wall thicker or add support",
+          "why": "Architects check strength with builders before work starts."
+        }
+      ]
+    },
+    "pilot": {
+      "learn": [
+        {
+          "emoji": "🛫",
+          "text": "Pilots fly planes. Before take-off they check the plane and the weather."
+        },
+        {
+          "emoji": "🗼",
+          "text": "Pilots talk to air traffic control. They help planes stay apart and land safely."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do pilots check before take-off?",
+          "choices": [
+            "The plane and the weather",
+            "The cake",
+            "The bus times"
+          ],
+          "a": "The plane and the weather"
+        },
+        {
+          "q": "Who helps planes stay apart?",
+          "choices": [
+            "Air traffic control",
+            "The baker",
+            "The librarian"
+          ],
+          "a": "Air traffic control"
+        },
+        {
+          "q": "Where do pilots sit?",
+          "choices": [
+            "In the cockpit",
+            "In the cabin with the seats",
+            "On the wing"
+          ],
+          "a": "In the cockpit"
+        }
+      ],
+      "challenge": {
+        "scene": "The airport is very foggy, and the plane cannot see the runway well.",
+        "question": "Ask a pilot: what are some ways the plane could still land safely?",
+        "choices": [
+          "Use the instruments to see the way down",
+          "Fly straight at the ground and hope",
+          "Wait for the fog to be a different colour"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: which of these should a pilot check before take-off?",
+        "choices": [
+          "The fuel",
+          "Whether the cake is tasty",
+          "The bus times"
+        ],
+        "a": "The fuel"
+      },
+      "harder": [
+        {
+          "q": "Fog covers the runway. What tool helps a pilot find the way down?",
+          "choices": [
+            "A map of the shops",
+            "A torch held out of the window",
+            "The instruments in the cockpit"
+          ],
+          "a": "The instruments in the cockpit",
+          "why": "Instruments show height and direction when the view is poor."
+        },
+        {
+          "q": "Why do pilots talk to air traffic control?",
+          "choices": [
+            "To ask about the weather in other countries only",
+            "To tell jokes",
+            "To get permission and stay safely apart from other planes"
+          ],
+          "a": "To get permission and stay safely apart from other planes",
+          "why": "Air traffic control keeps planes apart and guides them."
+        },
+        {
+          "q": "An engine warning light comes on during a flight. What should the pilot do?",
+          "choices": [
+            "Ignore it until landing",
+            "Follow the checklist and tell air traffic control",
+            "Turn off all the lights and hope"
+          ],
+          "a": "Follow the checklist and tell air traffic control",
+          "why": "Checklists and reporting keep everyone safe."
+        },
+        {
+          "q": "Why do pilots check the fuel before a flight?",
+          "choices": [
+            "To make the plane lighter for fun",
+            "To be sure there is enough to reach the destination",
+            "To choose the paint colour"
+          ],
+          "a": "To be sure there is enough to reach the destination",
+          "why": "The plane needs enough fuel for the whole journey."
+        },
+        {
+          "q": "The wind is strong at the airport. What helps the plane land?",
+          "choices": [
+            "Landing into the wind",
+            "Landing without checking the wind",
+            "Landing with the wind behind"
+          ],
+          "a": "Landing into the wind",
+          "why": "Landing into the wind slows the plane down and makes landing easier."
+        }
+      ]
+    },
+    "artist": {
+      "learn": [
+        {
+          "emoji": "🎨",
+          "text": "Artists make pictures to show feelings and ideas."
+        },
+        {
+          "emoji": "🖌️",
+          "text": "Artists mix colours. Mixing yellow and blue makes green."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What colour do you get from red and yellow?",
+          "choices": [
+            "Orange",
+            "Purple",
+            "Brown"
+          ],
+          "a": "Orange"
+        },
+        {
+          "q": "What do artists use to paint?",
+          "choices": [
+            "A brush",
+            "A spoon",
+            "A ball"
+          ],
+          "a": "A brush"
+        },
+        {
+          "q": "Why do artists make pictures?",
+          "choices": [
+            "To show feelings and ideas",
+            "To count the stars",
+            "To fix cars"
+          ],
+          "a": "To show feelings and ideas"
+        }
+      ],
+      "challenge": {
+        "scene": "You only have blue and yellow paint, and you want to paint a tree.",
+        "question": "Ask an artist: what could you make, and how?",
+        "choices": [
+          "Mix the blue and yellow to make green",
+          "Paint with only blue",
+          "Use no paint at all"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: which mix makes green?",
+        "choices": [
+          "Blue and yellow",
+          "Red and blue",
+          "Red and yellow"
+        ],
+        "a": "Blue and yellow"
+      },
+      "harder": [
+        {
+          "q": "A painting looks flat. What could an artist add to make it look deeper?",
+          "choices": [
+            "Darker colours in the back and lighter ones in front",
+            "More white over everything",
+            "Only one colour"
+          ],
+          "a": "Darker colours in the back and lighter ones in front",
+          "why": "Dark and light shades make things look near or far away."
+        },
+        {
+          "q": "Why do artists look at a real object before painting it?",
+          "choices": [
+            "To count the leaves only",
+            "To hide the object",
+            "To see the shapes, shadows and colours clearly"
+          ],
+          "a": "To see the shapes, shadows and colours clearly",
+          "why": "Looking closely helps the picture look real or true to what the artist sees."
+        },
+        {
+          "q": "An artist wants a calm picture. Which colours would help?",
+          "choices": [
+            "Bright red and yellow stripes",
+            "Soft blues and greens",
+            "Black and purple"
+          ],
+          "a": "Soft blues and greens",
+          "why": "Cool, soft colours feel calm."
+        },
+        {
+          "q": "Why do artists sketch before painting?",
+          "choices": [
+            "To use up the paper",
+            "To plan the picture and try ideas",
+            "To make the paint wet"
+          ],
+          "a": "To plan the picture and try ideas",
+          "why": "A sketch lets the artist test ideas before the real painting."
+        },
+        {
+          "q": "A painting has too much red in one corner. What could help balance it?",
+          "choices": [
+            "Remove the corner with scissors",
+            "Paint over it all in red",
+            "Add a cooler colour or a shape on the other side"
+          ],
+          "a": "Add a cooler colour or a shape on the other side",
+          "why": "Balancing colours and shapes makes a picture feel even."
+        }
+      ]
+    },
+    "flight-attendant": {
+      "learn": [
+        {
+          "emoji": "✈️",
+          "text": "Flight attendants look after everyone on a plane. They say hello and show people their seats."
+        },
+        {
+          "emoji": "🦺",
+          "text": "They show how to buckle a seat belt and where the exits are. They know what to do if something goes wrong."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do flight attendants show people?",
+          "choices": [
+            "How to buckle a seat belt",
+            "How to bake a cake",
+            "How to ride a bike"
+          ],
+          "a": "How to buckle a seat belt"
+        },
+        {
+          "q": "Who looks after everyone on the plane?",
+          "choices": [
+            "The flight attendants",
+            "The bakers",
+            "The gardeners"
+          ],
+          "a": "The flight attendants"
+        },
+        {
+          "q": "What do they know about the exits?",
+          "choices": [
+            "Where they are",
+            "What colour they are",
+            "How to sing them"
+          ],
+          "a": "Where they are"
+        }
+      ],
+      "challenge": {
+        "scene": "A child on the plane is feeling worried about the bumpy ride.",
+        "question": "Ask a flight attendant: what are some ways to help them feel calm?",
+        "choices": [
+          "Sit with them and talk about something fun",
+          "Tell them to stop being scared",
+          "Turn the lights off and leave them alone"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a flight attendant do before take-off?",
+        "choices": [
+          "Check that every seat belt is fastened",
+          "Start cooking dinner",
+          "Water the plants"
+        ],
+        "a": "Check that every seat belt is fastened"
+      },
+      "harder": [
+        {
+          "q": "A passenger asks how to get out in an emergency. What is the best way to help?",
+          "choices": [
+            "Tell them to look for it themselves",
+            "Point to the exits and show the nearest one",
+            "Tell them to hide in the toilet"
+          ],
+          "a": "Point to the exits and show the nearest one",
+          "why": "Showing the nearest exit is quick and clear."
+        },
+        {
+          "q": "A drink cart is in the aisle when the plane starts to shake. What should the flight attendant do?",
+          "choices": [
+            "Keep serving drinks",
+            "Make the cart safe and sit down with a seat belt on",
+            "Hold the cart up while standing"
+          ],
+          "a": "Make the cart safe and sit down with a seat belt on",
+          "why": "Safety first: secure the cart and sit down."
+        },
+        {
+          "q": "A child has lost a toy on the plane. What should the flight attendant do?",
+          "choices": [
+            "Tell the child to find another plane",
+            "Help look for it and keep the child calm",
+            "Say it is not their problem"
+          ],
+          "a": "Help look for it and keep the child calm",
+          "why": "Helping and calming the child is the kind thing to do."
+        },
+        {
+          "q": "Why does a flight attendant count the people on the plane?",
+          "choices": [
+            "To check everyone is safe and seated before take-off",
+            "To order the snacks",
+            "To choose the best seat"
+          ],
+          "a": "To check everyone is safe and seated before take-off",
+          "why": "Everyone must be seated and belted before the plane moves."
+        },
+        {
+          "q": "A passenger is sick and feels dizzy. What should the flight attendant do first?",
+          "choices": [
+            "Ask them to stand up and walk",
+            "Tell the crew and help them sit or lie down",
+            "Give them a big meal"
+          ],
+          "a": "Tell the crew and help them sit or lie down",
+          "why": "Sitting or lying down and telling the crew keeps them safe."
+        }
+      ]
+    },
+    "dancer": {
+      "learn": [
+        {
+          "emoji": "💃",
+          "text": "Dancers move to music. They use their arms, legs and whole body to tell a story."
+        },
+        {
+          "emoji": "🩰",
+          "text": "Dancers practise the same moves again and again until they feel easy and strong."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do dancers move to?",
+          "choices": [
+            "Music",
+            "Rain",
+            "Cars"
+          ],
+          "a": "Music"
+        },
+        {
+          "q": "What do dancers use to tell a story?",
+          "choices": [
+            "Their body",
+            "A spoon",
+            "A map"
+          ],
+          "a": "Their body"
+        },
+        {
+          "q": "How do dancers get good at a move?",
+          "choices": [
+            "They practise it again and again",
+            "They never try",
+            "They wait for it to happen"
+          ],
+          "a": "They practise it again and again"
+        }
+      ],
+      "challenge": {
+        "scene": "A dance is about a sad day, but the music is very happy.",
+        "question": "Ask a dancer: what are some ways to show a sad story with your body?",
+        "choices": [
+          "Move slowly and let your arms droop",
+          "Jump as high as you can",
+          "Stand still and smile"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: which move would show a happy feeling?",
+        "choices": [
+          "Spinning round with your arms up",
+          "Lying down very still",
+          "Hiding behind a chair"
+        ],
+        "a": "Spinning round with your arms up"
+      },
+      "harder": [
+        {
+          "q": "A dancer forgets a move during a show. What is the best thing to do?",
+          "choices": [
+            "Keep moving to the music and follow the others",
+            "Stop and walk off the stage",
+            "Shout at the music"
+          ],
+          "a": "Keep moving to the music and follow the others",
+          "why": "Keeping the rhythm and following the group keeps the show going."
+        },
+        {
+          "q": "A dance should show a storm. Which move shows that best?",
+          "choices": [
+            "Fast, twirling moves with arms flapping",
+            "Lying still on the floor",
+            "Slow hand waves"
+          ],
+          "a": "Fast, twirling moves with arms flapping",
+          "why": "Fast, wild movement suggests wind and rain."
+        },
+        {
+          "q": "How does a dancer warm up before a show?",
+          "choices": [
+            "Stretch the body slowly and move the joints",
+            "Sit down and eat a big meal",
+            "Run as fast as possible without stretching"
+          ],
+          "a": "Stretch the body slowly and move the joints",
+          "why": "Gentle stretching warms the muscles and helps prevent injury."
+        },
+        {
+          "q": "Two dancers are out of step. What helps them stay together?",
+          "choices": [
+            "Each dance at their own speed",
+            "Dance with their eyes closed and no music",
+            "Count the beats together and watch each other"
+          ],
+          "a": "Count the beats together and watch each other",
+          "why": "Counting and watching keep the group in time."
+        },
+        {
+          "q": "A dancer feels nervous before going on stage. What might help?",
+          "choices": [
+            "Eat a big meal just before",
+            "Skip the show",
+            "Take slow deep breaths and remember the first move"
+          ],
+          "a": "Take slow deep breaths and remember the first move",
+          "why": "Slow breathing and a clear start calm nerves."
+        }
+      ]
+    },
+    "singer": {
+      "learn": [
+        {
+          "emoji": "🎤",
+          "text": "Singers sing songs with their voice. They breathe deep so the song can be heard."
+        },
+        {
+          "emoji": "🎶",
+          "text": "Singers learn the words and the tune. They practise until they can sing them clearly."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do singers use to make a song?",
+          "choices": [
+            "Their voice",
+            "A hammer",
+            "A plate"
+          ],
+          "a": "Their voice"
+        },
+        {
+          "q": "What helps a singer be heard?",
+          "choices": [
+            "Breathing deep",
+            "Whispering very quietly",
+            "Covering their mouth"
+          ],
+          "a": "Breathing deep"
+        },
+        {
+          "q": "What do singers learn first?",
+          "choices": [
+            "The words and the tune",
+            "How to drive",
+            "How to swim"
+          ],
+          "a": "The words and the tune"
+        }
+      ],
+      "challenge": {
+        "scene": "The audience is far away at the back of a big hall.",
+        "question": "Ask a singer: what are some ways to make sure everyone can hear you?",
+        "choices": [
+          "Sing with a strong breath and face the back",
+          "Sing very softly",
+          "Sing with your eyes closed and sit down"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what helps a singer sing a long note?",
+        "choices": [
+          "A big, steady breath",
+          "Holding the breath for no reason",
+          "Talking instead of singing"
+        ],
+        "a": "A big, steady breath"
+      },
+      "harder": [
+        {
+          "q": "A singer's voice goes hoarse before a concert. What should they do?",
+          "choices": [
+            "Sing all night to get used to it",
+            "Rest their voice and drink water",
+            "Shout the song louder"
+          ],
+          "a": "Rest their voice and drink water",
+          "why": "Rest and water help the voice recover; straining it makes things worse."
+        },
+        {
+          "q": "What helps a singer stay in tune?",
+          "choices": [
+            "Listening carefully and matching the note",
+            "Changing the words as they go",
+            "Singing as loud as possible"
+          ],
+          "a": "Listening carefully and matching the note",
+          "why": "Listening to the note and matching it keeps the voice in tune."
+        },
+        {
+          "q": "A song is too high to reach. What is a good idea?",
+          "choices": [
+            "Squeeze the voice higher and strain",
+            "Sing it in a lower key",
+            "Shout the note instead of singing it"
+          ],
+          "a": "Sing it in a lower key",
+          "why": "Singing lower keeps the voice relaxed and healthy."
+        },
+        {
+          "q": "Why do singers warm up with gentle humming?",
+          "choices": [
+            "It makes the voice louder straight away",
+            "It makes the audience sleepy",
+            "It wakes up the voice slowly before singing"
+          ],
+          "a": "It wakes up the voice slowly before singing",
+          "why": "Humming warms the voice gently and reduces strain."
+        },
+        {
+          "q": "A crowd can't hear the singer. What should the singer do?",
+          "choices": [
+            "Whisper even quieter",
+            "Turn their back to the crowd",
+            "Stand closer to the microphone and breathe from the belly"
+          ],
+          "a": "Stand closer to the microphone and breathe from the belly",
+          "why": "Good breath support and a close microphone make the voice carry."
+        }
+      ]
+    },
+    "builder": {
+      "learn": [
+        {
+          "emoji": "🧱",
+          "text": "Builders put up walls, roofs and floors. They use bricks, wood and strong nails."
+        },
+        {
+          "emoji": "📐",
+          "text": "Builders check that each wall stands straight, using a long tool with a bubble in it."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do builders put up?",
+          "choices": [
+            "Walls, roofs and floors",
+            "Clouds",
+            "Waves"
+          ],
+          "a": "Walls, roofs and floors"
+        },
+        {
+          "q": "What tool shows if a wall is straight?",
+          "choices": [
+            "A spirit level",
+            "A paintbrush",
+            "A teapot"
+          ],
+          "a": "A spirit level"
+        },
+        {
+          "q": "What do builders use to join wood?",
+          "choices": [
+            "Strong nails",
+            "Cotton wool",
+            "Jelly"
+          ],
+          "a": "Strong nails"
+        }
+      ],
+      "challenge": {
+        "scene": "The wall you are building is leaning a little to one side.",
+        "question": "Ask a builder: what are some ways to fix a wall that leans?",
+        "choices": [
+          "Check it with a level and move the bricks back",
+          "Paint it so no one can see",
+          "Build the next wall on top of it anyway"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a builder check before the roof goes on?",
+        "choices": [
+          "That the walls are straight and strong",
+          "What colour the roof is",
+          "Whether it is raining"
+        ],
+        "a": "That the walls are straight and strong"
+      },
+      "harder": [
+        {
+          "q": "A builder needs to lift a heavy beam. What is the safest way?",
+          "choices": [
+            "Drop it onto the floor",
+            "Lift it alone with a straight back",
+            "Use a crane or ask others to help and bend the knees"
+          ],
+          "a": "Use a crane or ask others to help and bend the knees",
+          "why": "Lifting with help and proper tools protects everyone."
+        },
+        {
+          "q": "Why do builders wear a hard hat?",
+          "choices": [
+            "To look taller",
+            "To protect the head from falling things",
+            "To keep the sun off"
+          ],
+          "a": "To protect the head from falling things",
+          "why": "Hard hats protect against things that fall on a site."
+        },
+        {
+          "q": "A floor has a sag in the middle. What could fix it?",
+          "choices": [
+            "Put more weight on it",
+            "Paint over the sag",
+            "Add a support beam under the middle"
+          ],
+          "a": "Add a support beam under the middle",
+          "why": "A support beam stops the middle sinking."
+        },
+        {
+          "q": "Which tool checks that a shelf is flat?",
+          "choices": [
+            "A spirit level",
+            "A teaspoon",
+            "A paint roller"
+          ],
+          "a": "A spirit level",
+          "why": "A spirit level shows if a surface is level."
+        },
+        {
+          "q": "Before digging a hole, what should the builder check first?",
+          "choices": [
+            "Where the pipes and cables are underground",
+            "How deep the sea is",
+            "What colour the spade is"
+          ],
+          "a": "Where the pipes and cables are underground",
+          "why": "Hitting a pipe or cable can be dangerous, so the builder checks first."
+        }
+      ]
+    },
+    "doctor": {
+      "learn": [
+        {
+          "emoji": "🩺",
+          "text": "Doctors check people who are sick. They listen to the heart and look in the ears."
+        },
+        {
+          "emoji": "💊",
+          "text": "Doctors decide how to help people get better. Sometimes that means rest, and sometimes medicine."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does a doctor listen to?",
+          "choices": [
+            "The heart",
+            "The rain",
+            "The radio"
+          ],
+          "a": "The heart"
+        },
+        {
+          "q": "What does a doctor do when someone is sick?",
+          "choices": [
+            "Checks them to help them get better",
+            "Sells them a car",
+            "Teaches them to sing"
+          ],
+          "a": "Checks them to help them get better"
+        },
+        {
+          "q": "What can help a person get better?",
+          "choices": [
+            "Rest or medicine",
+            "Eating paper",
+            "Staying up all night"
+          ],
+          "a": "Rest or medicine"
+        }
+      ],
+      "challenge": {
+        "scene": "A friend has a tummy ache and does not want to eat.",
+        "question": "Ask a doctor: what are some ways to help a friend feel better?",
+        "choices": [
+          "Let them rest and tell a grown-up",
+          "Make them run around",
+          "Say it is nothing and ignore them"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what does a doctor use to listen to a heartbeat?",
+        "choices": [
+          "A stethoscope",
+          "A spoon",
+          "A shoe"
+        ],
+        "a": "A stethoscope"
+      },
+      "harder": [
+        {
+          "q": "A patient has a fever and a sore throat. What should a doctor do first?",
+          "choices": [
+            "Send them home without a check",
+            "Check the temperature and look at the throat and chest",
+            "Give them sweets only"
+          ],
+          "a": "Check the temperature and look at the throat and chest",
+          "why": "A check shows what is going on before any treatment."
+        },
+        {
+          "q": "Why does a doctor ask questions about how you feel?",
+          "choices": [
+            "To pass the time",
+            "To understand what is wrong and how to help",
+            "To choose a holiday"
+          ],
+          "a": "To understand what is wrong and how to help",
+          "why": "Your answers help the doctor find the right help."
+        },
+        {
+          "q": "A child needs medicine. What is most important?",
+          "choices": [
+            "Give it to whoever is closest",
+            "Give the right amount at the right time",
+            "Give as much as possible"
+          ],
+          "a": "Give the right amount at the right time",
+          "why": "The right dose at the right time keeps the child safe."
+        },
+        {
+          "q": "Why does a doctor wash their hands before a check?",
+          "choices": [
+            "To stop germs spreading",
+            "To make the hands smell nice",
+            "To get paint off"
+          ],
+          "a": "To stop germs spreading",
+          "why": "Clean hands stop germs moving from one person to another."
+        },
+        {
+          "q": "A patient is very worried about a check. What helps most?",
+          "choices": [
+            "Tell them to be quiet",
+            "Explain what will happen and answer their questions",
+            "Do the check quickly without speaking"
+          ],
+          "a": "Explain what will happen and answer their questions",
+          "why": "Explaining makes a scary check feel safer."
+        }
+      ]
+    },
+    "nurse": {
+      "learn": [
+        {
+          "emoji": "🩹",
+          "text": "Nurses look after patients in hospital. They check their temperature and give them their medicine."
+        },
+        {
+          "emoji": "🛏️",
+          "text": "Nurses help doctors. They keep the beds clean and make sure patients are comfortable."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Where do nurses look after patients?",
+          "choices": [
+            "In hospital",
+            "In a bakery",
+            "On a farm"
+          ],
+          "a": "In hospital"
+        },
+        {
+          "q": "What do nurses check?",
+          "choices": [
+            "Temperature",
+            "The weather",
+            "Football scores"
+          ],
+          "a": "Temperature"
+        },
+        {
+          "q": "Who do nurses help?",
+          "choices": [
+            "Doctors",
+            "Pirates",
+            "Bus drivers only"
+          ],
+          "a": "Doctors"
+        }
+      ],
+      "challenge": {
+        "scene": "A patient is scared of the needle.",
+        "question": "Ask a nurse: what are some ways to help the patient feel brave?",
+        "choices": [
+          "Explain each step and hold their hand",
+          "Do it quickly without a word",
+          "Tell them to look away and not ask"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a nurse do before giving medicine?",
+        "choices": [
+          "Check the name and the dose",
+          "Guess how much to give",
+          "Give it to the nearest person"
+        ],
+        "a": "Check the name and the dose"
+      },
+      "harder": [
+        {
+          "q": "A patient's temperature is higher than normal. What should the nurse do?",
+          "choices": [
+            "Write it down and tell the doctor",
+            "Ignore it until morning",
+            "Turn the heater up"
+          ],
+          "a": "Write it down and tell the doctor",
+          "why": "A high temperature needs to be recorded and reported."
+        },
+        {
+          "q": "What is the most important thing before giving medicine?",
+          "choices": [
+            "Mix it with juice",
+            "Ask the nearest visitor",
+            "Check the patient's name and the medicine label"
+          ],
+          "a": "Check the patient's name and the medicine label",
+          "why": "Checking the name and label stops the wrong medicine going to the wrong person."
+        },
+        {
+          "q": "A patient asks for a drink, but the doctor has not said they can have one. What should the nurse do?",
+          "choices": [
+            "Explain why and offer a damp cloth for the lips, if the doctor agrees",
+            "Give them a big glass anyway",
+            "Ignore them"
+          ],
+          "a": "Explain why and offer a damp cloth for the lips, if the doctor agrees",
+          "why": "Some patients must wait, and the nurse explains kindly and checks first."
+        },
+        {
+          "q": "Why do nurses change bandages?",
+          "choices": [
+            "To keep the wound clean and help it heal",
+            "To decorate it",
+            "To make it look bigger"
+          ],
+          "a": "To keep the wound clean and help it heal",
+          "why": "Clean dressings stop infection and help healing."
+        },
+        {
+          "q": "A patient is lonely at night. What can the nurse do?",
+          "choices": [
+            "Turn off the lights and leave",
+            "Sit with them for a moment and talk kindly",
+            "Tell them to be quiet"
+          ],
+          "a": "Sit with them for a moment and talk kindly",
+          "why": "Kind company helps patients feel safe."
+        }
+      ]
+    },
+    "veterinarian": {
+      "learn": [
+        {
+          "emoji": "🐾",
+          "text": "Vets help sick and hurt animals. They check dogs, cats, birds and even hamsters."
+        },
+        {
+          "emoji": "🩺",
+          "text": "Vets are gentle. They talk softly and check each animal carefully before they give any medicine."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who do vets help?",
+          "choices": [
+            "Sick and hurt animals",
+            "Sick cars",
+            "Lost shoes"
+          ],
+          "a": "Sick and hurt animals"
+        },
+        {
+          "q": "How do vets treat animals?",
+          "choices": [
+            "Gently and carefully",
+            "Roughly and quickly",
+            "With a loud voice"
+          ],
+          "a": "Gently and carefully"
+        },
+        {
+          "q": "What do vets check before medicine?",
+          "choices": [
+            "Each animal carefully",
+            "The weather",
+            "The shop prices"
+          ],
+          "a": "Each animal carefully"
+        }
+      ],
+      "challenge": {
+        "scene": "A puppy has hurt its paw and keeps trying to run away.",
+        "question": "Ask a vet: what are some ways to help the puppy stay calm?",
+        "choices": [
+          "Speak softly and hold the puppy gently",
+          "Chase the puppy around the room",
+          "Put the puppy in a box and shout"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: how should a vet hold a hurt bird?",
+        "choices": [
+          "Gently, with both hands",
+          "Tightly in one fist",
+          "Upside down"
+        ],
+        "a": "Gently, with both hands"
+      },
+      "harder": [
+        {
+          "q": "A dog eats chocolate. What should the vet tell the owner?",
+          "choices": [
+            "Chocolate is good for dogs",
+            "Call the vet straight away, chocolate can make dogs very ill",
+            "Wait and see for a week"
+          ],
+          "a": "Call the vet straight away, chocolate can make dogs very ill",
+          "why": "Chocolate is toxic to dogs, so a quick call to the vet is vital."
+        },
+        {
+          "q": "A cat won't eat for two days. What is the best next step?",
+          "choices": [
+            "Take it to the vet for a check",
+            "Give it lots of fish and wait a month",
+            "Put it outside to see what happens"
+          ],
+          "a": "Take it to the vet for a check",
+          "why": "A cat that stops eating needs a check to find out why."
+        },
+        {
+          "q": "Why do vets check an animal's weight?",
+          "choices": [
+            "To find out its colour",
+            "To decide its name",
+            "To see if it is healthy and eating enough"
+          ],
+          "a": "To see if it is healthy and eating enough",
+          "why": "Weight shows whether the animal is growing well or losing weight."
+        },
+        {
+          "q": "A rabbit's teeth are growing too long. What helps?",
+          "choices": [
+            "A vet trims them, and the rabbit gets hay to chew",
+            "Let them grow forever",
+            "Give it hard sweets to chew"
+          ],
+          "a": "A vet trims them, and the rabbit gets hay to chew",
+          "why": "Hay helps wear the teeth down, and a vet can trim them safely."
+        },
+        {
+          "q": "How should a vet talk to a scared animal?",
+          "choices": [
+            "They should not talk at all",
+            "Loudly and quickly",
+            "Softly and slowly"
+          ],
+          "a": "Softly and slowly",
+          "why": "A calm voice helps an animal trust the person."
+        }
+      ]
+    },
+    "teacher": {
+      "learn": [
+        {
+          "emoji": "🍎",
+          "text": "Teachers help children learn to read, count and write. They make lessons fun."
+        },
+        {
+          "emoji": "🤝",
+          "text": "Teachers help children make friends and feel safe. They listen when someone is worried."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do teachers help children learn?",
+          "choices": [
+            "To read, count and write",
+            "To fly planes",
+            "To cook soup"
+          ],
+          "a": "To read, count and write"
+        },
+        {
+          "q": "How do teachers make lessons?",
+          "choices": [
+            "Fun",
+            "Very boring",
+            "Quiet all day"
+          ],
+          "a": "Fun"
+        },
+        {
+          "q": "What do teachers do when a child is worried?",
+          "choices": [
+            "Listen and help",
+            "Ignore them",
+            "Send them outside alone"
+          ],
+          "a": "Listen and help"
+        }
+      ],
+      "challenge": {
+        "scene": "A child in the class finds counting very hard and feels sad.",
+        "question": "Ask a teacher: what are some ways to help them feel better about counting?",
+        "choices": [
+          "Use counters or toys and praise each step",
+          "Tell them they are no good at it",
+          "Give them harder sums straight away"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: a child has 2 apples and gets 3 more. How many apples now?",
+        "choices": [
+          "5",
+          "4",
+          "6"
+        ],
+        "a": "5"
+      },
+      "harder": [
+        {
+          "q": "A child is shy and does not want to read aloud. What helps?",
+          "choices": [
+            "Let them practise first or read to a friend",
+            "Make them read to the whole class at once",
+            "Tell them to stop reading"
+          ],
+          "a": "Let them practise first or read to a friend",
+          "why": "Practice and a safe audience build confidence step by step."
+        },
+        {
+          "q": "Why do teachers use praise?",
+          "choices": [
+            "It hides the answers",
+            "It makes lessons longer",
+            "It makes children want to keep trying"
+          ],
+          "a": "It makes children want to keep trying",
+          "why": "Praise for effort encourages children to keep going."
+        },
+        {
+          "q": "Two children keep arguing at play time. What should a teacher do?",
+          "choices": [
+            "Send them both out forever",
+            "Help them say how each feels and agree on a fix",
+            "Tell them the argument does not matter"
+          ],
+          "a": "Help them say how each feels and agree on a fix",
+          "why": "Talking it through teaches children to solve problems together."
+        },
+        {
+          "q": "A child gets a sum wrong. What is the best next step?",
+          "choices": [
+            "Tell them they are bad at maths",
+            "Give them the answer and move on",
+            "Look at what they did and show them the next step"
+          ],
+          "a": "Look at what they did and show them the next step",
+          "why": "Seeing where the mistake is helps the child learn it."
+        },
+        {
+          "q": "Why do teachers plan a lesson before the day?",
+          "choices": [
+            "So the lesson is longer",
+            "So they can finish early",
+            "So the lesson moves steadily and each child can join in"
+          ],
+          "a": "So the lesson moves steadily and each child can join in",
+          "why": "A plan keeps lessons clear and gives every child a chance to learn."
+        }
+      ]
+    },
+    "firefighter": {
+      "learn": [
+        {
+          "emoji": "🚒",
+          "text": "Firefighters put out fires and help people in emergencies. They ride in a big red fire engine."
+        },
+        {
+          "emoji": "🧯",
+          "text": "Firefighters wear special clothes and helmets. They use hoses full of water to put out the fire."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do firefighters put out?",
+          "choices": [
+            "Fires",
+            "Candles on cakes",
+            "Music"
+          ],
+          "a": "Fires"
+        },
+        {
+          "q": "What do firefighters ride in?",
+          "choices": [
+            "A fire engine",
+            "A bicycle",
+            "A rowing boat"
+          ],
+          "a": "A fire engine"
+        },
+        {
+          "q": "What do firefighters use to put out a fire?",
+          "choices": [
+            "Water from hoses",
+            "Sand from a bucket only",
+            "Sweets"
+          ],
+          "a": "Water from hoses"
+        }
+      ],
+      "challenge": {
+        "scene": "There is smoke in a house, and a child is in an upstairs room.",
+        "question": "Ask a firefighter: what are some ways to get the child out safely?",
+        "choices": [
+          "Crawl low under the smoke and call out to the child",
+          "Run up the stairs through thick smoke",
+          "Wait until the smoke goes away"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should you do first if you smell smoke at home?",
+        "choices": [
+          "Tell a grown-up and get out",
+          "Go and look for the fire",
+          "Hide under the bed"
+        ],
+        "a": "Tell a grown-up and get out"
+      },
+      "harder": [
+        {
+          "q": "A fire has started in a kitchen. What should people do first?",
+          "choices": [
+            "Get out and call the fire service",
+            "Pour water on the fire",
+            "Stay and finish cooking"
+          ],
+          "a": "Get out and call the fire service",
+          "why": "Leaving quickly and calling for help keeps everyone safe."
+        },
+        {
+          "q": "Why should you never use a lift in a fire?",
+          "choices": [
+            "It is too slow",
+            "It can stop working or take you to the fire",
+            "It is too clean"
+          ],
+          "a": "It can stop working or take you to the fire",
+          "why": "A lift can fail in a fire, so the stairs are safer."
+        },
+        {
+          "q": "How should you move through smoke?",
+          "choices": [
+            "Running through the middle",
+            "Low to the floor, where the air is cleaner",
+            "Standing up and running"
+          ],
+          "a": "Low to the floor, where the air is cleaner",
+          "why": "Smoke rises, so the air is clearest near the floor."
+        },
+        {
+          "q": "A firefighter sees a car that might catch fire. What should they do?",
+          "choices": [
+            "Keep people away and call for more help",
+            "Walk up to it to see",
+            "Start the engine"
+          ],
+          "a": "Keep people away and call for more help",
+          "why": "Keeping people back and calling for help keeps everyone safer."
+        },
+        {
+          "q": "Why do firefighters practise drills?",
+          "choices": [
+            "So everyone knows what to do quickly in a real emergency",
+            "So they can nap",
+            "So the fire engine gets dirty"
+          ],
+          "a": "So everyone knows what to do quickly in a real emergency",
+          "why": "Drills make the right actions automatic when it matters."
+        }
+      ]
+    },
+    "police-officer": {
+      "learn": [
+        {
+          "emoji": "🚓",
+          "text": "Police officers keep people safe. They help find lost things and lost people."
+        },
+        {
+          "emoji": "👮",
+          "text": "Police officers listen to everyone and help them. They tell the truth and treat people fairly."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do police officers help people do?",
+          "choices": [
+            "Stay safe",
+            "Make cakes",
+            "Grow carrots"
+          ],
+          "a": "Stay safe"
+        },
+        {
+          "q": "What do police officers find?",
+          "choices": [
+            "Lost things and people",
+            "Stars",
+            "Rainbows"
+          ],
+          "a": "Lost things and people"
+        },
+        {
+          "q": "How do police officers treat people?",
+          "choices": [
+            "Fairly",
+            "Unfairly",
+            "Rudely"
+          ],
+          "a": "Fairly"
+        }
+      ],
+      "challenge": {
+        "scene": "A child has got separated from their family in a busy shop.",
+        "question": "Ask a police officer: what are some ways to help the child find their family?",
+        "choices": [
+          "Take the child to a safe place and ask for their name",
+          "Leave the child on their own",
+          "Shout to see who answers"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a lost child do?",
+        "choices": [
+          "Stay where they are and find a grown-up in uniform",
+          "Walk off to find home alone",
+          "Hide in a clothes shop"
+        ],
+        "a": "Stay where they are and find a grown-up in uniform"
+      },
+      "harder": [
+        {
+          "q": "Someone finds a wallet on the street. What should they do?",
+          "choices": [
+            "Hand it to a police station or a grown-up",
+            "Throw it in a bin",
+            "Keep it for themselves"
+          ],
+          "a": "Hand it to a police station or a grown-up",
+          "why": "Handing it in lets the owner get it back."
+        },
+        {
+          "q": "A child on a bike is not wearing a helmet near a busy road. What might a police officer do?",
+          "choices": [
+            "Shout at them in front of everyone",
+            "Talk to them kindly about safety",
+            "Ignore it"
+          ],
+          "a": "Talk to them kindly about safety",
+          "why": "Kind advice helps a child remember to stay safe."
+        },
+        {
+          "q": "Why do police officers listen to both sides in a problem?",
+          "choices": [
+            "So they understand what happened fairly",
+            "So they can decide on lunch",
+            "So the story gets longer"
+          ],
+          "a": "So they understand what happened fairly",
+          "why": "Hearing both sides helps find the truth."
+        },
+        {
+          "q": "A road is blocked by a fallen tree. What should a police officer do?",
+          "choices": [
+            "Drive around it on the pavement",
+            "Ignore it",
+            "Set up a warning and tell other drivers a different way"
+          ],
+          "a": "Set up a warning and tell other drivers a different way",
+          "why": "Warnings and a diversion keep drivers and people safe."
+        },
+        {
+          "q": "A phone call says someone is hurt. What is the right thing to do?",
+          "choices": [
+            "Wait and see if they feel better",
+            "Post it online",
+            "Call the emergency number and say where it is and what happened"
+          ],
+          "a": "Call the emergency number and say where it is and what happened",
+          "why": "Quick, clear information gets help to the right place."
+        }
+      ]
+    },
+    "chef": {
+      "learn": [
+        {
+          "emoji": "🍳",
+          "text": "Chefs cook meals in a restaurant. They chop, stir and taste to make the food right."
+        },
+        {
+          "emoji": "📝",
+          "text": "Chefs make new recipes. They try different mixes of food and keep the ones that taste best."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do chefs do to check food?",
+          "choices": [
+            "Taste it",
+            "Throw it away",
+            "Hide it"
+          ],
+          "a": "Taste it"
+        },
+        {
+          "q": "Where do chefs cook?",
+          "choices": [
+            "In a restaurant",
+            "In a library",
+            "On a train"
+          ],
+          "a": "In a restaurant"
+        },
+        {
+          "q": "What do chefs make?",
+          "choices": [
+            "New recipes",
+            "New planets",
+            "New shoes"
+          ],
+          "a": "New recipes"
+        }
+      ],
+      "challenge": {
+        "scene": "A soup is too salty, and the customers are waiting.",
+        "question": "Ask a chef: what are some ways to fix the soup?",
+        "choices": [
+          "Add water or potato to soak up some salt",
+          "Serve it anyway without a word",
+          "Add more salt to hide it"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a chef do before cooking?",
+        "choices": [
+          "Wash their hands",
+          "Play with the knives",
+          "Take off the oven door"
+        ],
+        "a": "Wash their hands"
+      },
+      "harder": [
+        {
+          "q": "A cake is too dry. What should the chef check first?",
+          "choices": [
+            "The amount of liquid or butter and the baking time",
+            "The amount of salt only",
+            "How long it was in the freezer"
+          ],
+          "a": "The amount of liquid or butter and the baking time",
+          "why": "Too little liquid or too long in the oven makes cake dry."
+        },
+        {
+          "q": "Why do chefs keep raw meat away from salad?",
+          "choices": [
+            "To keep the salad cold",
+            "To stop germs spreading to food that is not cooked",
+            "To make the salad look red"
+          ],
+          "a": "To stop germs spreading to food that is not cooked",
+          "why": "Raw meat can carry germs that spread to other food."
+        },
+        {
+          "q": "A new recipe tastes flat. What might help?",
+          "choices": [
+            "More sugar only",
+            "More flour",
+            "A squeeze of lemon or a pinch of salt"
+          ],
+          "a": "A squeeze of lemon or a pinch of salt",
+          "why": "Lemon and salt wake up flavours."
+        },
+        {
+          "q": "Why does a chef taste food while cooking?",
+          "choices": [
+            "To make the food smaller",
+            "To keep the plates clean",
+            "To check the flavour and adjust it"
+          ],
+          "a": "To check the flavour and adjust it",
+          "why": "Tasting lets the chef adjust salt, sweetness or sourness."
+        },
+        {
+          "q": "Two dishes need to be ready at the same time. What should the chef do?",
+          "choices": [
+            "Cook both in the same pan",
+            "Serve one cold",
+            "Plan the order and use a timer for each dish"
+          ],
+          "a": "Plan the order and use a timer for each dish",
+          "why": "A plan and timers make sure both dishes are ready hot."
+        }
+      ]
+    },
+    "baker": {
+      "learn": [
+        {
+          "emoji": "🥐",
+          "text": "Bakers make bread, cakes and biscuits. They get up early so the bread is warm for breakfast."
+        },
+        {
+          "emoji": "🥖",
+          "text": "Bakers mix flour, water and yeast to make bread dough. The dough rises before it goes in the oven."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do bakers make?",
+          "choices": [
+            "Bread, cakes and biscuits",
+            "Cars",
+            "Roads"
+          ],
+          "a": "Bread, cakes and biscuits"
+        },
+        {
+          "q": "When do bakers start work?",
+          "choices": [
+            "Early in the morning",
+            "Late at night",
+            "At lunchtime"
+          ],
+          "a": "Early in the morning"
+        },
+        {
+          "q": "What makes bread rise?",
+          "choices": [
+            "Yeast",
+            "Sand",
+            "Paint"
+          ],
+          "a": "Yeast"
+        }
+      ],
+      "challenge": {
+        "scene": "The bread dough is not rising, and the shop opens soon.",
+        "question": "Ask a baker: what are some ways to fix it?",
+        "choices": [
+          "Check the yeast and put the dough somewhere warm",
+          "Put it in the freezer",
+          "Bake it flat and hope for the best"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: which of these goes into bread dough?",
+        "choices": [
+          "Flour",
+          "Glue",
+          "Paint"
+        ],
+        "a": "Flour"
+      },
+      "harder": [
+        {
+          "q": "The bread is too hard and dry. What could be the reason?",
+          "choices": [
+            "It was baked in the morning",
+            "It was in the oven too long or the dough had too little water",
+            "The flour was too white"
+          ],
+          "a": "It was in the oven too long or the dough had too little water",
+          "why": "Too long in the oven or too little water dries bread out."
+        },
+        {
+          "q": "Why does dough need to rest?",
+          "choices": [
+            "So it can grow hair",
+            "So it can get cold",
+            "So the flour soaks up water and it is easier to shape"
+          ],
+          "a": "So the flour soaks up water and it is easier to shape",
+          "why": "Resting lets the dough relax and be easier to shape."
+        },
+        {
+          "q": "A cake sinks in the middle. What is a likely cause?",
+          "choices": [
+            "The eggs were too blue",
+            "The oven door was opened too early",
+            "It had too much sun"
+          ],
+          "a": "The oven door was opened too early",
+          "why": "Opening the door too early lets cold air in, so the cake sinks."
+        },
+        {
+          "q": "What helps a baker check if bread is cooked?",
+          "choices": [
+            "Tap the bottom and listen for a hollow sound",
+            "Smell the air only",
+            "Lick the crust"
+          ],
+          "a": "Tap the bottom and listen for a hollow sound",
+          "why": "A hollow sound usually means the bread is baked through."
+        },
+        {
+          "q": "Why do bakers weigh their flour?",
+          "choices": [
+            "So the bags look full",
+            "So every batch tastes the same",
+            "So the flour can fly"
+          ],
+          "a": "So every batch tastes the same",
+          "why": "Weighing keeps the amounts the same each time."
+        }
+      ]
+    },
+    "farmer": {
+      "learn": [
+        {
+          "emoji": "🌾",
+          "text": "Farmers grow food like wheat, carrots and apples. They plant seeds in spring."
+        },
+        {
+          "emoji": "🐄",
+          "text": "Farmers look after animals too. They feed the cows and collect the eggs every morning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do farmers grow?",
+          "choices": [
+            "Food",
+            "Houses",
+            "Computers"
+          ],
+          "a": "Food"
+        },
+        {
+          "q": "When do farmers plant seeds?",
+          "choices": [
+            "In spring",
+            "In the middle of the night",
+            "Never"
+          ],
+          "a": "In spring"
+        },
+        {
+          "q": "What do farmers do each morning?",
+          "choices": [
+            "Feed the animals",
+            "Sleep in",
+            "Sail a boat"
+          ],
+          "a": "Feed the animals"
+        }
+      ],
+      "challenge": {
+        "scene": "It has not rained for weeks, and the crops are drying out.",
+        "question": "Ask a farmer: what are some ways to keep the crops alive?",
+        "choices": [
+          "Water them carefully, early in the morning or in the evening",
+          "Cut them all down straight away",
+          "Leave them and hope it rains"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what does a plant need to grow?",
+        "choices": [
+          "Water, soil and sun",
+          "Paint and glue",
+          "Sand only"
+        ],
+        "a": "Water, soil and sun"
+      },
+      "harder": [
+        {
+          "q": "A field has too many weeds. What is a good way to deal with them?",
+          "choices": [
+            "Pull them out or hoe them between the plants",
+            "Water the weeds more",
+            "Plant more weeds"
+          ],
+          "a": "Pull them out or hoe them between the plants",
+          "why": "Removing weeds stops them taking food and water from the crops."
+        },
+        {
+          "q": "Why do farmers change which crop grows in each field from year to year?",
+          "choices": [
+            "So the soil keeps its goodness and fewer pests build up",
+            "So the farm gets bigger",
+            "So the crops can see new places"
+          ],
+          "a": "So the soil keeps its goodness and fewer pests build up",
+          "why": "Changing crops keeps the soil healthy and stops pests building up."
+        },
+        {
+          "q": "A cow looks unwell. What should the farmer do?",
+          "choices": [
+            "Move it onto the road",
+            "Call the vet and check its food and water",
+            "Wait for it to recover alone"
+          ],
+          "a": "Call the vet and check its food and water",
+          "why": "A vet can find out what is wrong and treat it."
+        },
+        {
+          "q": "Why do farmers keep records of rainfall?",
+          "choices": [
+            "To make the sky happy",
+            "To guess the weather for the TV",
+            "To plan when to plant and water"
+          ],
+          "a": "To plan when to plant and water",
+          "why": "Rainfall records help farmers plan planting and watering."
+        },
+        {
+          "q": "The soil is very dry. What helps the most?",
+          "choices": [
+            "Pour lots of water all at once",
+            "Add water slowly and cover the soil",
+            "Dig it up and leave it in the sun"
+          ],
+          "a": "Add water slowly and cover the soil",
+          "why": "Slow watering soaks in, and a cover stops it drying out."
+        }
+      ]
+    },
+    "gardener": {
+      "learn": [
+        {
+          "emoji": "🌻",
+          "text": "Gardeners plant flowers and trees. They water them, pull out weeds and cut back the old leaves."
+        },
+        {
+          "emoji": "🪴",
+          "text": "Gardeners know which plants like sun and which like shade. They plant each one in the right place."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do gardeners plant?",
+          "choices": [
+            "Flowers and trees",
+            "Roads",
+            "Bricks"
+          ],
+          "a": "Flowers and trees"
+        },
+        {
+          "q": "What do gardeners pull out?",
+          "choices": [
+            "Weeds",
+            "Books",
+            "Shoes"
+          ],
+          "a": "Weeds"
+        },
+        {
+          "q": "What do gardeners think about before planting?",
+          "choices": [
+            "Whether the plant likes sun or shade",
+            "The colour of the fence",
+            "The time on the clock"
+          ],
+          "a": "Whether the plant likes sun or shade"
+        }
+      ],
+      "challenge": {
+        "scene": "A rose bush has yellow leaves and looks unhappy.",
+        "question": "Ask a gardener: what are some ways to help the rose bush?",
+        "choices": [
+          "Check the water and move it to a sunnier spot",
+          "Pull it out straight away",
+          "Paint the leaves green"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should you do before you plant a seed?",
+        "choices": [
+          "Make a hole in the soil",
+          "Put it in the bath",
+          "Put it in a drawer"
+        ],
+        "a": "Make a hole in the soil"
+      },
+      "harder": [
+        {
+          "q": "A plant has wilted. What should a gardener check first?",
+          "choices": [
+            "What colour the pot is",
+            "Whether it can sing",
+            "Whether the soil is too dry or too wet"
+          ],
+          "a": "Whether the soil is too dry or too wet",
+          "why": "Soil that is too dry or too wet makes plants wilt."
+        },
+        {
+          "q": "Why do gardeners prune roses in winter?",
+          "choices": [
+            "To stop them flowering",
+            "To make them smaller forever",
+            "To help new growth and flowers come back in spring"
+          ],
+          "a": "To help new growth and flowers come back in spring",
+          "why": "Pruning in winter helps healthy new growth in spring."
+        },
+        {
+          "q": "A seed packet says 'full sun'. Where should you plant it?",
+          "choices": [
+            "In a dark cupboard",
+            "Under a shady tree",
+            "In a spot that gets lots of sunshine"
+          ],
+          "a": "In a spot that gets lots of sunshine",
+          "why": "Full sun means the plant needs lots of light."
+        },
+        {
+          "q": "Why do gardeners add compost to soil?",
+          "choices": [
+            "It adds food for plants and helps the soil hold water",
+            "It stops the plants growing",
+            "It makes the soil heavier to carry"
+          ],
+          "a": "It adds food for plants and helps the soil hold water",
+          "why": "Compost feeds plants and improves soil."
+        },
+        {
+          "q": "A snail is eating the lettuces. What is a gentle fix?",
+          "choices": [
+            "Feed the snails more lettuce",
+            "Pick the snails off by hand or use a barrier",
+            "Pour salt on the soil"
+          ],
+          "a": "Pick the snails off by hand or use a barrier",
+          "why": "Picking snails off or using a barrier protects the plants without harm."
+        }
+      ]
+    },
+    "zookeeper": {
+      "learn": [
+        {
+          "emoji": "🦁",
+          "text": "Zookeepers feed and look after the animals at the zoo. Each animal eats different food."
+        },
+        {
+          "emoji": "🧹",
+          "text": "Zookeepers clean the animal homes every day, so the animals stay healthy and happy."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do zookeepers do with food?",
+          "choices": [
+            "Feed the animals",
+            "Eat it all",
+            "Throw it in the sea"
+          ],
+          "a": "Feed the animals"
+        },
+        {
+          "q": "Do all animals eat the same food?",
+          "choices": [
+            "No, each one eats different food",
+            "Yes, all of them",
+            "Only the lions"
+          ],
+          "a": "No, each one eats different food"
+        },
+        {
+          "q": "Why do zookeepers clean the animal homes?",
+          "choices": [
+            "So the animals stay healthy",
+            "So the animals can hide",
+            "So the zoo is dark"
+          ],
+          "a": "So the animals stay healthy"
+        }
+      ],
+      "challenge": {
+        "scene": "A lion has stopped eating its dinner.",
+        "question": "Ask a zookeeper: what are some ways to find out why?",
+        "choices": [
+          "Check the food, watch the lion and tell the vet",
+          "Give the lion a much bigger dinner",
+          "Ignore the lion until it eats"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a zookeeper do before going near a big animal?",
+        "choices": [
+          "Check that it is safe and ask a grown-up",
+          "Feed it a sweet",
+          "Climb into its home"
+        ],
+        "a": "Check that it is safe and ask a grown-up"
+      },
+      "harder": [
+        {
+          "q": "Why does a zookeeper keep a food diary for each animal?",
+          "choices": [
+            "To check the animals eat well and spot changes early",
+            "To give the animals names",
+            "To count the carrots left over"
+          ],
+          "a": "To check the animals eat well and spot changes early",
+          "why": "A diary shows if an animal stops eating or changes its habits."
+        },
+        {
+          "q": "A zoo animal is stressed by a noisy visitor. What should a zookeeper do?",
+          "choices": [
+            "Let the animal out",
+            "Move the visitor away and let the animal rest",
+            "Make more noise to scare the visitor"
+          ],
+          "a": "Move the visitor away and let the animal rest",
+          "why": "Calm and quiet help a stressed animal recover."
+        },
+        {
+          "q": "How should a zookeeper approach an animal they do not know well?",
+          "choices": [
+            "Shout to say hello",
+            "Slowly, and let it see them first",
+            "Run up quickly"
+          ],
+          "a": "Slowly, and let it see them first",
+          "why": "Slow movement feels safer to an animal."
+        },
+        {
+          "q": "Why do zoos clean animal homes every day?",
+          "choices": [
+            "So the visitors can see the floor",
+            "To keep the animals healthy and stop germs building up",
+            "So the animals can be painted"
+          ],
+          "a": "To keep the animals healthy and stop germs building up",
+          "why": "Clean homes stop germs and keep animals healthy."
+        },
+        {
+          "q": "A keeper sees an animal limping. What is the best next step?",
+          "choices": [
+            "Give it a big meal",
+            "Make it run to see how it moves",
+            "Tell the vet and keep the animal calm and still"
+          ],
+          "a": "Tell the vet and keep the animal calm and still",
+          "why": "A vet can check a limp safely; moving or stressing the animal could make it worse."
+        }
+      ]
+    },
+    "scientist": {
+      "learn": [
+        {
+          "emoji": "🔬",
+          "text": "Scientists ask questions and test them. They try things out to find out how the world works."
+        },
+        {
+          "emoji": "📓",
+          "text": "Scientists write down what they see in a notebook, so they can check it again later."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do scientists ask?",
+          "choices": [
+            "Questions",
+            "Riddles only",
+            "Nothing"
+          ],
+          "a": "Questions"
+        },
+        {
+          "q": "How do scientists find out the answer?",
+          "choices": [
+            "They test it",
+            "They guess and stop",
+            "They wait for a sign"
+          ],
+          "a": "They test it"
+        },
+        {
+          "q": "Where do scientists write what they see?",
+          "choices": [
+            "In a notebook",
+            "On the walls",
+            "In the sky"
+          ],
+          "a": "In a notebook"
+        }
+      ],
+      "challenge": {
+        "scene": "You think a plant grows faster in the dark, and you want to find out.",
+        "question": "Ask a scientist: what are some ways to test this?",
+        "choices": [
+          "Grow two plants, one in the light and one in the dark, and measure them",
+          "Ask the plant what it likes",
+          "Only look at the plant once"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a scientist write down during a test?",
+        "choices": [
+          "What happened each day",
+          "Only the ending",
+          "Nothing at all"
+        ],
+        "a": "What happened each day"
+      },
+      "harder": [
+        {
+          "q": "A scientist gets a result that is different from what they expected. What should they do?",
+          "choices": [
+            "Change the results to match",
+            "Check the test again and write the result down honestly",
+            "Throw the notebook away"
+          ],
+          "a": "Check the test again and write the result down honestly",
+          "why": "An honest record and a repeat test show whether the result is real."
+        },
+        {
+          "q": "Why do scientists repeat a test?",
+          "choices": [
+            "To make the notebook thicker",
+            "To use up the equipment",
+            "To check the result is not a fluke"
+          ],
+          "a": "To check the result is not a fluke",
+          "why": "Repeating a test shows whether the result happens every time."
+        },
+        {
+          "q": "What is a fair test?",
+          "choices": [
+            "Changing only one thing at a time",
+            "Using different people each time",
+            "Changing everything at once"
+          ],
+          "a": "Changing only one thing at a time",
+          "why": "Changing one thing shows what caused the difference."
+        },
+        {
+          "q": "A scientist wants to know if a magnet pulls through paper. What should they test?",
+          "choices": [
+            "Put paper between the magnet and a paperclip and see",
+            "Taste the paper",
+            "Read the magnet's name"
+          ],
+          "a": "Put paper between the magnet and a paperclip and see",
+          "why": "Testing the idea directly answers the question."
+        },
+        {
+          "q": "Why is it important that other scientists can repeat your test?",
+          "choices": [
+            "So the test can be sold",
+            "So the results can be hidden",
+            "So others can check your results"
+          ],
+          "a": "So others can check your results",
+          "why": "Other people checking the test makes results trustworthy."
+        }
+      ]
+    },
+    "astronaut": {
+      "learn": [
+        {
+          "emoji": "🚀",
+          "text": "Astronauts fly to space in a rocket. They float because they are always falling round the Earth, so nothing pulls them down to the floor."
+        },
+        {
+          "emoji": "🛰️",
+          "text": "Astronauts live on a space station and do experiments. They look down at the Earth from very high up."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How do astronauts get to space?",
+          "choices": [
+            "In a rocket",
+            "On a bike",
+            "By swimming"
+          ],
+          "a": "In a rocket"
+        },
+        {
+          "q": "Why do astronauts float?",
+          "choices": [
+            "They are always falling round the Earth",
+            "They are very light",
+            "They are wearing wings"
+          ],
+          "a": "They are always falling round the Earth"
+        },
+        {
+          "q": "What do astronauts do on the space station?",
+          "choices": [
+            "Experiments",
+            "Baking",
+            "Fishing"
+          ],
+          "a": "Experiments"
+        }
+      ],
+      "challenge": {
+        "scene": "A drink in space floats into the air instead of staying in the cup.",
+        "question": "Ask an astronaut: what are some ways to keep drinks safe in space?",
+        "choices": [
+          "Use a sealed bag or a straw with a lid",
+          "Pour it out on the floor",
+          "Shake the cup as hard as you can"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should an astronaut wear to go outside a spaceship?",
+        "choices": [
+          "A spacesuit",
+          "Swimming shorts",
+          "A raincoat"
+        ],
+        "a": "A spacesuit"
+      },
+      "harder": [
+        {
+          "q": "An astronaut's suit has a small leak. What is the most important thing to do?",
+          "choices": [
+            "Take the suit off to look",
+            "Follow the checklist and fix or seal the leak right away",
+            "Ignore it, it is only small"
+          ],
+          "a": "Follow the checklist and fix or seal the leak right away",
+          "why": "Even a small leak must be fixed to keep the astronaut safe."
+        },
+        {
+          "q": "Why do astronauts exercise every day in space?",
+          "choices": [
+            "To grow taller",
+            "Muscles and bones get weaker without gravity pulling on them",
+            "Because space is cold"
+          ],
+          "a": "Muscles and bones get weaker without gravity pulling on them",
+          "why": "Without gravity, muscles and bones weaken, so exercise helps."
+        },
+        {
+          "q": "How do astronauts sleep when they float?",
+          "choices": [
+            "They sleep standing up on the floor",
+            "They strap themselves into a sleeping bag",
+            "They never sleep"
+          ],
+          "a": "They strap themselves into a sleeping bag",
+          "why": "A sleeping bag holds them so they don't drift around."
+        },
+        {
+          "q": "Why does the space station carry spare parts?",
+          "choices": [
+            "They are for the crew to play with",
+            "To make the station heavier",
+            "Things can break and need fixing far from home"
+          ],
+          "a": "Things can break and need fixing far from home",
+          "why": "Spare parts let the crew repair things when they can't just go to a shop."
+        },
+        {
+          "q": "Why do astronauts wear a helmet on a spacewalk?",
+          "choices": [
+            "To protect the head and keep air around it",
+            "To look like a robot",
+            "To keep the hair dry"
+          ],
+          "a": "To protect the head and keep air around it",
+          "why": "Space has no air, so the helmet keeps air around the head."
+        }
+      ]
+    },
+    "bus-driver": {
+      "learn": [
+        {
+          "emoji": "🚌",
+          "text": "Bus drivers drive people safely around the town. They stop at each bus stop on time."
+        },
+        {
+          "emoji": "🪞",
+          "text": "Bus drivers check their mirrors often. They keep watch for people, bikes and cars all around the bus."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do bus drivers carry?",
+          "choices": [
+            "People",
+            "Cakes",
+            "Sand"
+          ],
+          "a": "People"
+        },
+        {
+          "q": "What do bus drivers check often?",
+          "choices": [
+            "Their mirrors",
+            "Their hair",
+            "Their shoes"
+          ],
+          "a": "Their mirrors"
+        },
+        {
+          "q": "Where do bus drivers stop?",
+          "choices": [
+            "At each bus stop",
+            "In the middle of the road",
+            "In the sea"
+          ],
+          "a": "At each bus stop"
+        }
+      ],
+      "challenge": {
+        "scene": "A ball rolls into the road in front of the bus.",
+        "question": "Ask a bus driver: what are some ways to stay safe?",
+        "choices": [
+          "Slow down, keep watch and stop if a child runs out",
+          "Speed up to get past it",
+          "Honk and keep going"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a bus driver do before setting off?",
+        "choices": [
+          "Check that everyone is sitting down",
+          "Turn off the lights and sleep",
+          "Let a friend drive"
+        ],
+        "a": "Check that everyone is sitting down"
+      },
+      "harder": [
+        {
+          "q": "A passenger is not feeling well on the bus. What should the driver do?",
+          "choices": [
+            "Let them get off at a random place",
+            "Keep driving and ignore it",
+            "Pull over safely and ask if they need help"
+          ],
+          "a": "Pull over safely and ask if they need help",
+          "why": "Stopping safely lets the driver check on the passenger."
+        },
+        {
+          "q": "A bus is running late. What is the safest thing for the driver?",
+          "choices": [
+            "Skip the stops",
+            "Keep to the speed limit and let the company know",
+            "Speed up to catch up"
+          ],
+          "a": "Keep to the speed limit and let the company know",
+          "why": "Safe driving matters more than being on time."
+        },
+        {
+          "q": "Why do bus drivers check their mirrors often?",
+          "choices": [
+            "To check their hair",
+            "To see people and vehicles around the bus",
+            "To see the shops"
+          ],
+          "a": "To see people and vehicles around the bus",
+          "why": "Mirrors show people and cars around the bus, which keeps everyone safe."
+        },
+        {
+          "q": "A child gets on without a ticket and is crying. What should the driver do?",
+          "choices": [
+            "Shout at the child",
+            "Ask the child to get off at once",
+            "Stay calm and ask a grown-up who is with them"
+          ],
+          "a": "Stay calm and ask a grown-up who is with them",
+          "why": "A calm approach helps the child feel safe and finds their grown-up."
+        },
+        {
+          "q": "A road is closed for works. What should the driver do?",
+          "choices": [
+            "Drive through the cones",
+            "Take a safe route and let passengers know",
+            "Stop and wait all day"
+          ],
+          "a": "Take a safe route and let passengers know",
+          "why": "A safe diversion keeps the bus and people safe, and passengers stay informed."
+        }
+      ]
+    },
+    "train-driver": {
+      "learn": [
+        {
+          "emoji": "🚂",
+          "text": "Train drivers drive trains with lots of people on board. They drive along the tracks."
+        },
+        {
+          "emoji": "🚦",
+          "text": "Train drivers watch the signals. A green light means go, and a red light means stop."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Where do trains travel?",
+          "choices": [
+            "Along tracks",
+            "Over the clouds",
+            "In a field"
+          ],
+          "a": "Along tracks"
+        },
+        {
+          "q": "What does a green light mean for a train?",
+          "choices": [
+            "Go",
+            "Stop",
+            "Sleep"
+          ],
+          "a": "Go"
+        },
+        {
+          "q": "Who does a train driver take along?",
+          "choices": [
+            "Lots of people",
+            "Only cats",
+            "Only cars"
+          ],
+          "a": "Lots of people"
+        }
+      ],
+      "challenge": {
+        "scene": "The signal is red, but there is a long train behind you waiting.",
+        "question": "Ask a train driver: what are some ways to keep everyone safe?",
+        "choices": [
+          "Stop at the red light and tell the control room",
+          "Go slowly past the red light",
+          "Turn the signal off yourself"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what colour light tells a train to stop?",
+        "choices": [
+          "Red",
+          "Green",
+          "Blue"
+        ],
+        "a": "Red"
+      },
+      "harder": [
+        {
+          "q": "A signal ahead is not working. What should the driver do?",
+          "choices": [
+            "Follow the rule book, slow down and wait for instructions",
+            "Speed up to get past it",
+            "Turn the signal off"
+          ],
+          "a": "Follow the rule book, slow down and wait for instructions",
+          "why": "Following the rules and waiting for instructions keeps the train safe."
+        },
+        {
+          "q": "Why do train drivers check the brakes before setting off?",
+          "choices": [
+            "To make sure the train can stop safely",
+            "To make the seats softer",
+            "To make the train quieter"
+          ],
+          "a": "To make sure the train can stop safely",
+          "why": "Brakes must work to stop safely."
+        },
+        {
+          "q": "What does an amber light mean for a train driver?",
+          "choices": [
+            "Turn the train around",
+            "Get ready to stop",
+            "Go as fast as you can"
+          ],
+          "a": "Get ready to stop",
+          "why": "Amber means prepare to stop at the next signal."
+        },
+        {
+          "q": "A passenger falls ill on a long train journey. What should the driver do?",
+          "choices": [
+            "Keep the window shut",
+            "Wait until the end of the journey",
+            "Tell the control room so help can meet the train at the next station"
+          ],
+          "a": "Tell the control room so help can meet the train at the next station",
+          "why": "Telling the control room gets help quickly."
+        },
+        {
+          "q": "Why do train drivers keep to the timetable?",
+          "choices": [
+            "So trains do not crash into each other and passengers reach places safely",
+            "So trains can race",
+            "So the timetable stays neat"
+          ],
+          "a": "So trains do not crash into each other and passengers reach places safely",
+          "why": "Keeping to the timetable keeps trains apart on the track."
+        }
+      ]
+    },
+    "sailor": {
+      "learn": [
+        {
+          "emoji": "⛵",
+          "text": "Sailors sail boats and keep the ship working on the sea. They use the wind to move the sails."
+        },
+        {
+          "emoji": "🧭",
+          "text": "Sailors use a compass and a map to know where they are going."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do sailors use to move the boat?",
+          "choices": [
+            "The wind",
+            "Sand",
+            "Cakes"
+          ],
+          "a": "The wind"
+        },
+        {
+          "q": "What do sailors use to know where they are going?",
+          "choices": [
+            "A compass and a map",
+            "A spoon",
+            "A ball"
+          ],
+          "a": "A compass and a map"
+        },
+        {
+          "q": "Where do sailors work?",
+          "choices": [
+            "On the sea",
+            "In a shop",
+            "In a library"
+          ],
+          "a": "On the sea"
+        }
+      ],
+      "challenge": {
+        "scene": "The wind has stopped, and the sails hang limp.",
+        "question": "Ask a sailor: what are some ways to keep the boat moving?",
+        "choices": [
+          "Use the oars and wait for the wind to come back",
+          "Shout at the sails",
+          "Jump into the sea and push"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a sailor check before leaving the harbour?",
+        "choices": [
+          "The weather and the sails",
+          "Whether the fish are hungry",
+          "The time of the moon"
+        ],
+        "a": "The weather and the sails"
+      },
+      "harder": [
+        {
+          "q": "A storm is coming. What should the sailor do first?",
+          "choices": [
+            "Hoist all the sails higher",
+            "Go for a swim",
+            "Check the weather and make the boat safe"
+          ],
+          "a": "Check the weather and make the boat safe",
+          "why": "Checking the weather and securing the boat keeps everyone safe."
+        },
+        {
+          "q": "What does a sailor use to see which way the wind blows?",
+          "choices": [
+            "A wind vane or a flag on the mast",
+            "A torch",
+            "A spoon"
+          ],
+          "a": "A wind vane or a flag on the mast",
+          "why": "A wind vane or flag turns with the wind."
+        },
+        {
+          "q": "Why do sailors wear life jackets?",
+          "choices": [
+            "To keep warm only",
+            "To float and stay safe if they fall in",
+            "To look smart"
+          ],
+          "a": "To float and stay safe if they fall in",
+          "why": "A life jacket keeps you afloat in the water."
+        },
+        {
+          "q": "A sailor wants to know how far away the land is. What helps them work it out?",
+          "choices": [
+            "A paintbrush",
+            "A cooking pot",
+            "A chart with a scale and a ruler"
+          ],
+          "a": "A chart with a scale and a ruler",
+          "why": "A chart has a scale that shows the real distance."
+        },
+        {
+          "q": "Why do sailors tie strong knots?",
+          "choices": [
+            "So the ropes do not come undone in wind and waves",
+            "So the knots look pretty",
+            "So the ropes are easier to lose"
+          ],
+          "a": "So the ropes do not come undone in wind and waves",
+          "why": "Strong knots hold the sails and ropes safely in rough weather."
+        }
+      ]
+    },
+    "lifeguard": {
+      "learn": [
+        {
+          "emoji": "🏊",
+          "text": "Lifeguards watch swimmers at the pool or beach and keep them safe."
+        },
+        {
+          "emoji": "🛟",
+          "text": "Lifeguards know how to rescue someone who is in trouble in the water."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do lifeguards watch?",
+          "choices": [
+            "Swimmers",
+            "Birds",
+            "Clouds"
+          ],
+          "a": "Swimmers"
+        },
+        {
+          "q": "Where do lifeguards work?",
+          "choices": [
+            "At the pool or beach",
+            "In a bank",
+            "On a bus"
+          ],
+          "a": "At the pool or beach"
+        },
+        {
+          "q": "What do lifeguards know how to do?",
+          "choices": [
+            "Rescue people in trouble",
+            "Fly planes",
+            "Bake bread"
+          ],
+          "a": "Rescue people in trouble"
+        }
+      ],
+      "challenge": {
+        "scene": "A swimmer is going further out and seems tired.",
+        "question": "Ask a lifeguard: what are some ways to help them get back safely?",
+        "choices": [
+          "Call them back, use a rescue buoy and get help",
+          "Wait and see if they swim back",
+          "Swim out alone without any help"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: a swimmer is in trouble. What should the lifeguard do first?",
+        "choices": [
+          "Blow the whistle and go to them",
+          "Sit down and read a book",
+          "Wait and see if they swim back"
+        ],
+        "a": "Blow the whistle and go to them"
+      },
+      "harder": [
+        {
+          "q": "A child in the shallow end keeps going under. What should the lifeguard do?",
+          "choices": [
+            "Get them to the side and check they are breathing",
+            "Tell them to hold their breath longer",
+            "Let them try to swim to the side alone"
+          ],
+          "a": "Get them to the side and check they are breathing",
+          "why": "Getting them out and checking their breathing comes first."
+        },
+        {
+          "q": "Why do lifeguards scan the water all the time?",
+          "choices": [
+            "To count the clouds",
+            "To look at other lifeguards",
+            "To spot swimmers who may be in trouble early"
+          ],
+          "a": "To spot swimmers who may be in trouble early",
+          "why": "Spotting trouble early gives more time to help."
+        },
+        {
+          "q": "A swimmer waves their arms and calls for help. What should the lifeguard do?",
+          "choices": [
+            "Ask them to swim faster",
+            "Wait to see if they wave again",
+            "Go to them straight away with a rescue tool"
+          ],
+          "a": "Go to them straight away with a rescue tool",
+          "why": "Quick action is needed when someone is calling for help."
+        },
+        {
+          "q": "Why do lifeguards blow a whistle?",
+          "choices": [
+            "To call the birds",
+            "To keep music going",
+            "To get swimmers' attention and tell them what to do"
+          ],
+          "a": "To get swimmers' attention and tell them what to do",
+          "why": "A whistle is a clear signal that everyone can hear."
+        },
+        {
+          "q": "A pool has a sign saying 'no running'. Why?",
+          "choices": [
+            "Running makes the water warmer",
+            "Wet floors are slippery and people can fall",
+            "Running is loud"
+          ],
+          "a": "Wet floors are slippery and people can fall",
+          "why": "Wet floors are slippery, so running can cause falls."
+        }
+      ]
+    },
+    "mail-carrier": {
+      "learn": [
+        {
+          "emoji": "📮",
+          "text": "Mail carriers deliver letters and parcels to every house in their area."
+        },
+        {
+          "emoji": "🏠",
+          "text": "Mail carriers check the addresses carefully, so every letter goes to the right home."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do mail carriers deliver?",
+          "choices": [
+            "Letters and parcels",
+            "Trees",
+            "Rain"
+          ],
+          "a": "Letters and parcels"
+        },
+        {
+          "q": "Where do mail carriers take the post?",
+          "choices": [
+            "To every house in their area",
+            "To the moon",
+            "Only to the school"
+          ],
+          "a": "To every house in their area"
+        },
+        {
+          "q": "What do mail carriers check?",
+          "choices": [
+            "The addresses",
+            "The shoes",
+            "The stars"
+          ],
+          "a": "The addresses"
+        }
+      ],
+      "challenge": {
+        "scene": "A parcel has a name on it, but the house number is missing.",
+        "question": "Ask a mail carrier: what are some ways to find the right home?",
+        "choices": [
+          "Look at the street and ask a neighbour or the post office",
+          "Leave it on the wrong doorstep",
+          "Keep it and forget about it"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a mail carrier check before delivering a letter?",
+        "choices": [
+          "The address on the envelope",
+          "The colour of the stamp only",
+          "Whether the letter is heavy"
+        ],
+        "a": "The address on the envelope"
+      },
+      "harder": [
+        {
+          "q": "A letter has no stamp. What should the mail carrier do?",
+          "choices": [
+            "Throw it away",
+            "Take it back to the post office to check the postage",
+            "Post it in any bin"
+          ],
+          "a": "Take it back to the post office to check the postage",
+          "why": "The post office can check the postage and send the letter properly."
+        },
+        {
+          "q": "A dog barks at the mail carrier every day. What should they do?",
+          "choices": [
+            "Shout back at the dog",
+            "Stay calm, keep a safe distance and ask the owner to keep the dog in",
+            "Chase the dog away"
+          ],
+          "a": "Stay calm, keep a safe distance and ask the owner to keep the dog in",
+          "why": "Calm and distance keep both the carrier and the dog safer."
+        },
+        {
+          "q": "Why do mail carriers sort letters into order before walking the route?",
+          "choices": [
+            "So they can read them all",
+            "So they can deliver faster and not miss a house",
+            "So the letters look tidy"
+          ],
+          "a": "So they can deliver faster and not miss a house",
+          "why": "Sorting in route order saves time and avoids missed houses."
+        },
+        {
+          "q": "A parcel is too big for the letterbox. What should the mail carrier do?",
+          "choices": [
+            "Keep it for a week",
+            "Push it through the window",
+            "Leave a card that says where to collect it"
+          ],
+          "a": "Leave a card that says where to collect it",
+          "why": "A card tells the person where to collect the parcel."
+        },
+        {
+          "q": "What should a mail carrier do if it is raining?",
+          "choices": [
+            "Stop and go home",
+            "Leave the letters in the rain",
+            "Keep the letters dry and carry on safely"
+          ],
+          "a": "Keep the letters dry and carry on safely",
+          "why": "Keeping the post dry and walking carefully is the job."
+        }
+      ]
+    },
+    "librarian": {
+      "learn": [
+        {
+          "emoji": "📖",
+          "text": "Librarians help people find books. They know where every book is on the shelves."
+        },
+        {
+          "emoji": "📚",
+          "text": "Librarians read a lot and love stories. They suggest books that people might enjoy."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do librarians help people find?",
+          "choices": [
+            "Books",
+            "Fish",
+            "Shoes"
+          ],
+          "a": "Books"
+        },
+        {
+          "q": "What do librarians know?",
+          "choices": [
+            "Where every book is",
+            "How to fly",
+            "How to swim"
+          ],
+          "a": "Where every book is"
+        },
+        {
+          "q": "What do librarians love?",
+          "choices": [
+            "Stories",
+            "Loud noise",
+            "Rain"
+          ],
+          "a": "Stories"
+        }
+      ],
+      "challenge": {
+        "scene": "A child wants a book about dinosaurs, but cannot find the right shelf.",
+        "question": "Ask a librarian: what are some ways to find the book?",
+        "choices": [
+          "Look in the animal or science section and ask the librarian",
+          "Take any book at random",
+          "Go home without looking"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: how do libraries keep books in order?",
+        "choices": [
+          "On shelves, in an order that helps you find them",
+          "Scattered on the floor",
+          "Under the chairs"
+        ],
+        "a": "On shelves, in an order that helps you find them"
+      },
+      "harder": [
+        {
+          "q": "A book is damaged. What should the librarian do?",
+          "choices": [
+            "Sell it at once",
+            "Repair it carefully or set it aside for repair",
+            "Throw it away straight away"
+          ],
+          "a": "Repair it carefully or set it aside for repair",
+          "why": "Repairing books keeps them for other readers."
+        },
+        {
+          "q": "A child asks for a book the library does not have. What should the librarian do?",
+          "choices": [
+            "Make one up",
+            "Say no and send them away",
+            "Look in other libraries or suggest a similar book"
+          ],
+          "a": "Look in other libraries or suggest a similar book",
+          "why": "Helping find another book keeps the reader happy."
+        },
+        {
+          "q": "Why do libraries put books in order by number?",
+          "choices": [
+            "So people can find each book quickly",
+            "So the books change colour",
+            "So the shelves are heavier"
+          ],
+          "a": "So people can find each book quickly",
+          "why": "A number system helps everyone find a book fast."
+        },
+        {
+          "q": "A reader comes in alone and seems quiet. What might a librarian do?",
+          "choices": [
+            "Ignore them",
+            "Say hello, suggest a book and maybe invite them to story time",
+            "Ask them to leave"
+          ],
+          "a": "Say hello, suggest a book and maybe invite them to story time",
+          "why": "A friendly welcome helps people feel at home in the library."
+        },
+        {
+          "q": "Why do libraries have quiet areas?",
+          "choices": [
+            "So the staff can nap",
+            "So people can read and think without noise",
+            "So the books can sleep"
+          ],
+          "a": "So people can read and think without noise",
+          "why": "Quiet areas help people concentrate on reading."
+        }
+      ]
+    },
+    "photographer": {
+      "learn": [
+        {
+          "emoji": "📷",
+          "text": "Photographers take pictures of people, places and special moments."
+        },
+        {
+          "emoji": "🌅",
+          "text": "Photographers look at the light. Morning and evening light can make a picture look warm and soft."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do photographers take?",
+          "choices": [
+            "Pictures",
+            "Naps",
+            "Cakes"
+          ],
+          "a": "Pictures"
+        },
+        {
+          "q": "What makes a picture look warm and soft?",
+          "choices": [
+            "Morning or evening light",
+            "Turning off the lights",
+            "A very bright flash in the eyes"
+          ],
+          "a": "Morning or evening light"
+        },
+        {
+          "q": "What do photographers capture?",
+          "choices": [
+            "Special moments",
+            "Only the sky",
+            "Empty rooms"
+          ],
+          "a": "Special moments"
+        }
+      ],
+      "challenge": {
+        "scene": "A family wants a photo, but the sun is very bright and the faces look dark.",
+        "question": "Ask a photographer: what are some ways to make a better photo?",
+        "choices": [
+          "Move into the shade, or turn so the sun is behind you",
+          "Stand right in the sun",
+          "Take the photo with your eyes closed"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: where should the sun be for a good photo of a face?",
+        "choices": [
+          "Behind the photographer",
+          "Right behind the face",
+          "Under the table"
+        ],
+        "a": "Behind the photographer"
+      },
+      "harder": [
+        {
+          "q": "A photo is too dark. What is a good fix?",
+          "choices": [
+            "Turn the camera upside down",
+            "Take it again in better light or brighten it on a computer",
+            "Make it darker"
+          ],
+          "a": "Take it again in better light or brighten it on a computer",
+          "why": "Better light or brightening the picture fixes the dark photo."
+        },
+        {
+          "q": "Why do photographers ask people to smile naturally?",
+          "choices": [
+            "So the photo is blue",
+            "So the camera does not shake",
+            "So the photo feels real and happy"
+          ],
+          "a": "So the photo feels real and happy",
+          "why": "A natural smile makes the photo feel true."
+        },
+        {
+          "q": "What helps keep a camera steady in low light?",
+          "choices": [
+            "Stand on one leg",
+            "Rest it on a table, or hold your breath and press gently",
+            "Shake it to add energy"
+          ],
+          "a": "Rest it on a table, or hold your breath and press gently",
+          "why": "Steady support stops blurry photos."
+        },
+        {
+          "q": "Why do photographers take many photos of the same moment?",
+          "choices": [
+            "To use up the film",
+            "To make the camera tired",
+            "To choose the best one from the many"
+          ],
+          "a": "To choose the best one from the many",
+          "why": "Taking several gives a better chance of a good shot."
+        },
+        {
+          "q": "A bright sky is behind a person, so the person looks dark. What helps?",
+          "choices": [
+            "Cover the sky with paper",
+            "Use the flash or move so the light falls on their face",
+            "Move the person into the dark corner"
+          ],
+          "a": "Use the flash or move so the light falls on their face",
+          "why": "Light on the face or a flash brightens the person."
+        }
+      ]
+    },
+    "author": {
+      "learn": [
+        {
+          "emoji": "🖋️",
+          "text": "Authors write books and stories for people to read. They start with an idea and build it up."
+        },
+        {
+          "emoji": "✏️",
+          "text": "Authors write, then read it again and change it. Writing again and again makes a story better."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do authors write?",
+          "choices": [
+            "Books and stories",
+            "Cars",
+            "Roads"
+          ],
+          "a": "Books and stories"
+        },
+        {
+          "q": "What do authors do after writing?",
+          "choices": [
+            "Read it again and change it",
+            "Throw it away at once",
+            "Eat it"
+          ],
+          "a": "Read it again and change it"
+        },
+        {
+          "q": "Where does an author start?",
+          "choices": [
+            "With an idea",
+            "With the ending only",
+            "With the cover"
+          ],
+          "a": "With an idea"
+        }
+      ],
+      "challenge": {
+        "scene": "A story feels boring in the middle, and the reader might stop.",
+        "question": "Ask an author: what are some ways to make the middle more exciting?",
+        "choices": [
+          "Add a surprise or a problem for the hero",
+          "Make the story shorter by skipping the middle",
+          "Repeat the same sentence many times"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what does every story need to have?",
+        "choices": [
+          "A hero and a problem",
+          "Only pictures",
+          "Only numbers"
+        ],
+        "a": "A hero and a problem"
+      },
+      "harder": [
+        {
+          "q": "A character in a story is not believable. What should the author do?",
+          "choices": [
+            "Remove all the words",
+            "Make them change shape",
+            "Give them clear wants, a voice and reasons for what they do"
+          ],
+          "a": "Give them clear wants, a voice and reasons for what they do",
+          "why": "Real motives and a clear voice make characters believable."
+        },
+        {
+          "q": "Why do authors read their own writing out loud?",
+          "choices": [
+            "To make the paper louder",
+            "To hear where the words feel clumsy or too long",
+            "To wake up the reader"
+          ],
+          "a": "To hear where the words feel clumsy or too long",
+          "why": "Reading aloud shows where the story does not flow."
+        },
+        {
+          "q": "An author wants the reader to feel scared. Which choice helps?",
+          "choices": [
+            "Make the story very short and bright",
+            "Tell the reader it is funny",
+            "Describe small, creepy details and a sudden noise"
+          ],
+          "a": "Describe small, creepy details and a sudden noise",
+          "why": "Small details and surprises build fear."
+        },
+        {
+          "q": "What is a good first step for writing a story?",
+          "choices": [
+            "Choose the cover",
+            "Count the pages",
+            "Think of the characters and what problem they have"
+          ],
+          "a": "Think of the characters and what problem they have",
+          "why": "A character with a problem gives the story its shape."
+        },
+        {
+          "q": "Why do authors ask other people to read their drafts?",
+          "choices": [
+            "To sell the story faster",
+            "To find parts that are confusing and make them clearer",
+            "To make the story longer"
+          ],
+          "a": "To find parts that are confusing and make them clearer",
+          "why": "Other readers spot what the author cannot see."
+        }
+      ]
+    },
+    "musician": {
+      "learn": [
+        {
+          "emoji": "🎸",
+          "text": "Musicians play instruments and make music. Some play with others in a band or an orchestra."
+        },
+        {
+          "emoji": "🎵",
+          "text": "Musicians practise the same tune again and again. They listen to each other, so the music sounds good together."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do musicians play?",
+          "choices": [
+            "Instruments",
+            "Cars",
+            "Trees"
+          ],
+          "a": "Instruments"
+        },
+        {
+          "q": "How do musicians get better?",
+          "choices": [
+            "They practise",
+            "They stop trying",
+            "They only sleep"
+          ],
+          "a": "They practise"
+        },
+        {
+          "q": "Why do musicians listen to each other?",
+          "choices": [
+            "So the music sounds good together",
+            "So they can hide",
+            "So they can eat"
+          ],
+          "a": "So the music sounds good together"
+        }
+      ],
+      "challenge": {
+        "scene": "Two friends in the band are playing at different speeds.",
+        "question": "Ask a musician: what are some ways to play together?",
+        "choices": [
+          "Count the beat out loud and watch the drummer",
+          "Each play as fast as you like",
+          "Stop and never play together again"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what keeps a band playing together?",
+        "choices": [
+          "A steady beat everyone can follow",
+          "Everyone playing a different tune",
+          "Silence"
+        ],
+        "a": "A steady beat everyone can follow"
+      },
+      "harder": [
+        {
+          "q": "A band is too loud and drowns out the singer. What can the musicians do?",
+          "choices": [
+            "Stop the singer",
+            "Play even louder",
+            "Play quieter together and listen to the singer"
+          ],
+          "a": "Play quieter together and listen to the singer",
+          "why": "Listening and playing softer lets the singer be heard."
+        },
+        {
+          "q": "Why do musicians tune their instruments before playing?",
+          "choices": [
+            "So the instruments look shiny",
+            "So they can be heavier",
+            "So the notes sound right together"
+          ],
+          "a": "So the notes sound right together",
+          "why": "Tuning makes sure the notes fit together."
+        },
+        {
+          "q": "How does a musician learn a new song?",
+          "choices": [
+            "Only read the title",
+            "Play at full speed from the start",
+            "Listen many times, then play it slowly and build up speed"
+          ],
+          "a": "Listen many times, then play it slowly and build up speed",
+          "why": "Slow practice builds the song up safely."
+        },
+        {
+          "q": "A drummer and a guitarist are not playing together. What helps?",
+          "choices": [
+            "Stop and go home",
+            "Count the beat out loud and start at the same time",
+            "Each play their own speed"
+          ],
+          "a": "Count the beat out loud and start at the same time",
+          "why": "A shared count and a shared start keep the band together."
+        },
+        {
+          "q": "What is a 'rest' in a piece of music?",
+          "choices": [
+            "A break in the room",
+            "A type of drum",
+            "A moment of silence in the music"
+          ],
+          "a": "A moment of silence in the music",
+          "why": "A rest is a planned silence in the music."
+        }
+      ]
+    },
+    "actor": {
+      "learn": [
+        {
+          "emoji": "🎭",
+          "text": "Actors pretend to be other people in plays and films."
+        },
+        {
+          "emoji": "🎬",
+          "text": "Actors learn their lines and practise with others. They try different voices and faces to show a feeling."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do actors pretend to be?",
+          "choices": [
+            "Other people",
+            "Trees",
+            "Cars"
+          ],
+          "a": "Other people"
+        },
+        {
+          "q": "Where do actors perform?",
+          "choices": [
+            "In plays and films",
+            "In a bank",
+            "In a car park"
+          ],
+          "a": "In plays and films"
+        },
+        {
+          "q": "What do actors learn?",
+          "choices": [
+            "Their lines",
+            "How to fly",
+            "How to cook"
+          ],
+          "a": "Their lines"
+        }
+      ],
+      "challenge": {
+        "scene": "In a play, your character is very angry, but you feel silly doing it.",
+        "question": "Ask an actor: what are some ways to show anger on stage?",
+        "choices": [
+          "Use a loud voice and firm, strong movements",
+          "Whisper the lines",
+          "Skip the scene"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: how can an actor show that a character is sad?",
+        "choices": [
+          "A slow voice and droopy shoulders",
+          "Jumping up and down",
+          "Giggling the whole time"
+        ],
+        "a": "A slow voice and droopy shoulders"
+      },
+      "harder": [
+        {
+          "q": "An actor forgets their line on stage. What is the best thing to do?",
+          "choices": [
+            "Improvise a line that fits and keep the scene going",
+            "Wait in silence until the curtain falls",
+            "Stop and walk off"
+          ],
+          "a": "Improvise a line that fits and keep the scene going",
+          "why": "Keeping the scene going is what the audience needs."
+        },
+        {
+          "q": "Why do actors warm up their voices before a play?",
+          "choices": [
+            "To make the audience cough",
+            "To make the voice clear and strong for the audience",
+            "To make the voice squeaky"
+          ],
+          "a": "To make the voice clear and strong for the audience",
+          "why": "A warm voice carries and sounds clear."
+        },
+        {
+          "q": "An actor must play a very quiet, sad character. How can they show it?",
+          "choices": [
+            "Speak softly with a slow pace and low energy",
+            "Jump about",
+            "Shout the lines"
+          ],
+          "a": "Speak softly with a slow pace and low energy",
+          "why": "Quiet voice and slow movement show sadness."
+        },
+        {
+          "q": "Why do actors practise with the other actors?",
+          "choices": [
+            "So the play is shorter",
+            "So they can pick their costumes",
+            "So they know how to respond and move together"
+          ],
+          "a": "So they know how to respond and move together",
+          "why": "Practising together makes the scene feel real."
+        },
+        {
+          "q": "An actor is nervous before going on stage. What helps?",
+          "choices": [
+            "Breathe slowly and focus on the first line",
+            "Drink lots of fizzy drinks",
+            "Skip the show"
+          ],
+          "a": "Breathe slowly and focus on the first line",
+          "why": "Slow breathing and a clear focus calm nerves."
+        }
+      ]
+    },
+    "engineer": {
+      "learn": [
+        {
+          "emoji": "🔧",
+          "text": "Engineers design and fix machines, bridges and gadgets. They work out how things fit and move."
+        },
+        {
+          "emoji": "⚙️",
+          "text": "Engineers test their designs. If something breaks, they find out why and make it stronger."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do engineers design?",
+          "choices": [
+            "Machines and bridges",
+            "Songs",
+            "Cakes"
+          ],
+          "a": "Machines and bridges"
+        },
+        {
+          "q": "What do engineers do with a design?",
+          "choices": [
+            "Test it",
+            "Throw it in the bin",
+            "Sleep on it"
+          ],
+          "a": "Test it"
+        },
+        {
+          "q": "What do engineers do if something breaks?",
+          "choices": [
+            "Find out why and make it stronger",
+            "Hide it",
+            "Pretend it is fine"
+          ],
+          "a": "Find out why and make it stronger"
+        }
+      ],
+      "challenge": {
+        "scene": "A bridge made of sticks keeps bending in the middle.",
+        "question": "Ask an engineer: what are some ways to make the bridge stronger?",
+        "choices": [
+          "Add triangle supports across the middle",
+          "Make the bridge longer",
+          "Use only one thin stick"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what shape is strongest for holding weight in a bridge?",
+        "choices": [
+          "A triangle",
+          "A wiggly line",
+          "A dot"
+        ],
+        "a": "A triangle"
+      },
+      "harder": [
+        {
+          "q": "A bridge design must hold a heavy bus. What should an engineer do?",
+          "choices": [
+            "Guess how heavy a bus is",
+            "Use the thinnest material",
+            "Calculate the weight and test the design with models"
+          ],
+          "a": "Calculate the weight and test the design with models",
+          "why": "Calculation and testing show the bridge will be strong enough."
+        },
+        {
+          "q": "Why do engineers test machines in a safe space first?",
+          "choices": [
+            "To find problems before anyone uses them",
+            "So it gets a new colour",
+            "So the machine can rest"
+          ],
+          "a": "To find problems before anyone uses them",
+          "why": "Testing first finds problems safely."
+        },
+        {
+          "q": "A gear is slipping. What might be the cause?",
+          "choices": [
+            "The gear is too clean",
+            "The teeth are worn or the gear is not lined up",
+            "The gear is too heavy to move"
+          ],
+          "a": "The teeth are worn or the gear is not lined up",
+          "why": "Worn teeth or misalignment make gears slip."
+        },
+        {
+          "q": "Why do engineers use a lever?",
+          "choices": [
+            "To change colour",
+            "To lift something heavy with less effort",
+            "To make a noise"
+          ],
+          "a": "To lift something heavy with less effort",
+          "why": "A lever multiplies the force you put in."
+        },
+        {
+          "q": "A tower leans in the wind. What should an engineer add?",
+          "choices": [
+            "Make it taller",
+            "A heavier top only",
+            "Supports or a wider base to keep it steady"
+          ],
+          "a": "Supports or a wider base to keep it steady",
+          "why": "A wider base and supports stop a tower tipping."
+        }
+      ]
+    },
+    "coder": {
+      "learn": [
+        {
+          "emoji": "💻",
+          "text": "Coders write instructions for computers. These instructions make apps and games work."
+        },
+        {
+          "emoji": "🐞",
+          "text": "Coders test their code. When it does not work, they find the bug and fix it."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do coders write?",
+          "choices": [
+            "Instructions for computers",
+            "Letters to friends",
+            "Shopping lists only"
+          ],
+          "a": "Instructions for computers"
+        },
+        {
+          "q": "What do coders do with their code?",
+          "choices": [
+            "Test it",
+            "Hide it",
+            "Eat it"
+          ],
+          "a": "Test it"
+        },
+        {
+          "q": "What is a bug?",
+          "choices": [
+            "A mistake in the code",
+            "A type of cake",
+            "A pet"
+          ],
+          "a": "A mistake in the code"
+        }
+      ],
+      "challenge": {
+        "scene": "A game character walks through walls when it should stop at them.",
+        "question": "Ask a coder: what are some ways to find and fix this?",
+        "choices": [
+          "Check the wall rule and test it step by step",
+          "Remove all the walls from the game",
+          "Tell the player it is a feature"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a coder do when a game does not work?",
+        "choices": [
+          "Find the mistake and test it again",
+          "Turn off the computer and forget it",
+          "Give up straight away"
+        ],
+        "a": "Find the mistake and test it again"
+      },
+      "harder": [
+        {
+          "q": "A program crashes when a user types their name with a space. What should a coder do?",
+          "choices": [
+            "Test with spaces and find where the code breaks",
+            "Delete the program",
+            "Tell the user not to use spaces"
+          ],
+          "a": "Test with spaces and find where the code breaks",
+          "why": "Testing the case shows the bug, and then it can be fixed."
+        },
+        {
+          "q": "Why do coders break a big problem into smaller steps?",
+          "choices": [
+            "So the code gets longer",
+            "So each step is easy to test and fix",
+            "So the computer gets bored"
+          ],
+          "a": "So each step is easy to test and fix",
+          "why": "Small steps are easier to test and fix."
+        },
+        {
+          "q": "What is a loop in code?",
+          "choices": [
+            "A picture on the screen",
+            "A knot in the cable",
+            "Something that repeats the same instructions"
+          ],
+          "a": "Something that repeats the same instructions",
+          "why": "A loop repeats instructions a set number of times or until something happens."
+        },
+        {
+          "q": "Why do coders write notes in their code?",
+          "choices": [
+            "So the code is longer",
+            "So other people can understand what the code does",
+            "So the computer can read them faster"
+          ],
+          "a": "So other people can understand what the code does",
+          "why": "Notes help other people, and future you, understand the code."
+        },
+        {
+          "q": "A button in an app does nothing when pressed. What is a good first check?",
+          "choices": [
+            "Buy a new button",
+            "Look at what the button is set to do and test it",
+            "Restart the phone and forget it"
+          ],
+          "a": "Look at what the button is set to do and test it",
+          "why": "Checking what the button is set to do finds the mistake."
+        }
+      ]
+    },
+    "electrician": {
+      "learn": [
+        {
+          "emoji": "⚡",
+          "text": "Electricians put in and fix the wires that bring power to buildings. Power makes lights and fridges work."
+        },
+        {
+          "emoji": "🔌",
+          "text": "Electricians always switch off the power before they touch a wire. Safety comes first."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do electricians put in?",
+          "choices": [
+            "Wires that bring power",
+            "Water pipes only",
+            "Carpets"
+          ],
+          "a": "Wires that bring power"
+        },
+        {
+          "q": "What do electricians do before touching a wire?",
+          "choices": [
+            "Switch off the power",
+            "Lick it",
+            "Shout at it"
+          ],
+          "a": "Switch off the power"
+        },
+        {
+          "q": "What does power make work?",
+          "choices": [
+            "Lights and fridges",
+            "Rain",
+            "Snow"
+          ],
+          "a": "Lights and fridges"
+        }
+      ],
+      "challenge": {
+        "scene": "A lamp in the house keeps flickering, and it is getting dark.",
+        "question": "Ask an electrician: what are some ways to find out why?",
+        "choices": [
+          "Check the bulb and get an electrician to look at the wiring",
+          "Put your fingers in the socket to see",
+          "Ignore it and keep the lamp on"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should you do before you change a light bulb?",
+        "choices": [
+          "Switch the lamp off and let it cool",
+          "Pour water on it",
+          "Put a fork in the socket"
+        ],
+        "a": "Switch the lamp off and let it cool"
+      },
+      "harder": [
+        {
+          "q": "A socket feels warm. What should an electrician do?",
+          "choices": [
+            "Turn off the power and check the wires and plug",
+            "Cover it with paper",
+            "Put the plug in harder"
+          ],
+          "a": "Turn off the power and check the wires and plug",
+          "why": "A warm socket can mean a loose or faulty connection, so turn the power off and check."
+        },
+        {
+          "q": "Why do electricians use coloured wires?",
+          "choices": [
+            "So the house looks bright",
+            "Because the colour makes the power faster",
+            "To tell which wire does what and make it safe"
+          ],
+          "a": "To tell which wire does what and make it safe",
+          "why": "Colours show each wire's job so it is connected correctly."
+        },
+        {
+          "q": "A fuse keeps blowing. What does it mean?",
+          "choices": [
+            "The fuse needs a rest",
+            "The fuse wants to be bigger",
+            "There may be too much power or a fault in the circuit"
+          ],
+          "a": "There may be too much power or a fault in the circuit",
+          "why": "A blown fuse is a warning that something is overloaded or faulty."
+        },
+        {
+          "q": "Why do electricians wear rubber gloves?",
+          "choices": [
+            "To stop electricity passing through the body",
+            "To grip tools better",
+            "To keep hands warm"
+          ],
+          "a": "To stop electricity passing through the body",
+          "why": "Rubber does not conduct electricity, so it protects the hands."
+        },
+        {
+          "q": "A light switch feels hot. What should be done?",
+          "choices": [
+            "Turn off the power and get an electrician to check it",
+            "Turn it on and off quickly",
+            "Touch it to see if it is still hot"
+          ],
+          "a": "Turn off the power and get an electrician to check it",
+          "why": "A hot switch can be dangerous, so the power needs to go off and a professional should check it."
+        }
+      ]
+    },
+    "hairdresser": {
+      "learn": [
+        {
+          "emoji": "💇",
+          "text": "Hairdressers cut, wash and style hair. They ask how the person wants their hair to look."
+        },
+        {
+          "emoji": "✂️",
+          "text": "Hairdressers are careful with scissors. They cut a little at a time, so the hair looks just right."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do hairdressers do?",
+          "choices": [
+            "Cut, wash and style hair",
+            "Drive buses",
+            "Grow carrots"
+          ],
+          "a": "Cut, wash and style hair"
+        },
+        {
+          "q": "What do hairdressers ask first?",
+          "choices": [
+            "How the person wants their hair",
+            "The weather",
+            "What the time is"
+          ],
+          "a": "How the person wants their hair"
+        },
+        {
+          "q": "How do hairdressers cut hair?",
+          "choices": [
+            "A little at a time",
+            "All at once",
+            "With their eyes closed"
+          ],
+          "a": "A little at a time"
+        }
+      ],
+      "challenge": {
+        "scene": "A customer wants a short haircut, but they are worried it will look silly.",
+        "question": "Ask a hairdresser: what are some ways to help them feel happy with it?",
+        "choices": [
+          "Show them a picture and cut a little at a time",
+          "Cut it very short straight away",
+          "Tell them it is too late to change"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a hairdresser do before they start cutting?",
+        "choices": [
+          "Ask what style the customer wants",
+          "Start with the scissors",
+          "Shave the whole head"
+        ],
+        "a": "Ask what style the customer wants"
+      },
+      "harder": [
+        {
+          "q": "A customer's hair is very dry and frizzy. What might help?",
+          "choices": [
+            "A gentle conditioner and less heat from the dryer",
+            "Cut it all off",
+            "Hot water and a lot of scrubbing"
+          ],
+          "a": "A gentle conditioner and less heat from the dryer",
+          "why": "Gentle care and less heat help dry hair."
+        },
+        {
+          "q": "Why do hairdressers ask about allergies before colouring?",
+          "choices": [
+            "To choose the music",
+            "Some hair dyes can irritate the skin",
+            "To pick a hat"
+          ],
+          "a": "Some hair dyes can irritate the skin",
+          "why": "Some dyes can cause a reaction, so checking first keeps the customer safe."
+        },
+        {
+          "q": "A child is nervous about a haircut. What helps?",
+          "choices": [
+            "Explain each step and let them hold a mirror",
+            "Hold them down",
+            "Cut quickly so they don't see"
+          ],
+          "a": "Explain each step and let them hold a mirror",
+          "why": "Explaining and letting them see helps them feel safe."
+        },
+        {
+          "q": "Why do hairdressers check the hair is dry before cutting?",
+          "choices": [
+            "Dry hair is faster to sweep up",
+            "Wet hair is too heavy to cut",
+            "Wet hair stretches, so the cut might end up shorter than planned"
+          ],
+          "a": "Wet hair stretches, so the cut might end up shorter than planned",
+          "why": "Hair stretches when wet, so a cut on wet hair can be too short."
+        },
+        {
+          "q": "What does a hairdresser use to thin out hair?",
+          "choices": [
+            "A hammer",
+            "Thinning scissors",
+            "A spoon"
+          ],
+          "a": "Thinning scissors",
+          "why": "Thinning scissors remove some hair without making it all short."
+        }
+      ]
+    },
+    "florist": {
+      "learn": [
+        {
+          "emoji": "💐",
+          "text": "Florists make bunches of flowers for people to give to friends, family and at special events."
+        },
+        {
+          "emoji": "🌸",
+          "text": "Florists pick flowers that go well together. They trim the stems so the flowers can drink water."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do florists make?",
+          "choices": [
+            "Bunches of flowers",
+            "Bicycles",
+            "Bread"
+          ],
+          "a": "Bunches of flowers"
+        },
+        {
+          "q": "Why do florists trim the stems?",
+          "choices": [
+            "So the flowers can drink water",
+            "So the flowers can fly",
+            "So the flowers can sing"
+          ],
+          "a": "So the flowers can drink water"
+        },
+        {
+          "q": "What do florists think about when they choose flowers?",
+          "choices": [
+            "Which ones go well together",
+            "Which ones are the heaviest",
+            "Which ones are on the ground"
+          ],
+          "a": "Which ones go well together"
+        }
+      ],
+      "challenge": {
+        "scene": "A customer wants flowers for a friend who likes only one colour.",
+        "question": "Ask a florist: what are some ways to make a bunch just for them?",
+        "choices": [
+          "Use a mix of their favourite colour with some green leaves",
+          "Pick flowers at random",
+          "Make the bunch without any flowers"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a florist do with the stems before putting them in water?",
+        "choices": [
+          "Trim them at a slant",
+          "Tie them in knots",
+          "Dip them in paint"
+        ],
+        "a": "Trim them at a slant"
+      },
+      "harder": [
+        {
+          "q": "A bunch of flowers wilts after one day. What is a likely reason?",
+          "choices": [
+            "They were wrapped in paper",
+            "The flowers are too colourful",
+            "The stems are not in water or have not been trimmed"
+          ],
+          "a": "The stems are not in water or have not been trimmed",
+          "why": "Stems need water and a fresh trim to drink well."
+        },
+        {
+          "q": "Why does a florist use a mix of sizes?",
+          "choices": [
+            "To hide the stems",
+            "To make the bunch look full and balanced",
+            "To make it heavier to carry"
+          ],
+          "a": "To make the bunch look full and balanced",
+          "why": "Mixed sizes give a balanced, full shape."
+        },
+        {
+          "q": "A customer wants flowers that last a long time. What should the florist pick?",
+          "choices": [
+            "Long-lasting flowers like carnations or chrysanthemums",
+            "Flowers that have already started to brown at the edges",
+            "Petals that fall off in a breeze"
+          ],
+          "a": "Long-lasting flowers like carnations or chrysanthemums",
+          "why": "Carnations and chrysanthemums last longer in a vase."
+        },
+        {
+          "q": "Why does a florist add a little water to a bunch before handing it over?",
+          "choices": [
+            "To make it weigh more",
+            "To keep the flowers fresh on the way home",
+            "To make the paper stick"
+          ],
+          "a": "To keep the flowers fresh on the way home",
+          "why": "Water keeps the stems fresh until they are in a vase."
+        },
+        {
+          "q": "What is a good colour mix for a birthday bunch?",
+          "choices": [
+            "All black flowers",
+            "Only white and grey",
+            "Bright colours that the person likes"
+          ],
+          "a": "Bright colours that the person likes",
+          "why": "Choosing favourite colours makes the gift special."
+        }
+      ]
+    },
+    "tailor": {
+      "learn": [
+        {
+          "emoji": "🧵",
+          "text": "Tailors sew and mend clothes, so they fit well. They measure the person first."
+        },
+        {
+          "emoji": "📏",
+          "text": "Tailors take in or let out seams, so a jumper or a skirt fits just right."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do tailors sew?",
+          "choices": [
+            "Clothes",
+            "Cars",
+            "Walls"
+          ],
+          "a": "Clothes"
+        },
+        {
+          "q": "What do tailors do first?",
+          "choices": [
+            "Measure the person",
+            "Paint the cloth",
+            "Cut the cloth in half and stop"
+          ],
+          "a": "Measure the person"
+        },
+        {
+          "q": "What do tailors change so clothes fit?",
+          "choices": [
+            "The seams",
+            "The sky",
+            "The stars"
+          ],
+          "a": "The seams"
+        }
+      ],
+      "challenge": {
+        "scene": "A child's new coat is too big in the arms.",
+        "question": "Ask a tailor: what are some ways to make the coat fit better?",
+        "choices": [
+          "Take in the sleeves and check the fit again",
+          "Let the arms out even more",
+          "Tell the child to grow into it straight away"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a tailor do before cutting the cloth?",
+        "choices": [
+          "Measure carefully",
+          "Cut it quickly",
+          "Throw the cloth away"
+        ],
+        "a": "Measure carefully"
+      },
+      "harder": [
+        {
+          "q": "A dress has a split at the seam. What should the tailor do?",
+          "choices": [
+            "Cut the dress in half",
+            "Staple it shut",
+            "Mend the seam with strong stitches and check the fit"
+          ],
+          "a": "Mend the seam with strong stitches and check the fit",
+          "why": "Strong stitching repairs the seam properly."
+        },
+        {
+          "q": "Why do tailors pin fabric before sewing?",
+          "choices": [
+            "To keep the cloth dry",
+            "To hold the pieces in the right place",
+            "To make a noise"
+          ],
+          "a": "To hold the pieces in the right place",
+          "why": "Pins keep the fabric lined up while sewing."
+        },
+        {
+          "q": "A shirt sleeve is too long. What should be done?",
+          "choices": [
+            "Measure, mark the new length and shorten it neatly",
+            "Stretch it until it fits",
+            "Leave it and roll it up"
+          ],
+          "a": "Measure, mark the new length and shorten it neatly",
+          "why": "Measuring and marking gives a neat, even hem."
+        },
+        {
+          "q": "Why do tailors keep a tape measure round their neck?",
+          "choices": [
+            "It keeps the scissors warm",
+            "It is handy for measuring quickly",
+            "It holds the thread"
+          ],
+          "a": "It is handy for measuring quickly",
+          "why": "A tape to hand saves time when measuring."
+        },
+        {
+          "q": "What should a tailor check when a jacket fits strangely?",
+          "choices": [
+            "The colour of the buttons only",
+            "The shape of the hanger",
+            "The shoulders and the length"
+          ],
+          "a": "The shoulders and the length",
+          "why": "Shoulders and length decide how a jacket sits."
+        }
+      ]
+    },
+    "beekeeper": {
+      "learn": [
+        {
+          "emoji": "🐝",
+          "text": "Beekeepers look after bees and collect their honey. They keep the bee homes, called hives, tidy and dry."
+        },
+        {
+          "emoji": "🧑‍🌾",
+          "text": "Beekeepers wear a special suit and a veil, to stay safe. They move slowly, so the bees stay calm."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What do beekeepers collect?",
+          "choices": [
+            "Honey",
+            "Sand",
+            "Stones"
+          ],
+          "a": "Honey"
+        },
+        {
+          "q": "What do beekeepers wear to stay safe?",
+          "choices": [
+            "A special suit and a veil",
+            "Swimming goggles",
+            "A cape"
+          ],
+          "a": "A special suit and a veil"
+        },
+        {
+          "q": "Why do beekeepers move slowly?",
+          "choices": [
+            "So the bees stay calm",
+            "So they can nap",
+            "So the honey dries"
+          ],
+          "a": "So the bees stay calm"
+        }
+      ],
+      "challenge": {
+        "scene": "A bee is buzzing close to a child in the garden.",
+        "question": "Ask a beekeeper: what are some ways to keep everyone safe and the bee calm?",
+        "choices": [
+          "Stay still and let the bee fly away on its own",
+          "Swat at the bee",
+          "Run and shout"
+        ],
+        "starter": "I would ___ because ___."
+      },
+      "task": {
+        "prompt": "First pass: what should a beekeeper do before opening a hive?",
+        "choices": [
+          "Put on the suit and veil",
+          "Take off all their clothes",
+          "Shout at the bees"
+        ],
+        "a": "Put on the suit and veil"
+      },
+      "harder": [
+        {
+          "q": "A hive is too hot in the summer. What can the beekeeper do?",
+          "choices": [
+            "Close all the holes",
+            "Give the hive shade and make sure air and water are close by",
+            "Pour warm water inside"
+          ],
+          "a": "Give the hive shade and make sure air and water are close by",
+          "why": "Shade, airflow and water help the bees keep cool."
+        },
+        {
+          "q": "Why do beekeepers check for disease in the hive?",
+          "choices": [
+            "To change the bees' names",
+            "To count the honey",
+            "To keep the bees healthy and protect the hive"
+          ],
+          "a": "To keep the bees healthy and protect the hive",
+          "why": "Checking early helps stop disease spreading."
+        },
+        {
+          "q": "What is a swarm?",
+          "choices": [
+            "A bag of honey",
+            "A large group of bees moving to start a new hive",
+            "A group of flies"
+          ],
+          "a": "A large group of bees moving to start a new hive",
+          "why": "A swarm is bees leaving to make a new home."
+        },
+        {
+          "q": "A beekeeper wants to take honey. What should they leave in the hive?",
+          "choices": [
+            "None at all",
+            "All of it, the bees have plenty",
+            "Enough honey for the bees to eat through the winter"
+          ],
+          "a": "Enough honey for the bees to eat through the winter",
+          "why": "Bees need honey to survive the cold months."
+        },
+        {
+          "q": "Why do beekeepers use smoke?",
+          "choices": [
+            "It calms the bees so they are easier to work with",
+            "It makes honey sweeter",
+            "It keeps the flies away from the lunch"
+          ],
+          "a": "It calms the bees so they are easier to work with",
+          "why": "Smoke calms bees so the beekeeper can work safely."
+        }
+      ]
+    }
+  }
+}
