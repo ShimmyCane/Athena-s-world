@@ -1,6 +1,6 @@
 # Athena's world — Schematic
 
-**Status:** V2 (2.2.2): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
+**Status:** V2 (2.2.3): Home decor is a 3-D world with places, players and an outside view. Partly tested on iPad (2.0.0).
 **Owner:** Jimmy
 **Platform:** iPad web app, landscape first (portrait stacks the room above the buttons)
 **Conversations:** `convo/convo v0.1.md` (questions), `convo/convo v0.2.md` (visibility answers), `convo/convo v0.3.md` (purpose, MVP, assumptions), `convo/convo v0.4.md` (five houses, ready pop-up, open questions)
@@ -136,6 +136,11 @@ Source: `athena_notes` in the Family database, all 10 notes still `open` when re
 - **Shops:** items sit in two or three columns on wide screens so the list fits the page. (Guest, 2026-11-16) Note marked done. Horizontal scroll was not added.
 - **Moving things:** a spinning fan (Target, 60) and a spinning globe (Bookshop, 60) were added. (Guest, 2026-11-16)
 - **Windows:** a window on an inside wall also shows as a window on the outside wall. Not yet checked by placing a window in the game. (Athena, 2026-11-09)
+
+**Done in 2.2.3**
+- **Job audio:** all 37 job descriptions are spoken (Kokoro English voice `af_heart`, the same engine and default voice as the Voice repo). Clips are in `audio/jobs/<id>.mp3`, made from `tools/jobs_audio_manifest.json` by `tools/make_audio.py`. Each job card has a 🔊 Listen button. Note marked done. Checked headless: the clip loads (200), no errors. Not heard by a person yet.
+
+**How to make more audio:** write a JSON list of `{"id", "text"}` and run `python3 -I tools/make_audio.py --model <model folder> --manifest <file>`. The model files stay outside the repo; setup steps are in the script's header.
 
 **Still to do**
 - **Outside things at home:** let the player install outside things (front door, shutters, flower box, porch lamp, awning) from the home screen, not only in the outside view. Today picking one switches to the outside view. (Guest, 2026-11-16)

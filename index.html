@@ -560,6 +560,7 @@
       <label>Version log</label>
       <div>Now on version <span id="version"></span></div>
       <ul>
+        <li><b>2.2.3</b> Every job card has a 🔊 Listen button with a spoken description (Kokoro voice, made with tools/make_audio.py).</li>
         <li><b>2.2.2</b> Shop items sit in two or three columns on wide screens. New moving things: a spinning fan (Target, 60) and a spinning globe (Bookshop, 60). A window on a wall now shows from the outside too.</li>
         <li><b>2.2.1</b> Going home from the shops needs a quarter of the shops (rounded up), and no spending. Tester notes marked done.</li>
         <li><b>2.2.0</b> Prices are set by time: about 10 credits (5 minutes of questions) buys two small things. New: a decorative pony (5) and a windmill whose sails turn (60, save up for it). The shop shows a 3-D picture of everything, and moving things move. Drawn pictures of the job people.</li>
@@ -616,7 +617,7 @@
   <script src="people.js"></script>
   <script>
     // ---- Places, rooms and players. Edit these lists to change the game. ----
-    const VERSION = '2.2.2';
+    const VERSION = '2.2.3';
     // A place is a little world (ground) with one or more rooms. A room has a look (theme) and the things it needs.
     // cx, cz: where the room sits on the island; y: how high its floor is (the treehouse is up a tree).
     // The things are in models.js (ITEMS).
@@ -1357,6 +1358,10 @@
         const intro = el('div', 'intro');
         (job.intro || [job.desc]).forEach(line => intro.append(el('p', '', line)));
         body.append(intro);
+        // spoken job description (audio/jobs, made by tools/make_audio.py); a missing file just does nothing
+        body.append(choiceBtn('🔊 Listen', () => {
+          try { const a = new Audio('audio/jobs/' + job.id + '.mp3'); a.play().catch(() => {}); } catch (e) { /* no audio */ }
+        }));
         if (S) body.append(choiceBtn('✅ Apply', () => { v.stage = 'learn'; v.i = 0; renderJobs(); }));
         else body.append(el('p', '', 'The steps for this job are not written yet. Coming later.'));
       } else if (v.stage === 'learn') {
