@@ -48,7 +48,7 @@ A decorating game. Athena picks who a house or workplace is for, then decorates 
 - **Outside view:** zoom far out, or press 🔭. The walls go back up, the roof goes on (or the upper floors come down), and the inside hides. 🛋️ goes back in. While you look inside, a building's upper floors float above the room like a doll's house lid.
 - **Full screen** (⛶): the world fills the page, with a strip of things along the bottom and ✖ to leave. Two fingers pan (or right-drag / shift-drag with a mouse).
 - **Outside things** (Home Depot): front door, shutters, flower box, porch lamp, awning. Picking one switches to the outside view; tap the outside of a wall. **Siding** (mint, pink, brick, wood) changes a room's outside walls at once; pick it again to take it off.
-- **Shops** now use names Athena knows: H Mart, Costco, Target, and a new Home Depot. The trip needs every shop (13).
+- **Shops** now use names Athena knows: H Mart, Costco, Target, and a new Home Depot. The trip needs 25% of the shops (see Retail therapy, 2026-11-25 feedback).
 - **Jobs:** every job has a person to meet (a picture, a name and a 2–3 line hello). About four in five are women.
 
 ## V2: the 3-D home (2.0.0)
@@ -72,7 +72,7 @@ A decorating game. Athena picks who a house or workplace is for, then decorates 
 ## The three MVPs (v0.8.0)
 
 - **Learning center:** the first round is about baking desserts. It has 30 questions, 41 points in all: 25 core questions (1 point each), 3 bonus questions (2 points each, harder), and 2 challenge questions (5 points each, where you put several facts together). Questions are multiple choice or true/false, in the Test Bank's JSON shape (`bank/desserts_round1.json`, loaded into `content.js`). A right answer on the first try earns its full points as credits; a right answer after a wrong try earns half, rounded up. Credits show as 🪙 on the front page and in every level.
-- **Retail therapy:** 12 shops (`SHOPS` in `content.js`), each selling things by id with a price. Buying puts the thing in the bag, so it becomes a decorate button in every house. A trip home needs every shop visited and 20 credits spent (`TRIP`). Shop names are generic until Jimmy answers convo v0.5.
+- **Retail therapy:** 12 shops (`SHOPS` in `content.js`), each selling things by id with a price. Buying puts the thing in the bag, so it becomes a decorate button in every house. A trip home needs 25% of the shops visited (about 3 of 12) and no credits spent (`TRIP`, from tester feedback 2026-11-25). Shop names are generic until Jimmy answers convo v0.5.
 - **Get a job:** the job board holds all 37 jobs (`JOBS`, from `jobs.md`). Architect, Pilot and Artist have full steps (`JOB_STEPS`): two learn pages, a three-question quiz, a scenario to ask a real worker (with choices and a sentence starter, saved as the answer), a first-pass task, then Hired ⭐. The other 34 show their card; their steps come later.
 - Saved on the device, and in `athena_saves` when signed in: credits, the trip, hired jobs, and the challenge answers.
 
@@ -125,13 +125,27 @@ Levels 2–4 open as placeholder screens for now. Lock rules are a suggestion, s
 - `convo/` — Q&A history, one file per round, never compacted (convo v0.6 holds the level plan).
 - `CLAUDE.md` — pointer for Claude Code.
 
+## Tester feedback (2026-11-25)
+
+Source: `athena_notes` in the Family database, all 10 notes still `open` when read. Mark each done only after its fix ships.
+
+**Decided rules**
+- **Shop trip:** 25% of shops must be visited before the next button opens, with no minimum spending. Replaces "every shop and 20 credits". Applies to the Cottage notes from Guest (2026-11-16).
+
+**To build**
+- **Shops:** on a wide screen (for example a laundry-room width), allow more than one column. Use horizontal scroll so everything fits a vertical page. (Guest, 2026-11-16)
+- **Moving things:** more items like the windmill (Guest, 2026-11-16). Felix (2026-11-25) asks for more of the unfinished things in progress.
+- **Outside things at home:** let the player install outside things (front door, shutters, flower box, porch lamp, awning) from the home screen, not only in the outside view. (Guest, 2026-11-16)
+- **Windows:** a window added inside the house should also show from the outside. (Athena, 2026-11-09, synced 2026-11-25)
+- **Jobs:** develop the jobs in progress so they can all be tried (Felix, 2026-11-25). Record audio for the job descriptions, using the voice from the Voice repo (Felix, 2026-11-25). Felix says he was hired as an architect and asks that answering questions earns pay. The existing rule already pays credits for questions, so check that it is clear to the player.
+
 ## Open
 
 - Athena's age and what she can do on her own (convo v0.3, Q4).
 - Whether houses and decorations should be saved between visits (Q9). Answered in code: yes, through the family sign-in.
 - Whether anyone else plays (Q5).
 - What comes next (Q16).
-- Retail therapy and the economy: credits from questions, a shop trip of 12+ shops, going home to decorate, and buying a job (convo v0.5, planned, awaiting answers).
+- Retail therapy and the economy: credits from questions, a shop trip of 25% of shops with no spending (decided 2026-11-25), going home to decorate, and buying a job (convo v0.5, planned, awaiting answers).
 - What Replay should go back to (convo v0.4, Q2).
 
 Details go in `convo/` as they are answered. Do not compact old convo files.
